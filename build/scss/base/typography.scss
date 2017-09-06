@@ -1,0 +1,103 @@
+/*======================================================================*\
+==========================================================================
+
+							TYPOGRAPHY
+
+==========================================================================
+\*======================================================================*/
+
+
+body {
+	font: $font-base-size $font-txt;
+	line-height: $font-base-lh;
+	color: $c-txt;
+}
+
+
+//================================================================= WEBFONT
+
+//@include add-webfont('qanelas', 'qanelas/black', 'qanelassoft-black-webfont', 900);
+
+
+//================================================================ HEADINGS
+
+h1, h2, h3, h4, h5, p {
+	margin: 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+
+h1, .h1 {	
+	@include font-size($h1-font-sizes);	
+}
+h1 {	
+	margin-top: $space--xl;
+}
+
+
+h2, .h2 {	
+	@include font-size($h2-font-sizes);	
+}
+h2 {	
+	margin-top: $space--l;
+}
+
+
+h3, .h3 {	
+	@include font-size($h3-font-sizes);	
+}
+h3 {	
+	margin-top: $space--m;
+}
+
+
+h4, .h4 {	
+	@include font-size($h4-font-sizes);	
+}
+h4 {	
+	margin-top: $space--s;
+}
+
+
+h5, .h5 {	
+	@include font-size($h5-font-sizes);	
+}
+h5 {	
+	margin-top: $space--xs;
+}
+
+h6, .h6 {	
+	@include font-size($h6-font-sizes);	
+}
+h6 {	
+	margin-top: $space--xs*$smaller;
+}
+
+
+//================================================================== CONTENT
+
+p, .p {
+	@include font-size($h4-font-sizes);	
+}
+p {
+	margin-top: $space--s;
+}
+
+
+a,
+p a {
+
+}
+
+
+blockquote {
+
+}
+
+
+ul, ol {
+	
+}

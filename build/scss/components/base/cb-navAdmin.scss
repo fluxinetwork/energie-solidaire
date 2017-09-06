@@ -1,0 +1,32 @@
+/*======================================================================*\
+==========================================================================
+
+							BASE NAV ADMIN
+
+==========================================================================
+\*======================================================================*/
+
+.cb-navAdmin {
+	position: fixed;
+	z-index: 1000;
+	left: $space;
+	bottom: $space;
+}
+
+.cb-navAdmin__bt {
+	display: inline-block;
+	@extend .h5;
+	font-family: $font-h;
+	color: #fff;
+	padding: $space--xs $space--s;
+	background-color: $c-main;
+	border-radius: $radius;
+
+	&:hover {
+		background-color: $c-accent;
+	}
+
+	&:nth-child(2) {
+		margin-left: $space/2;
+	}
+}
