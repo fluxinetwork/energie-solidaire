@@ -36,7 +36,7 @@ function fluxi_manage_paiement(){
 			$description_charge = 'Don à Énergie Solidaire';
 
 			$montant = filter_var( $_POST['amount'], FILTER_SANITIZE_NUMBER_INT);
-			$montant_cent = ($montant*100);			
+			$montant_cent = (int)($montant*100);			
 
 			$stripe = new Stripe(STRIPE_KEY);			
 
@@ -47,7 +47,8 @@ function fluxi_manage_paiement(){
 			]);
 
 			if( property_exists($customer, 'error') ):
-				$reg_errors->add( 'stripefail', $message_response );
+				//var_dump($customer->error);
+				$reg_errors->add( 'stripefail', $customer->error );
 			else:
 
 				$charge = $stripe->api('charges',[
@@ -58,6 +59,7 @@ function fluxi_manage_paiement(){
 				]);
 
 				if( property_exists($charge,'error') || $charge->status == 'failed'):
+					//var_dump($charge->error);
 					$reg_errors->add( 'stripefail', $message_response );
 				else:
 
@@ -99,12 +101,52 @@ function fluxi_manage_paiement(){
 						add_post_meta($the_post_id, $key, $value, true);						
 					}
 
+
+					$datas_topdon = array();
+				    $datas_topdon['key'] = "e8Gpe5G!";
+				    $datas_topdon['civilite'] = 'M';
+				    $datas_topdon['nom'] = 'Rolland';
+				    $datas_topdon['prenom'] = 'Yann';
+				    $datas_topdon['email'] = 'rollandyann@gmail.com';
+				    $datas_topdon['adresse1'] = '166 rue Diderot';
+				    $datas_topdon['adresse2'] = '';
+				    $datas_topdon['codepostal'] = '94300';
+				    $datas_topdon['ville'] = 'Vincennes';
+				    $datas_topdon['pays'] = 'France';
+				    $datas_topdon['tel'] = '0682396513';
+				    $datas_topdon['code_aff'] = '????';
+				    $datas_topdon['numtransac'] = $charge->id;
+				    $datas_topdon['dt_paiement'] = date("Y-m-d H:i:s"); //prendre la date de la banque
+				    $datas_topdon['amount'] = $montant;
+				    $datas_topdon['authorisation_id'] = '77777';
+				    $datas_topdon['payment_certificate'] = '1235';
+				    $datas_topdon['payment_time'] = '1201';
+				    $datas_topdon['payment_date'] = '20170203';
+				    $datas_topdon['type_paiement'] = 'CBM';
+				    $datas_topdon['recurrence'] = 1;
+				    $datas_topdon['date_validite'] = 10;
+				    $datas_topdon['id_mem'] = '1234';
+
+				    $postdata_topdon = http_build_query($datas_topdon);
+			        $opts_topdon = array('http' =>
+			            array(
+			                'method' => 'POST',
+			                'header' => 'Content-type: application/x-www-form-urlencoded',
+			                'content' => $postdata_topdon
+			            )
+			        );
+
+			        $context_topdon = stream_context_create($opts_topdon);
+
+			        $result_topdon = file_get_contents('https://ws.topdon.fr/importDonsTopweb.php', false, $context_topdon);
+			        
+
 					// Notification mail admin
-					notify_by_mail ( array(CONTACT_ENERCOOP), 'Les Amis d\'Enercoop <' . CONTACT_ENERCOOP . '>','Nouveau don',false,'<h2>Nouveau don de '.$montant.'€</h2><p>' . $nom_structure_contact . ' a donné '.$montant.'€ le '.$today.'.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder au reçu</a></p>');
+					/*notify_by_mail ( array(CONTACT_ENERCOOP), 'Les Amis d\'Enercoop <' . CONTACT_ENERCOOP . '>','Nouveau don',false,'<h2>Nouveau don de '.$montant.'€</h2><p>' . $nom_structure_contact . ' a donné '.$montant.'€ le '.$today.'.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder au reçu</a></p>');
 
 					// Notification mail user
 					$mail_paiement = array(get_footer_mail(), $montant, $nom_structure_contact, $adresse, $complement_adresse, $code_postal, $ville, $today, $last4, 'cb' );
-					notify_by_mail (array($mail_contact),'Les Amis d\'Enercoop <' . CONTACT_ENERCOOP . '>', 'Confirmation de don', true, get_template_directory() . '/app/inc/mails/confirmation-paiement.php', $mail_paiement);				
+					notify_by_mail (array($mail_contact),'Les Amis d\'Enercoop <' . CONTACT_ENERCOOP . '>', 'Confirmation de don', true, get_template_directory() . '/app/inc/mails/confirmation-paiement.php', $mail_paiement);	*/			
 
 					$message_response = 'Votre don a été pris en compte. Vous allez recevoir une confirmation par email.';
 				endif;
