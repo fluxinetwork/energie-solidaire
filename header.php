@@ -22,8 +22,8 @@
 
 <body <?php body_class(); ?> >
 
-	<div class="global">
+	<div id="global">
 
 		<?php get_template_part( 'page-templates-parts/base/header'); ?>
 
-		<div class="main">
+		<div id="main">

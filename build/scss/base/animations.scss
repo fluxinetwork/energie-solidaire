@@ -11,5 +11,20 @@
 
 @keyframes spin {
 	from {transform: rotate(0);}
-	to {transform: rotate(360deg);}
+	to {transform: rotate(359deg);}
+}
+
+.anim-spin {
+	animation: 1s spin infinite linear;
+}
+
+
+@keyframes floating {
+	0% {transform: translateY(0);}
+	50% {transform: translateY(-20%);}
+	100% {transform: translateY(0);}
+}
+
+.anim-floating {
+	animation: 3s floating infinite linear;
 }

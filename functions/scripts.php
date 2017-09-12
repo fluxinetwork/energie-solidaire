@@ -76,6 +76,7 @@ function enqueue_scripts() {
     wp_register_script( 'waypoint', THEME_DIR_PATH . '/app/js/vendors/base/waypoints.min.js', array(), null, true );
     wp_register_script( 'mousewheel', THEME_DIR_PATH . '/app/js/vendors/jquery.mousewheel.min.js', array(), null, true );
     wp_register_script( 'fitvids', THEME_DIR_PATH . '/app/js/vendors/base/jquery.fitvids.min.js', array(), null, true );
+    wp_register_script( 'fontAwesome', 'https://use.fontawesome.com/3a70e536e7.js', array(), null, false );
    
 
     // FORMS
@@ -92,7 +93,7 @@ function enqueue_scripts() {
 
 
     // Main
-    wp_register_script( 'main', THEME_DIR_PATH . '/app/js/main.js', array('modernizr', 'jQuery', 'waypoint', 'fitvids'), null, true );
+    wp_register_script( 'main', THEME_DIR_PATH . '/app/js/main.js', array('modernizr', 'jQuery', 'fontAwesome', 'waypoint', 'fitvids'), null, true );
 
     wp_register_script( 'full', THEME_DIR_PATH . '/app/js/full.min.js', array('modernizr', 'jQuery'), null, true );
 

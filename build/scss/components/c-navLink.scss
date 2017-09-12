@@ -1,0 +1,16 @@
+.c-navLink {
+	text-transform: uppercase;
+	@extend .h5;
+	font-weight: 900;
+	letter-spacing: 0.7px;
+	color: $c-dark;
+	@extend %transition;
+
+	&--light {
+		font-weight: 400;
+	}
+
+	&:hover {
+		opacity: 0.5;
+	}
+}

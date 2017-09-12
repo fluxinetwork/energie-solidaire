@@ -1,0 +1,26 @@
+/*======================================================================*\
+==========================================================================
+
+								BUTTONS
+
+==========================================================================
+\*======================================================================*/
+
+.c-button {
+	display: inline-block;
+	@extend .h4;
+	font-weight: 900;
+	text-transform: uppercase;
+	color: $c-dark;
+	padding: 1em 1.8em;
+	background-color: $c-accent;
+	box-shadow: 0 0 50px rgba($c-accent, 0.5);
+	border-radius: 80px;
+	cursor: pointer;
+	@extend %transition;
+
+	&:hover {
+		box-shadow: 0 0 80px rgba($c-accent, 0.8);
+		transform: scale(1.1);
+	}
+}

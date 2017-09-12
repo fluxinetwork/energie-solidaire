@@ -6,8 +6,7 @@ module.exports = function (grunt) {
 
 		watch: {
         	options: {
-        	  spawn: false,
-        	  livereload: true
+        	  spawn: false
         	},
 		    js: {
 		        files: ['build/js/**/*.js'],
@@ -78,7 +77,8 @@ module.exports = function (grunt) {
 	        main: {
 	        	options : {
 	    	        style: 'expanded',
-	    	        sourcemap: 'none'
+	    	        sourcemap: 'none',
+	    	        noCache: true
 	    		},
 	            files: {
 	                'app/css/main.css': 'build/scss/main.scss'

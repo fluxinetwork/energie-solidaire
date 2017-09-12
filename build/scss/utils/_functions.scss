@@ -23,3 +23,7 @@
 		@return radial-gradient($origin, lighten( $color, 5% ),$color $posColor2);
 	}
 }
+
+@function linear-grad($color, $color2, $posColor2: 100%, $angle: -20deg) {
+	@return linear-gradient($angle, $color, $color2 $posColor2);
+}

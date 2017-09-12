@@ -12,8 +12,8 @@
 $breakpoints: (
   small: 480px,
   medium: 768px, 
-  large: 1050px,
-  xlarge: 1300px,
+  large: 960px,
+  xlarge: 1200px,
 );
 
 $break--s: map-get($breakpoints, small);
@@ -32,17 +32,19 @@ $space--l: $space*5;
 $space--xl: $space*8;
 $space--xxl: $space*12;
 
+$gutter: $space--m;
+
 $bigger: 1.3;
 $smaller: 0.7;
 
 
 /////////////////////////////////////////////////////////////////// COLORS
 
-$c-main: #1565C0;
-$c-accent: #FFA000;
-$c-dark: #263238;
-$c-light:#ECEFF1;
-$c-txt: #212121;
+$c-main: #026873;
+$c-accent: #FCEE00;
+$c-dark: #003035;
+$c-light:#CDE2E4;
+$c-txt: #003035;
 $c-error: #F13636;
 $c-valid: #00C15F;
 
@@ -60,39 +62,42 @@ $c-linkedin: #0077b5;
 
 //////////////////////////////////////////////////////////////////// TYPO
 
-$font-h: sans-serif;
-$font-txt: serif;
-$font-bt: sans-serif;
+$font-h: gilroy, sans-serif;
+$font-txt: gilroy, sans-serif;
+$font-bt: gilroy, sans-serif;
 
-$font-base-size: 16px;
 $font-base-lh: 1.3;
 
 $h0-font-sizes: (
-	null : (61px)
+	null : (22px),
+	medium : (32px),
+	large : (45px)
 );
 
 $h1-font-sizes: (
-	null : (31px)
+	null : (40px)
 );
 
 $h2-font-sizes: (
-	null : (25px)
+	null : (32px)
 );
 
 $h3-font-sizes: (
-	null : (20px)
+	null : (25px)
 );
 
 $h4-font-sizes: (
-	null : (16px)
+	null : (16px),
+	medium : (18px),
+	large : (20px, 1.5)
 );
 
 $h5-font-sizes: (
-	null : (13px)
+	null : (14px)
 );
 
 $h6-font-sizes: (
-	null : (11px)
+	null : (12px)
 );
 
 

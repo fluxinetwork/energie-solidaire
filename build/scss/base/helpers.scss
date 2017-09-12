@@ -6,11 +6,82 @@
 ==========================================================================
 \*======================================================================*/
 
+%transition,
+.transition {
+  	@include transition();
+}
+
 
 //================================================================== RESET
 
+%list-reset,
 .list-reset {
 	@include list-reset();
+}
+
+.clearfix {
+   *zoom: 1;
+
+   &:before,
+   &:after {
+       content: " ";
+       display: table;
+   }
+
+   &:after {
+       clear: both;
+   }
+}
+
+//================================================================ POSITIONS
+
+.posR {
+	position: relative;
+}
+
+.posA {
+	position: absolute;
+}
+
+.posF {
+	position: fixed;
+}
+
+//================================================================== DISPLAY
+
+.displayIB {
+	display: inline-block;
+}
+
+
+//==================================================== AFFICHAGE BREAKPOINTS
+
+[class*="show@"] {
+	display: none;
+}
+
+.show\@small {
+	@media screen and(min-width: $break--s) {
+		display: block;
+	}
+}
+
+.show\@medium {
+	@media screen and(min-width: $break--m) {
+		display: block;
+	}
+}
+
+.show\@large {
+	@media screen and(min-width: $break--l) {
+		display: block;
+	}
+}
+
+.show\@xlarge {
+	@media screen and(min-width: $break--xl) {
+		display: block;
+	}
 }
 
 
@@ -58,7 +129,7 @@
 }
 
 
-//================================================================ LAYOUT
+//================================================================== FLEX
 
 .flex {
 	display: flex;
@@ -91,8 +162,16 @@
 		justify-content: space-around;
 	}
 
+	&--aifs {
+		align-items: flex-start;
+	}
+
 	&--aic {
 		align-items: center;
+	}
+
+	&--aife {
+		align-items: flex-end;
 	}
 
 	&--center {
@@ -126,78 +205,126 @@
 }
 
 
+//================================================================= STATES
+
+.is-hidden {
+	visibility: hidden;
+	opacity: 0;
+} 
+
+.is-visible {
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
+.is-none {
+	display: none !important;
+}
+
+.is-muted {
+	opacity: 0.3 !important;
+}
+
+.is-on-top {
+	z-index: 10 !important;
+}
+
+.is-fixed {
+	position: fixed !important;
+}
+
+.has-pointer {
+  cursor: pointer; 
+}
+
+.has-no-scroll {
+	overflow: hidden;
+}
+
+
 //================================================================= COLORS
 
 @mixin colors($color, $suffix) {
 	.c-#{$suffix} {
-		color: $color;
+		color: $color !important;
 	}
 	.bg-#{$suffix} {
-		background-color: $color;
+		background-color: $color !important;
 	}
 }
 
 @include colors($c-main, 'main');
-@include colors($c-main, 'accent');
-@include colors($c-main, 'dark');
-@include colors($c-main, 'light');
-@include colors($c-main, 'txt');
-@include colors($c-main, 'valid');
-@include colors($c-main, 'error');
+@include colors($c-accent, 'accent');
+@include colors($c-dark, 'dark');
+@include colors($c-light, 'light');
+@include colors($c-txt, 'txt');
+@include colors($c-valid, 'valid');
+@include colors($c-error, 'error');
+@include colors($c-facebook, 'facebook');
+@include colors($c-twitter, 'twitter');
+@include colors($c-linkedin, 'linkedin');
+@include colors($c-youtube, 'youtube');
+@include colors(#fff, 'white');
 
 
 //======================================================= PADDING & MARGIN
 
+.mgn--center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .mgnTop--auto {
-	margin-top: auto;
+	margin-top: auto !important;
 }
 
 .mgnRight--auto {
-	margin-right: auto;
+	margin-right: auto !important;
 }
 
 .mgnBottom--auto {
-	margin-bottom: auto;
+	margin-bottom: auto !important;
 }
 
-.mgnRight--auto {
-	margin-right: auto;
+.mgnLeft--auto {
+	margin-left: auto !important;
 }
 
 @mixin spaces($space, $suffix) {
 	.pdg--#{$suffix} {
-		padding: $space;
+		padding: $space !important;
 	}
 	.pdgTop--#{$suffix} {
-		padding-top: $space;
+		padding-top: $space !important;
 	}
 	.pdgRight--#{$suffix} {
-		padding-right: $space;
+		padding-right: $space !important;
 	}
 	.pdgBottom--#{$suffix} {
-		padding-bottom: $space;
+		padding-bottom: $space !important;
 	}
 	.pdgLeft--#{$suffix} {
-		padding-left: $space;
+		padding-left: $space !important;
 	}
 
 	.mgn--#{$suffix} {
-		margin: $space;
+		margin: $space !important;
 	}
 	.mgnTop--#{$suffix} {
-		margin-top: $space;
+		margin-top: $space !important;
 	}
 	.mgnRight--#{$suffix} {
-		margin-right: $space;
+		margin-right: $space !important;
 	}
 	.mgnBottom--#{$suffix} {
-		margin-bottom: $space;
+		margin-bottom: $space !important;
 	}
 	.mgnLeft--#{$suffix} {
-		margin-left: $space;
+		margin-left: $space !important;
 	}
 }
 
+@include spaces(0, 'none');
 @include spaces($space--xs, 'xs');
 @include spaces($space--s, 's');
 @include spaces($space--m, 'm');

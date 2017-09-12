@@ -5,3 +5,246 @@
 
 ==========================================================================
 \*======================================================================*/
+
+
+//================================================================== INTRO
+
+
+.hp-intro {
+	position: relative;
+	padding-bottom: $space--xl*2;
+
+	@media screen and (min-width: $break--m) {
+		padding-bottom: $space--xl*2.5;
+	}
+}
+
+.hp-intro__content {
+	position: relative;
+	z-index: 2;
+}
+
+
+// DECOR
+
+.hp-decor {
+	position: absolute;
+	background-image: url("../img/hp-decor.png");
+}
+
+
+// CLOUDS
+
+.hp-cloud {
+	display: none;
+
+	@media screen and (min-width: $break--m) {
+		display: block;
+	}
+}
+
+.hp-cloud1 {
+	left: -2%;
+	top: 20%;
+	background-position: -649px bottom;
+	width: 139px;
+	height: 63px;
+	animation: floating 4s infinite;
+
+	@media screen and (min-width: $break--l) {
+		left: 4%;
+	}
+
+	@media screen and (min-width: $break--xl) {
+		left: 12%;
+	}
+}
+
+.hp-cloud2 {
+	right: -5%;
+	top: 0;
+	background-position: -788px bottom;
+	width: 150px;
+	height: 80px;
+	animation: floating 5.5s infinite;
+
+	@media screen and (min-width: $break--l) {
+		right: 5%;
+	}
+
+	@media screen and (min-width: $break--xl) {
+		right: 15%;
+	}
+}
+
+
+// GROUND SCENE
+
+.hp-intro__ground {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+.hp-ground-decor {
+	bottom: 0;
+	transform: scale(0.45);
+
+	@media screen and (min-width: $break--s) {
+		transform: scale(0.5);
+	}
+
+	@media screen and (min-width: $break--m) {
+		transform: scale(0.75);
+	}
+
+	@media screen and (min-width: $break--l) {
+		transform: scale(1);
+	}
+}
+
+.hp-leftHouse {
+	left: -20px;
+	width: 285px;
+	height: 263px;
+	transform-origin: left bottom;
+
+	@media screen and (min-width: $break--l) {
+		left: 2%;
+	}
+
+	@media screen and (min-width: $break--xl) {
+		left: 9%;
+	}
+}
+
+.hp-family {
+	left: 45%;
+	background-position: -563px bottom;
+	width: 86px;
+	height: 101px;
+	transform-origin: center bottom;
+}
+
+.hp-rightHouse {
+	right: -20px;
+	background-position: -285px bottom;
+	width: 278px;
+	height: 220px;
+	transform-origin: right bottom;
+
+	@media screen and (min-width: $break--l) {
+		right: 2%;
+	}
+
+	@media screen and (min-width: $break--xl) {
+		right: 9%;
+	}
+}
+
+
+//================================================================== VIDEO
+
+.hp-video {
+	position: relative;
+	background: linear-grad(#A0D5F3, darken(#A0D5F3, 10%));
+	@include flex(null center, column);
+	text-align: center;
+}
+
+
+// PLAYER
+
+.hp-video__player  {
+	position: relative;
+	z-index: 2;
+	width: 80%;
+	max-width: $contentW;
+
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		background-color: rgba($c-dark, 0.4);
+		width: 90%;
+		height: 20%;
+		left: 5%;
+		bottom: -4%;
+		border-radius: 10px;
+		filter: blur(10px);
+	}
+}
+
+
+// CONTENT
+
+.hp-video__txt {
+	max-width: 500px;
+}
+
+.hp-video__button {
+	position: relative;
+	z-index: 2;
+}
+
+
+// MOUNTAINS
+
+.hp-video__decor {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 200px;
+}
+
+.hp-wrapMountain {
+	position: absolute;
+	bottom: 0;
+
+	&--flip {
+		transform: scaleX(-1);
+	}
+
+	&:first-child {
+		left: -10%;
+
+		@media screen and (min-width: $break--m) {
+			left: -5%;
+		}
+	}
+
+	&:last-child {
+		right: -10%;
+
+		@media screen and (min-width: $break--m) {
+			right: -5%;
+		}
+	}
+}
+
+.hp-mountain {
+	position: relative;
+	background-position: -938px bottom;
+	width: 405px;
+	height: 235px;
+	transform: scale(0.4);
+	transform-origin: left bottom;
+
+	@media screen and (min-width: $break--m) {
+		transform: scale(0.5);
+	}
+
+	@media screen and (min-width: $break--l) {
+		transform: scale(0.8);
+	}
+
+	@media screen and (min-width: $break--xl) {
+		transform: scale(1);
+	}
+}
+
+
+
+

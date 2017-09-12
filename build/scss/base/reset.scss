@@ -23,7 +23,6 @@ button, input, select, textarea {
 
 img { 
 	display: block;
-	height: auto;
 	max-width: 100%;
 }
 
@@ -34,8 +33,8 @@ a {
 	outline: 0;
 }
 
-ul {
-	padding-left: 1.5rem;
+button {
+	cursor: pointer;
 }
 
 

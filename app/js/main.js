@@ -64,6 +64,8 @@ var FOO = {
 
             // Form contact
             initFormContact();
+
+            jQuery('.js-fitVids').fitVids();
         }
     },    
     home: {
@@ -361,3 +363,6 @@ function activeTheLights(){
 	});
 
 }
+jQuery('.js-toggle-menu').on('click', function() {
+	jQuery('.js-nav').toggleClass('is-open');
+})

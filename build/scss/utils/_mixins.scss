@@ -48,9 +48,16 @@ If only one value, will be used for the two properties
 Use 'null' to not declare a propertie, ex: flex(center null)
 */
 
-@mixin flex($positions: null null, $column: false, $wrap: true) {
+@mixin flex($positions: null null, $direction: false, $wrap: false) {
 	display: flex;
-	flex-wrap: wrap;
+
+	@if ( $direction ) {
+		flex-direction: $direction;
+	}
+
+	@if ( $wrap ) {
+		flex-wrap: $wrap;
+	}
 	
 	$positions: unpack-duo($positions);
 
@@ -63,14 +70,6 @@ Use 'null' to not declare a propertie, ex: flex(center null)
 		@if ($position != null) {
 			#{$flex-position}: $position;
 		}
-	}
-
-	@if ($column != false) {
-		flex-direction: column;
-	}
-
-	@if ($wrap != true) {
-		flex-wrap: nowrap;
 	}
 }
 
@@ -104,23 +103,34 @@ $fullH fill width AND height
 
 // CENTER 
 
-@mixin center($direction: 'horizontal') {
+@mixin center($direction: 'x') {
 	position: absolute;
 
-	@if ($direction == 'horizontal') {
+	@if ($direction == 'x') {
 		left: 50%;
 		transform: translateX(-50%)
 	}
-	@else {
+	
+	@if ($direction == 'y'){
 		top: 50%;
 		transform: translateY(-50%)
+	}
+
+	@if ($direction == 'xy'){
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 }
 
 
 // SQUARE
 
-@mixin square() {
+@mixin square($width: null) {
+	@if ($width) {
+		width: $width;
+	}
+
 	&:before {
 	    content: "";
 	    display: block;
@@ -128,10 +138,26 @@ $fullH fill width AND height
 	}
 }
 
+// ROUND
+
+@mixin round($width: null) {
+	@if ($width) {
+		@include square($width);
+	}
+	@else {
+		@include square();
+	}
+	border-radius: 50%;
+}
+
 
 // RECTANGLE
 
-@mixin rectangle($padding: 60%) {
+@mixin rectangle($padding: 60%, $width: null) {
+	@if ($width) {
+		@include square($width);
+	}
+
 	&:before {
 	    content: "";
 	    display: block;
@@ -206,7 +232,7 @@ $path in context of the fonts folder
 	    font-family: $name;
 	    src: url('../fonts/'+$folder+'/'+$slug+'.eot');
 	    src: url('../fonts/'+$folder+'/'+$slug+'.eot?#iefix') format('embedded-opentype'),
-	         url('../fonts/'+$folder+'/'+$slug+'.woff2') format('woff2'),
+	         //url('../fonts/'+$folder+'/'+$slug+'.woff2') format('woff2'),
 	         url('../fonts/'+$folder+'/'+$slug+'.ttf') format('truetype'),
 	         url('../fonts/'+$folder+'/'+$slug+'.woff') format('woff'),
 	         url('../fonts/'+$folder+'/'+$slug+'.svg') format('svg');

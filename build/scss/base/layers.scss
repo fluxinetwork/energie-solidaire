@@ -6,25 +6,26 @@
 ==========================================================================
 \*======================================================================*/
 
-.global {
-	position: absolute;
-	width: 100%;	
-	max-width: 100%;	
-	overflow-x: hidden;		
-	min-height: 100%;
+body {
+
 }
 
-.main {
+#global {
+	position: relative;
+	overflow-x: hidden;
+}
+
+#main {
 	position: relative;
 	z-index: 2;
 }
 
-.header {
+#header {
 	position: relative;
 	z-index: 4;
 }
 
-.footer {
+#footer {
 	position: relative;
 	z-index: 3;
 
@@ -37,8 +38,26 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 1000;
+	z-index: 5;
 	width: 100%;			
 	height: 100%;
-	background-color: rgba($c-dark, 0.8);
+	background-color: rgba($c-dark, 0.9);
+	@include flex(center, column);
+	opacity: 0;
+	visibility: hidden;
+	transform: scale(0.7);
+	@extend %transition;
+
+	&.is-visible {
+		transform: scale(1);
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.overlay__bt {
+	position: absolute;
+	top: 0;
+	right: 0;
+	@extend .l-cell;
 }

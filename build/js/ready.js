@@ -19,6 +19,8 @@ var FOO = {
 
             // Form contact
             initFormContact();
+
+            jQuery('.js-fitVids').fitVids();
         }
     },    
     home: {

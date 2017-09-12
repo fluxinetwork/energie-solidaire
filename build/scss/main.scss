@@ -1,28 +1,24 @@
-// VENDORS
-
-@import "vendors/bourbon/bourbon";
-
-
 // UTILS
 
-@import "utils/variables";
 @import "utils/easing";
 @import "utils/functions";
 @import "utils/mixins";
+@import "utils/variables";
 
 
 // BASE
 
 @import "base/reset";
-@import "base/states";
 @import "base/typography";
-@import "base/helpers";
+@import "base/layers";
 @import "base/animations";
+@import "base/helpers";
 
 
-// LAYOUT
+// LAYOUTS
 
-@import "layout/l-helpers";
+@import "layouts/base/l-basics";
+@import "layouts/base/l-flexGrid";
 
 
 // COMPONENTS
@@ -31,7 +27,17 @@
 @import "components/base/cb-loader";
 @import "components/base/cb-notify";
 @import "components/base/cb-navAdmin";
-@import "components/c-buttons";
+@import "components/c-roundButton";
+@import "components/c-button";
+@import "components/c-navLink";
+@import "components/c-heroTxt";
+@import "components/c-sectionMiniTitle";
+
+
+// BLOCKS
+
+@import "blocks/header";
+@import "blocks/footer";
 
 
 // PAGES 

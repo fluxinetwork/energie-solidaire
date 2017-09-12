@@ -8,15 +8,17 @@
 
 
 body {
-	font: $font-base-size $font-txt;
+	font-family: $font-txt;
 	line-height: $font-base-lh;
 	color: $c-txt;
+	@include font-smoothing();
 }
 
 
 //================================================================= WEBFONT
 
-//@include add-webfont('qanelas', 'qanelas/black', 'qanelassoft-black-webfont', 900);
+@include webfont('gilroy', 'gilroy/black', 'Gilroy-Black', 900);
+@include webfont('gilroy', 'gilroy/regular', 'Gilroy-Regular', 400);
 
 
 //================================================================ HEADINGS
@@ -29,6 +31,9 @@ h1, h2, h3, h4, h5, p {
 	}
 }
 
+.h0 {	
+	@include font-size($h0-font-sizes);	
+}
 
 h1, .h1 {	
 	@include font-size($h1-font-sizes);	
