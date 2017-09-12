@@ -37,6 +37,34 @@ if ( CUSTOM_POST_TYPE ) {
 		register_post_type( 'dons-ponctuels', $args_don_ponctuel );
 
 
+		$labels_projets = array(
+			'name' => __( 'Projets', '' ),
+			'singular_name' => __( 'Projet', '' ),
+			);
+
+		$args_projets = array(
+			'label' => __( 'Projets', '' ),
+			'labels' => $labels_projets,
+			'description' => '',
+			'public' => true,
+			'show_ui' => true,
+			'show_in_rest' => false,
+			'rest_base' => '',
+			'has_archive' => false,
+			'show_in_menu' => true,
+			'exclude_from_search' => false,
+			'capability_type' => 'post',
+			'map_meta_cap' => true,
+			'hierarchical' => false,
+			'rewrite' => array( 'slug' => 'projets', 'with_front' => false ),
+			'query_var' => true,
+
+			'supports' => array( 'title', 'author' ),
+			//'taxonomies' => array( 'category', 'post_tag' ),
+		);
+		register_post_type( 'projets', $args_projets );
+
+
 	}
 	add_action( 'init', 'create_cpts' );
 
