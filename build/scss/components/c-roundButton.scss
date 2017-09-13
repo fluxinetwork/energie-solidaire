@@ -5,6 +5,11 @@
 	background-color: $c-main;
 	color: #fff;
 	@include flex(center);
+	@extend .transition;
+
+	&:hover {
+		transform: scale(1.2);
+	}
 
 	&--ghost {
 		background-color: transparent;

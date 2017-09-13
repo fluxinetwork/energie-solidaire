@@ -52,9 +52,9 @@ Make background with :after and fancy shadow with :before
 \*======================================================================*/
 .overlay, .c-button, .c-navLink, .header__nav, .header__nav .header__nav__close,
 .transition,
-.l-dotSlider__items__item,
 .l-dotSlider__items__item::after,
 .l-dotSlider__controls__dot,
+.c-roundButton,
 .c-link::before,
 .c-projectCard__more {
   transition-property: all;
@@ -1036,7 +1036,7 @@ p {
   background-color: transparent;
 }
 .l-col--content {
-  max-width: 600px;
+  max-width: 650px;
 }
 @media screen and (min-width: 768px) {
   .l-col--content {
@@ -1186,7 +1186,7 @@ p {
 }
 
 .l-duo__item__content {
-  max-width: 300px;
+  max-width: 325px;
 }
 .l-duo__item--left .l-duo__item__content {
   padding-left: 0;
@@ -1209,21 +1209,19 @@ p {
 .l-dotSlider__items__item {
   position: relative;
   flex: none;
+  transition: 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transform: scale(0.7);
 }
 .l-dotSlider__items__item::after {
   content: '';
   display: inline-block;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.75);
   position: absolute;
   width: 130%;
   height: 120%;
   top: -10%;
   left: -15%;
   cursor: pointer;
-}
-.l-dotSlider__items__item:hover::after {
-  opacity: 0;
 }
 .l-dotSlider__items__item.is-active {
   opacity: 1;
@@ -1399,6 +1397,9 @@ p {
   justify-content: center;
   align-items: center;
 }
+.c-roundButton:hover {
+  transform: scale(1.2);
+}
 .c-roundButton--ghost {
   background-color: transparent;
   color: #026873;
@@ -1453,7 +1454,7 @@ p + .c-link {
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 0.7px;
-  color: #003035;
+  color: #026873;
 }
 .c-navLink--light {
   font-weight: 400;
@@ -1599,7 +1600,7 @@ p + .c-link {
 
 @media screen and (min-width: 768px) {
   .c-projectCard {
-    max-width: 600px;
+    max-width: 550px;
     align-items: flex-start;
     text-align: left;
   }
@@ -1794,7 +1795,28 @@ p + .c-link {
 ==========================================================================
 \*======================================================================*/
 .footer {
+  position: relative;
   background-color: #FCEE00;
+}
+
+.footer__backTop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 0;
+}
+
+.footer__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__row a {
+  margin: 16px;
+}
+.footer__row + .footer__row {
+  margin-top: 24px;
 }
 
 /*======================================================================*\
@@ -1979,7 +2001,7 @@ p + .c-link {
   position: relative;
   z-index: 2;
   width: 80%;
-  max-width: 600px;
+  max-width: 650px;
 }
 .hp-video__player::before {
   content: '';

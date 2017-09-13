@@ -59,7 +59,7 @@ $break: $break--m;
 
 @media screen and (min-width: $break--m) {
 	.c-projectCard {
-		max-width: $contentW;	
+		max-width: 550px;	
 		align-items: flex-start;
 		text-align: left;
 	}

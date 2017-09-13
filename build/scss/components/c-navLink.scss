@@ -3,7 +3,7 @@
 	@extend .h5;
 	font-weight: 900;
 	letter-spacing: 0.7px;
-	color: $c-dark;
+	color: $c-main;
 	@extend %transition;
 
 	&--light {

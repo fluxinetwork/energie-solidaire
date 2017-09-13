@@ -8,5 +8,23 @@
 
 
 .footer {
+	position: relative;
 	background-color: $c-accent;
+}
+
+.footer__backTop {
+	@include center(xy);
+	top: 0;
+}
+
+.footer__row {
+	@include flex(center);
+
+	a {
+		margin: $space--s;
+	}
+
+	+ .footer__row {
+		margin-top: $space--m;
+	}
 }

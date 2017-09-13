@@ -49,7 +49,7 @@ Template Name: Homepage
 </section>
 
 <section class="l-vRythm content">
-	<h2 class="c-sectionTitle l-col">Nous récoltons <span class="underline">des dons</span></h2>
+	<h2 class="c-sectionTitle l-col l-col--content">Nous récoltons <span class="underline">des dons</span></h2>
 
 	<div class="l-col l-col--content l-vRythm hp-glowing-shape hp-glowing-shape--rect">
 		<h3>Le micro don sur facture</h3>
@@ -61,11 +61,10 @@ Template Name: Homepage
 	<div class="l-col l-col--content l-vRythm hp-glowing-shape hp-glowing-shape--round">
 		<h3>Le don d'énergie</h3>
 		<p>Le don d'énergie permet à des producteurs professionnels et particuliers, de reverser une partie de l'énergie produite au profit de la lutte contre la précarité énergétique.</p>
-		<a href="#" class="c-link">En savoir plus</a>
 	</div>
 
-	<div class="l-duo l-duo--respond l-jump">
-		<div class="l-duo__title">
+	<div class="l-duo l-duo--respond mgnTop--m">
+		<div class="l-duo__title is-none">
 			<span class="c-tiltedTitle">2 formes de don d'énergie</span>
 		</div>
 
@@ -85,10 +84,14 @@ Template Name: Homepage
 			</div>
 		</div>
 	</div>
+
+	<div class="l-col l-col--content mgnTop--m">
+		<a href="#" class="c-link">En savoir plus</a>
+	</div>
 </section>
 
 <section class="l-innerRythm">
-	<h2 class="c-sectionTitle l-col">Pour soutenir <span class="underline">des projets</span></h2>
+	<h2 class="c-sectionTitle l-col l-col--content">Pour soutenir <span class="underline">des projets</span></h2>
 	
 	<div class="l-dotSlider l-vRythm js-dotSlider">
 		<div class="l-dotSlider__items js-dotSlider-items">

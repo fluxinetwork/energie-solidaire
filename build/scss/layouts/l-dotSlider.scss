@@ -12,13 +12,13 @@
 .l-dotSlider__items__item {
 	position: relative;
 	flex: none;
-	@extend .transition;
+	transition: 0.4s $easeInOutCubic;
 	transform: scale(0.7);
 
 	&::after {
 		content: '';
 		display: inline-block;
-		background-color: rgba(#fff, 0.5);
+		background-color: rgba(#fff, 0.75);
 		position: absolute;
 		width: 130%;
 		height: 120%;
@@ -26,12 +26,6 @@
 		left: -15%;
 		@extend .transition;
 		cursor: pointer;
-	}
-
-	&:hover {
-		&::after {
-			opacity: 0;
-		}
 	}
 
 	&.is-active {

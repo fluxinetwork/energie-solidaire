@@ -16,7 +16,6 @@
 			<a href="#" class="c-navLink c-navLink--light">À propos</a>
 			<a href="#" class="c-navLink c-navLink--light">Actualités</a>
 			<a href="#" class="c-navLink c-navLink--light">Presse</a>
-			<a href="#" class="c-navLink c-navLink--light">Contact</a>
 		</nav>
 		
 		<div class="header__nav__close">
