@@ -1,0 +1,16 @@
+.c-sectionTitle {
+	@extend .h2;
+	text-transform: uppercase;
+	text-align: center;
+
+	.underline {
+		position: relative;
+
+		&::after {
+			@include pseudo-bg($c-accent);
+			top: 100%;
+			height: 5px;
+			box-shadow: 0 0 50px rgba($c-accent, 0.5);
+		}
+	}
+}

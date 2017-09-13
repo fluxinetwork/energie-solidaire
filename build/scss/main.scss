@@ -4,21 +4,24 @@
 @import "utils/functions";
 @import "utils/mixins";
 @import "utils/variables";
+@import "utils/helpers";
 
 
 // BASE
 
 @import "base/reset";
-@import "base/typography";
 @import "base/layers";
+@import "base/typography";
+@import "base/states";
 @import "base/animations";
-@import "base/helpers";
 
 
 // LAYOUTS
 
 @import "layouts/base/l-basics";
 @import "layouts/base/l-flexGrid";
+@import "layouts/l-duo";
+@import "layouts/l-dotSlider";
 
 
 // COMPONENTS
@@ -29,9 +32,12 @@
 @import "components/base/cb-navAdmin";
 @import "components/c-roundButton";
 @import "components/c-button";
+@import "components/c-link";
 @import "components/c-navLink";
 @import "components/c-heroTxt";
-@import "components/c-sectionMiniTitle";
+@import "components/c-sectionTitle";
+@import "components/c-tiltedTitle";
+@import "components/c-projectCard";
 
 
 // BLOCKS

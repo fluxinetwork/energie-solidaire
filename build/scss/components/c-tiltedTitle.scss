@@ -1,0 +1,20 @@
+.c-tiltedTitle {
+	position: relative;
+	display: inline-block;
+	transform: rotate(-2deg);
+	color: $c-dark;
+	@extend .h4;
+	font-weight: 900;
+	letter-spacing: 0.7px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		background-color: $c-accent;
+		width: 120%;
+		height: 140%;
+		left: -10%;
+		top: -20%;
+	}
+}

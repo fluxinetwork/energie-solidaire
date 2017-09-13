@@ -1,0 +1,28 @@
+.c-link {
+	position: relative;
+	display: inline-block;
+	@extend .t-miniH;
+	color: $c-main;
+	
+	&::before {
+		content: '';
+		position: absolute;
+		left: -55px;
+		top: 50%;
+		width: 50px;
+		height: 2px;
+		background-color: $c-main;
+		@extend .transition;
+		transform-origin: right;
+	}
+
+	p + & {
+		margin-top: $space--s;
+	}
+
+	&:hover {
+		&::before {
+			transform: scaleX(0.5);
+		}
+	}
+}

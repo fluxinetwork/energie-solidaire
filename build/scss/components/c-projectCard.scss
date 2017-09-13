@@ -1,0 +1,89 @@
+$break: $break--m;
+
+.c-projectCard {
+	position: relative;
+	max-width: 320px;	
+	background-color: $c-main;
+	border-radius: $radius;
+	@extend .l-largeCell;
+	text-align: center;
+	@include flex(null center, column);
+}
+
+.c-projectCard__city {
+	transform: translateY(-100%);
+}
+
+.c-projectCard__img {
+	border-radius: 50%;
+	margin-bottom: $space--s;
+}
+
+.c-projectCard__title {
+	@extend .h2;
+	text-transform: uppercase;
+	color: $c-accent;
+	margin-top: 0;
+}
+
+.c-projectCard__excerpt {
+	@extend .p;
+	color: #fff;
+	margin-top: $space--xs;
+	font-weight: 400;
+}
+
+.c-projectCard__more {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	text-align: right;
+	line-height: 0.9;
+	background-color: $c-dark;
+	@extend .l-largeCell;
+	padding-right: $space--s;
+	clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+	@extend .transition;
+
+	.t-miniH {
+		position: relative;
+		top: 6px;
+	}
+
+	.c-projectCard:hover & {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+	}
+}
+
+@media screen and (min-width: $break--m) {
+	.c-projectCard {
+		max-width: $contentW;	
+		align-items: flex-start;
+		text-align: left;
+	}
+
+	.c-projectCard__city {
+		position: absolute;
+		top: 0;
+		left: 11%;
+		transform: translateY(-50%);
+	}
+
+	.c-projectCard__img {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(-50%, -50%);
+	}
+
+	.c-projectCard__title,
+	.c-projectCard__excerpt {
+		margin-left: $space--m;
+	} 
+
+	.c-projectCard__more {
+		display: block;
+	}
+}

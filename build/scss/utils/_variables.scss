@@ -79,11 +79,15 @@ $h1-font-sizes: (
 );
 
 $h2-font-sizes: (
-	null : (32px)
+	null : (26px),
+	medium : (29px),
+	large : (32px)
 );
 
 $h3-font-sizes: (
-	null : (25px)
+	null : (20px),
+	medium : (23px),
+	large : (25px)
 );
 
 $h4-font-sizes: (
@@ -93,17 +97,21 @@ $h4-font-sizes: (
 );
 
 $h5-font-sizes: (
-	null : (14px)
+	null : (14px),
+	medium : (15px),
+	large : (16px)
 );
 
 $h6-font-sizes: (
-	null : (12px)
+	null : (12px),
+	medium : (13px),
+	large : (14px)
 );
 
 
 //////////////////////////////////////////////////////////////////// SIZES
 
-$contentW: 750px;
+$contentW: 600px;
 $maxW: 1200px;
 
 
@@ -111,4 +119,5 @@ $maxW: 1200px;
 
 $radius: 3px;
 $border: 1px solid $c-dark;
+$glow: 0 0 50px rgba($c-accent, 0.5);
 

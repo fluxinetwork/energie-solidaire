@@ -1,2 +1,2 @@
-<footer id="footer" class="" role="footer">
+<footer id="footer" class="footer l-innerRythm" role="footer">
 </footer>

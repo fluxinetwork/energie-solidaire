@@ -7,7 +7,7 @@
 \*======================================================================*/
 
 $break1: 675px;
-$break2: 960px;
+$break2: 1100px;
 
 .header {
 	@extend .l-cell;
@@ -20,6 +20,7 @@ $break2: 960px;
 	@include square(110px);
 	border-radius: 50%;
 	margin-right: $space--s;
+	flex: none;
 }
 
 .header__logo__content {
@@ -112,6 +113,8 @@ $break2: 960px;
 
 	.header__nav__secondary {
 		margin-bottom: $space--xs;
+		transform: scale(0.8);
+		transform-origin: right;
 	}
 
 	.header__hamburger {
@@ -136,6 +139,7 @@ $break2: 960px;
 	.header__nav__secondary {
 		margin-bottom: 0;
 		margin-left: auto;
+		transform: scale(1);
 	}
 }
 

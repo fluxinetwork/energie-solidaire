@@ -10,11 +10,11 @@ var FOO = {
     common: {
         init: function() {
             // Fitvids
-            $(".fitvids").fitVids();
+            jQuery(".fitvids").fitVids();
 
             // Warning flexbox
-            if ($('html').hasClass('detect_no-flexbox')) {
-                $('.warning-flexbox').addClass('show-me');
+            if (jQuery('html').hasClass('detect_no-flexbox')) {
+                jQuery('.warning-flexbox').addClass('show-me');
             }
 
             // Form contact
@@ -26,6 +26,8 @@ var FOO = {
     home: {
         init: function() {
             isHome = true; 
+
+            dot_slider();
         }
     }
     
@@ -47,7 +49,7 @@ var UTIL = {
     }
 };
 
-$(document).ready(UTIL.loadEvents);
+jQuery(document).ready(UTIL.loadEvents);
 
 
 

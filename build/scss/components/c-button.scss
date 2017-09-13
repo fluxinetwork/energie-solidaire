@@ -14,7 +14,7 @@
 	color: $c-dark;
 	padding: 1em 1.8em;
 	background-color: $c-accent;
-	box-shadow: 0 0 50px rgba($c-accent, 0.5);
+	@extend .has-glow;
 	border-radius: 80px;
 	cursor: pointer;
 	@extend %transition;

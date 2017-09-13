@@ -2,7 +2,7 @@
 	@extend .h0;
 	@extend .l-largeCell;
 	color: $c-main;
-	max-width: $contentW*0.7;
+	max-width: 520px;
 	margin: 0 auto;
 	line-height: 1.2;
 	letter-spacing: 1px;
@@ -25,14 +25,15 @@
 			@include pseudo-bg($c-accent);
 			top: 100%;
 			height: 5px;
+			@extend .has-glow;
 		}
 	}
 
 	@media screen and (min-width: $break--m) {
-		max-width: $contentW*0.8;
+		max-width: 600px;
 	}
 
 	@media screen and (min-width: $break--l) {
-		max-width: $contentW;
+		max-width: 750px;
 	}
 }

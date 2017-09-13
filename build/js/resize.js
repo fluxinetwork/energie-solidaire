@@ -19,11 +19,11 @@ function calc_window() {
 }
 // Get width
 function calc_windowW() {
-    windowW = $(window).width();
+    windowW = jQuery(window).width();
 }
 // Get height
 function calc_windowH() {
-    windowH = $(window).height();
+    windowH = jQuery(window).height();
 }
 
 
@@ -36,7 +36,7 @@ Activated by variable in config.js
 function resize_handler() {
 
 }
-if ( resizeEvent ) { $( window ).bind( "resize", resize_handler() ); }
+if ( resizeEvent ) { jQuery( window ).bind( "resize", resize_handler() ); }
 
 /*
 DEBOUNCER
@@ -68,7 +68,7 @@ function debouncer( func , timeout ) {
 function debouncer_handler() {
     calc_window();
 }
-if ( resizeDebouncer ) { $( window ).bind( "resize", debouncer(debouncer_handler) ); }
+if ( resizeDebouncer ) { jQuery( window ).on( "resize", debouncer(debouncer_handler) ); }
 
 
 
