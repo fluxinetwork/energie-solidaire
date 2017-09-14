@@ -18,8 +18,7 @@
 	}
 }
 
-
-.l-largeCell {
+@mixin largeCell() {
 	padding: $space--l;
 
 	@media screen and (min-width: $break--m) {
@@ -29,6 +28,11 @@
 	@media screen and (min-width: $break--l) {
 		padding: $space--xl;
 	}
+}
+
+
+.l-largeCell {
+	@include largeCell();
 }
 
 .l-heroCell {

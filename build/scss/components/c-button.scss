@@ -8,10 +8,8 @@
 
 .c-button {
 	display: inline-block;
-	@extend .h4;
-	font-weight: 900;
-	text-transform: uppercase;
-	color: $c-dark;
+	@extend .t-miniH;
+	color: $c-main;
 	padding: 1em 1.8em;
 	background-color: $c-accent;
 	@extend .has-glow;
@@ -19,8 +17,18 @@
 	cursor: pointer;
 	@extend %transition;
 
+	&--cta {
+		background-color: $c-main;
+		color: $c-accent;
+		text-shadow: 0 0 25px $c-accent;
+	}
+
 	&:hover {
 		box-shadow: 0 0 80px rgba($c-accent, 0.8);
 		transform: scale(1.1);
 	}
+}
+
+.c-button__icon {
+	margin-right: $space--xs;
 }

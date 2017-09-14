@@ -1,8 +1,5 @@
 .c-navLink {
-	text-transform: uppercase;
-	@extend .h5;
-	font-weight: 900;
-	letter-spacing: 0.7px;
+	@extend .t-miniH;
 	color: $c-main;
 	@extend %transition;
 

@@ -6,13 +6,16 @@
 ==========================================================================
 \*======================================================================*/
 
-$break1: 675px;
-$break2: 1100px;
+$break1: 760px; // report this breakpoint in nav.js
+$break2: 1250px;
 
 .header {
 	@extend .l-cell;
 	@include flex(space-between center);
 }
+
+
+//================================================================== LOGO
 
 .header__logo {
 	position: relative;
@@ -32,51 +35,78 @@ $break2: 1100px;
 	}
 }
 
-.header__nav {
+
+//================================================================== NAV
+
+@mixin navMobile () {
 	position: fixed;
-	width: 100%;
-	height: 100%;
-	left: 0;
+	right: 0;
 	top: 0;
 	background-color: $c-accent;
-	@include flex(center, column);
-	@extend %transition;
-
-	@media screen and (max-width: $break1) {
-		visibility: hidden;
-		opacity: 0;
-		transform: translateX(100%);
-	}
-
-	.c-navLink {
-		margin-bottom: $space--s;
-	}
-
-	.header__nav__close {
-		position: absolute;
-		top: 30px;
-		right: 0;
-		@extend .l-cell;
-		@extend %transition;
-		transition-delay: 0.2s;
-		transform: scale(0);
-	}
+	transform: translateX(100%);
+	@include transition();
 
 	&.is-open {
-		visibility: visible;
-		opacity: 1;
 		transform: translateX(0);
+	}
+}
 
-		.header__nav__close {
-			transform: scale(1);
+.header__nav {
+	@media screen and (max-width: $break1) {
+		@include navMobile();
+		@include flex(null, column);
+		padding: 140px 20px 0 0;
+		width: 100%;
+		height: 100%;
+
+		.c-navLink {
+			font-size: 20px;
+			margin-bottom: $space--s;
+			width: 100%;
+			text-align: right;
 		}
 	}
 }
 
+$offset: 53px;
+$offset2: 62px;
+
 .header__nav__primary,
 .header__nav__secondary {
 	@include flex(center, column);
+	z-index: 2;
 }
+
+.header__nav__secondary {
+	@media screen and (min-width: $break1) and (max-width: $break2) {
+		@include navMobile();
+		display: block;
+		padding: $offset $space--xxl;
+		margin-top: -4px;
+		border-radius: $radius 0 0 $radius;
+	}
+
+	@media screen and (min-width: $break--l) and (max-width: $break2) {
+		padding-top: $offset2;
+		padding-bottom: $offset2;
+	}
+}
+
+#nav-cta {
+	border: 3px solid $c-main;
+	margin-top: $space--m;
+	position: fixed;
+	top: 21px;
+	right: 85px;
+}
+
+.header__hamburger {
+	margin-left: auto;
+	z-index: 4;
+}
+
+
+//================================================================== BREAK 1
 
 @media screen and (min-width: $break1) {
 	.header {
@@ -92,35 +122,27 @@ $break2: 1100px;
 	}
 
 	.header__nav {
-		position: relative;
-		flex: 1 0 auto;
-		flex-direction: column-reverse;
-		align-items: flex-end;
-		width: auto;
-		height: auto;
-		background-color: transparent;
+		flex: 1 0 0;
+		@include flex(flex-end null);
 
 		.c-navLink {
 			margin-right: $space--s;
-			margin-bottom: 0;
 		}
 	}
 
-	.header__nav__primary,
-	.header__nav__secondary {
+	.header__nav__primary {
 		flex-direction: row;
 	}
 
-	.header__nav__secondary {
-		margin-bottom: $space--xs;
-		transform: scale(0.8);
-		transform-origin: right;
-	}
-
-	.header__hamburger {
-		display: none;
+	#nav-cta {
+		position: static;
+		margin-top: 0;
+		margin-left: $space--s;
 	}
 }
+
+
+//================================================================== BREAK 2
 
 @media screen and (min-width: $break2) {
 	.header__logo {
@@ -131,24 +153,17 @@ $break2: 1100px;
 		}
 	}
 
-
-	.header__nav {
+	.header__nav__secondary {
+		margin-left: auto;
+		display: flex;
 		flex-direction: row;
 	}
 
-	.header__nav__secondary {
-		margin-bottom: 0;
-		margin-left: auto;
-		transform: scale(1);
+	#nav-cta {
+		border: 0;
 	}
-}
 
-@media screen and (min-width: $break--xl) {
-	.header__logo {
-		width: 180px;
-
-		img {
-			width: 100px;
-		}
+	.header__hamburger {
+		display: none;
 	}
 }

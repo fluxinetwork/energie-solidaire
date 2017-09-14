@@ -11,9 +11,8 @@ Template Name: Homepage
 		<h1 class="c-heroTxt">Nous soutenons des programmes de <sapn class="c-heroTxt--stabilo">lutte contre la précarité énergétique</sapn> au moyen de solutions de collecte <span class="c-heroTxt--underline">innovantes</span>.</h1>
 	</div>
 
-	<div class="hp-decor hp-cloud hp-cloud1"></div>
-
-	<div class="hp-decor hp-cloud hp-cloud2"></div>
+	<div class="hp-decor hp-cloud hp-cloud-pos1 hp-cloud1"></div>
+	<div class="hp-decor hp-cloud hp-cloud-pos2 hp-cloud2"></div>
 	
 	<div class="hp-intro__ground">
 		<div class="hp-decor hp-ground-decor hp-leftHouse"></div>
@@ -24,6 +23,15 @@ Template Name: Homepage
 
 <section class="hp-video l-innerRythm">
 	<div class="hp-video__title">Comprendre notre projet<br><span>en 1 minute</span></div>
+	
+
+	<div class="hp-decor hp-cloud-pos3 hp-cloud-flip">
+		<div class="hp-decor hp-cloud hp-cloud2"></div>
+	</div>
+
+	<div class="hp-decor hp-cloud-pos4 hp-cloud-flip">
+		<div class="hp-decor hp-cloud hp-cloud1"></div>
+	</div>
 
 	<div class="hp-video__player l-jump js-fitVids">
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/hsH7U9tk2R4?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
@@ -34,7 +42,7 @@ Template Name: Homepage
 	</div>
 
 	<div class="hp-video__button l-jump">
-		<a href="#" class="c-button">En savoir plus</a>
+		<a href="#" class="c-button"><i class="c-button__icon fa fa-plus"></i>En savoir plus</a>
 	</div>
 
 	<div class="hp-video__decor">
@@ -49,7 +57,7 @@ Template Name: Homepage
 </section>
 
 <section class="l-vRythm content">
-	<h2 class="c-sectionTitle l-col l-col--content">Nous récoltons <span class="underline">des dons</span></h2>
+	<h2 class="c-sectionTitle l-col l-col--content">Nous récoltons des <span class="underline">dons</span></h2>
 
 	<div class="l-col l-col--content l-vRythm hp-glowing-shape hp-glowing-shape--rect">
 		<h3>Le micro don sur facture</h3>
@@ -71,7 +79,9 @@ Template Name: Homepage
 		<div class="l-duo__item l-duo__item--left bg-dark">
 			<div class="l-duo__item__content hp-forme-don">
 				<span class="t-miniH t-miniH--glow">Professionnels</span>
-				<img src="<?php bloginfo('template_url'); ?>/app/img/don-energie-pro.png" class="hp-forme-don__illustration"></img>
+				<div class="hp-forme-don__illustration">
+					<img src="<?php bloginfo('template_url'); ?>/app/img/don-energie-pro.png"></img>
+				</div>
 				<p class="hp-forme-don__txt">Versement d’un pourcentage du chiffres d’affaires au profit d’Energie Solidaire</p>
 			</div>
 		</div>
@@ -79,7 +89,9 @@ Template Name: Homepage
 		<div class="l-duo__item l-duo__item--right bg-main">
 			<div class="l-duo__item__content hp-forme-don">
 				<span class="t-miniH t-miniH--glow">Particuliers</span>
-				<img src="<?php bloginfo('template_url'); ?>/app/img/don-energie-particulier.png" class="hp-forme-don__illustration"></img>
+				<div class="hp-forme-don__illustration">
+					<img src="<?php bloginfo('template_url'); ?>/app/img/don-energie-particulier.png"></img>
+				</div>
 				<p class="hp-forme-don__txt">Versement d’une partie de la revente des surplus d’énergie au profit d’Energie Solidaire</p>
 			</div>
 		</div>
@@ -91,7 +103,7 @@ Template Name: Homepage
 </section>
 
 <section class="l-innerRythm">
-	<h2 class="c-sectionTitle l-col l-col--content">Pour soutenir <span class="underline">des projets</span></h2>
+	<h2 class="c-sectionTitle l-col l-col--content">Pour soutenir des <span class="underline">projets</span></h2>
 	
 	<div class="l-dotSlider l-vRythm js-dotSlider">
 		<div class="l-dotSlider__items js-dotSlider-items">

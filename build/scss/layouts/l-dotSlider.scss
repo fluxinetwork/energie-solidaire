@@ -13,17 +13,17 @@
 	position: relative;
 	flex: none;
 	transition: 0.4s $easeInOutCubic;
-	transform: scale(0.7);
+	transform: scale(0.8);
 
 	&::after {
 		content: '';
 		display: inline-block;
 		background-color: rgba(#fff, 0.75);
 		position: absolute;
-		width: 130%;
+		width: 120%;
 		height: 120%;
 		top: -10%;
-		left: -15%;
+		left: -10%;
 		@extend .transition;
 		cursor: pointer;
 	}
@@ -35,6 +35,15 @@
 		&::after {
 			opacity: 0;
 			visibility: hidden;
+		}
+	}
+
+	@media screen and (min-width: $break--s) {
+		transform: scale(0.7);
+
+		&::after {
+			width: 130%;
+			left: -15%;
 		}
 	}
 }
@@ -55,15 +64,23 @@
 	&::before {
 		content: '';
 		display: inline-block;
-		width: 15px;
-		height: 15px;
+		width: 10px;
+		height: 10px;
 		border-radius: 50%;
 		background-color: $c-dark;
+
+		@media screen and (min-width: $break--m) {
+			width: 15px;
+			height: 15px;
+		}
 	}
 
 	&.is-active,
 	&:hover {
 		opacity: 1;
+	}
+
+	&.is-active {
 		transform: scale(1.3);
 	}
 }

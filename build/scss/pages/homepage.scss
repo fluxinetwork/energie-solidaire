@@ -44,12 +44,22 @@
 }
 
 .hp-cloud1 {
-	left: -2%;
-	top: 20%;
 	background-position: -649px bottom;
 	width: 139px;
 	height: 63px;
 	animation: floating 4s infinite;
+}
+
+.hp-cloud2 {
+	background-position: -788px bottom;
+	width: 150px;
+	height: 80px;
+	animation: floating 5.5s infinite;
+}
+
+.hp-cloud-pos1 {
+	left: -2%;
+	top: 20%;
 
 	@media screen and (min-width: $break--l) {
 		left: 4%;
@@ -60,13 +70,13 @@
 	}
 }
 
-.hp-cloud2 {
+.hp-cloud-pos2 {
 	right: -5%;
 	top: 0;
-	background-position: -788px bottom;
-	width: 150px;
-	height: 80px;
-	animation: floating 5.5s infinite;
+
+	.hp-video & {
+		top: 40%;
+	}
 
 	@media screen and (min-width: $break--l) {
 		right: 5%;
@@ -75,6 +85,28 @@
 	@media screen and (min-width: $break--xl) {
 		right: 15%;
 	}
+}
+
+.hp-cloud-pos3 {
+	left: 8%;
+	bottom: 20%;
+
+	@media screen and (min-width: $break--xl) {
+		left: 12%;
+	}
+}
+
+.hp-cloud-pos4 {
+	right: 5%;
+	bottom: 26%;
+
+	@media screen and (min-width: $break--xl) {
+		right: 15%;
+	}
+}
+
+.hp-cloud-flip {
+	transform: rotate(180deg) scale(-1);
 }
 
 
@@ -339,6 +371,10 @@
 
 .hp-forme-don__illustration {
 	margin: $space--m auto;
+	
+	@media screen and (max-width: $break--m) {
+		max-width: 80%;
+	}
 }
 
 .hp-forme-don__txt {
