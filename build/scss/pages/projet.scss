@@ -1,0 +1,44 @@
+.projet-title {
+	font-family: $font-h;
+	text-align: center;
+	color: $c-main;
+}
+
+.projet-subtitle {
+	@extend .h3;
+	font-weight: 400;
+	text-align: center;
+}
+
+.projet-public {
+	text-align: center;
+	@extend .h5;
+}
+
+.projet-detail {
+	@include flex(null center, column);
+	text-align: center;
+	color: #fff;
+	font-family: $font-h;
+	height: 100%;
+}
+
+.projet-detail__title {
+	flex: none;
+}
+
+.projet-detail__content {
+	margin-top: $space--s;
+	width: 100%;
+	flex: 1 0 auto;
+	@include flex(center null, column);
+}
+
+.projet-soutien{
+	@extend .h0;
+	font-weight: 900;
+}
+
+.projet-porteur {
+	@extend .h3;
+}

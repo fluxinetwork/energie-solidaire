@@ -137,7 +137,7 @@ Make background with :after and fancy shadow with :before
 }
 
 .t--p {
-  font-family: gilroy, sans-serif;
+  font-family: "Assistant", sans-serif;
 }
 
 .t--uppercase {
@@ -771,7 +771,7 @@ html {
 ==========================================================================
 \*======================================================================*/
 body {
-  font-family: gilroy, sans-serif;
+  font-family: "Assistant", sans-serif;
   line-height: 1.3;
   color: #003035;
   -webkit-font-smoothing: antialiased;
@@ -799,22 +799,32 @@ h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, 
   margin-top: 0;
 }
 
-.h0, .c-heroTxt {
+.h0, .c-heroTxt, .projet-soutien {
   font-size: 22px;
 }
 @media screen and (min-width: 768px) {
-  .h0, .c-heroTxt {
+  .h0, .c-heroTxt, .projet-soutien {
     font-size: 32px;
   }
 }
 @media screen and (min-width: 960px) {
-  .h0, .c-heroTxt {
+  .h0, .c-heroTxt, .projet-soutien {
     font-size: 45px;
   }
 }
 
 h1, .h1 {
-  font-size: 40px;
+  font-size: 29px;
+}
+@media screen and (min-width: 768px) {
+  h1, .h1 {
+    font-size: 34px;
+  }
+}
+@media screen and (min-width: 960px) {
+  h1, .h1 {
+    font-size: 40px;
+  }
 }
 
 h1 {
@@ -822,11 +832,11 @@ h1 {
 }
 
 h2, .h2, .c-sectionTitle, .c-projectCard__title {
-  font-size: 26px;
+  font-size: 24px;
 }
 @media screen and (min-width: 768px) {
   h2, .h2, .c-sectionTitle, .c-projectCard__title {
-    font-size: 29px;
+    font-size: 28px;
   }
 }
 @media screen and (min-width: 960px) {
@@ -839,22 +849,25 @@ h2 {
   margin-top: 40px;
 }
 
-h3, .h3, .cb-notify__message {
+h3, .h3, .cb-notify__message, .projet-subtitle, .projet-porteur {
   font-size: 20px;
 }
 @media screen and (min-width: 768px) {
-  h3, .h3, .cb-notify__message {
+  h3, .h3, .cb-notify__message, .projet-subtitle, .projet-porteur {
     font-size: 23px;
   }
 }
 @media screen and (min-width: 960px) {
-  h3, .h3, .cb-notify__message {
+  h3, .h3, .cb-notify__message, .projet-subtitle, .projet-porteur {
     font-size: 25px;
   }
 }
 
 h3 {
   margin-top: 24px;
+}
+.content h3 {
+  font-family: gilroy, sans-serif;
 }
 
 h4, .h4, .cb-notify__btn, .c-tiltedTitle, .hp-video__title {
@@ -876,16 +889,16 @@ h4 {
   margin-top: 16px;
 }
 
-h5, .h5, .t-miniH, .c-button, .c-link, .c-navLink, .cb-navAdmin__bt, .hp-forme-don__txt {
+h5, .h5, .t-miniH, .c-button, .c-link, .c-navLink, .cb-navAdmin__bt, .hp-forme-don__txt, .projet-public {
   font-size: 14px;
 }
 @media screen and (min-width: 768px) {
-  h5, .h5, .t-miniH, .c-button, .c-link, .c-navLink, .cb-navAdmin__bt, .hp-forme-don__txt {
+  h5, .h5, .t-miniH, .c-button, .c-link, .c-navLink, .cb-navAdmin__bt, .hp-forme-don__txt, .projet-public {
     font-size: 15px;
   }
 }
 @media screen and (min-width: 960px) {
-  h5, .h5, .t-miniH, .c-button, .c-link, .c-navLink, .cb-navAdmin__bt, .hp-forme-don__txt {
+  h5, .h5, .t-miniH, .c-button, .c-link, .c-navLink, .cb-navAdmin__bt, .hp-forme-don__txt, .projet-public {
     font-size: 16px;
   }
 }
@@ -1177,6 +1190,19 @@ p {
   transform: translate(-50%, -50%);
 }
 
+.l-duo__junction {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+@media screen and (max-width: 768px) {
+  .l-duo__junction .c-roundButton {
+    transform: rotate(90deg);
+  }
+}
+
 .l-duo__item {
   display: flex;
   flex: 1 0 0;
@@ -1186,13 +1212,12 @@ p {
 }
 
 .l-duo__item__content {
-  max-width: 325px;
+  max-width: 382.35294px;
+  width: 100%;
+  border-radius: 0 3px 3px 0;
 }
 .l-duo__item--left .l-duo__item__content {
-  padding-left: 0;
-}
-.l-duo__item--right .l-duo__item__content {
-  padding-right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
 .l-dotSlider {
@@ -1426,6 +1451,9 @@ p {
   color: #026873;
   border: 3px solid #026873;
 }
+.c-roundButton--ghost.c-white {
+  border-color: #fff;
+}
 .c-roundButton--2icon .fa:nth-child(2) {
   display: none;
 }
@@ -1501,6 +1529,7 @@ p + .c-link {
 }
 
 .c-heroTxt {
+  font-family: gilroy, sans-serif;
   color: #026873;
   max-width: 520px;
   margin: 0 auto;
@@ -1545,6 +1574,7 @@ p + .c-link {
 }
 
 .c-sectionTitle {
+  font-family: gilroy, sans-serif;
   text-transform: uppercase;
   text-align: center;
 }
@@ -1697,6 +1727,7 @@ p + .c-link {
 ==========================================================================
 \*======================================================================*/
 .header {
+  padding-bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2087,6 +2118,7 @@ p + .c-link {
 .hp-video__title {
   position: relative;
   z-index: 2;
+  font-family: gilroy, sans-serif;
   text-align: center;
   font-weight: 900;
 }
@@ -2254,4 +2286,46 @@ p + .c-link {
   .hp-forme-don__illustration {
     max-width: 80%;
   }
+}
+
+.projet-title {
+  font-family: gilroy, sans-serif;
+  text-align: center;
+  color: #026873;
+}
+
+.projet-subtitle {
+  font-weight: 400;
+  text-align: center;
+}
+
+.projet-public {
+  text-align: center;
+}
+
+.projet-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  font-family: gilroy, sans-serif;
+  height: 100%;
+}
+
+.projet-detail__title {
+  flex: none;
+}
+
+.projet-detail__content {
+  margin-top: 16px;
+  width: 100%;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.projet-soutien {
+  font-weight: 900;
 }

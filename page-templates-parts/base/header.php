@@ -1,9 +1,9 @@
 <header id="header" class="header" role="header">
-	<div class="header__logo">
+	<a  href="<?php bloginfo('url'); ?>" class="header__logo">
 		<div class="header__logo__content">
 			<img src="<?php bloginfo('template_url'); ?>/app/img/logo.svg">
 		</div>
-	</div>
+	</a>
 	
 	<div class="header__nav js-nav">
 		<nav class="header__nav__primary js-nav-primary" role="navigation">
@@ -21,6 +21,6 @@
 	</div>
 
 	<div class="header__hamburger">
-		<button class="c-roundButton c-roundButton--ghost c-roundButton--2icon js-toggle-menu"><i class="fa fa-bars"></i><i class="fa fa-times"></i></button>		
+		<button class="c-roundButton c-roundButton--ghost c-roundButton--2icon js-toggle-menu"><i class="fa fa-bars"></i><i class="fa fa-times"></i></button>	
 	</div>
 </header>

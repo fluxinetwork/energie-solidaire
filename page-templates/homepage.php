@@ -37,7 +37,7 @@ Template Name: Homepage
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/hsH7U9tk2R4?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 	
-	<div class="hp-video__txt l-vRythm l-col">
+	<div class="hp-video__txt l-jump l-col">
 		<p>La précarité énergétique est une urgence environnementale et sociale. </p>
 	</div>
 

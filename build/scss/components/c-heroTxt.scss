@@ -1,5 +1,6 @@
 .c-heroTxt {
 	@extend .h0;
+	font-family: $font-h;
 	@extend .l-largeCell;
 	color: $c-main;
 	max-width: 520px;

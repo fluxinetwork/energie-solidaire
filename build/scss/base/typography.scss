@@ -57,6 +57,10 @@ h3, .h3 {
 }
 h3 {	
 	margin-top: $space--m;
+
+	.content & {
+		font-family: $font-h;
+	}
 }
 
 

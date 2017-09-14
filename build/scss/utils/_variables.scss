@@ -63,7 +63,7 @@ $c-linkedin: #0077b5;
 //////////////////////////////////////////////////////////////////// TYPO
 
 $font-h: gilroy, sans-serif;
-$font-txt: gilroy, sans-serif;
+$font-txt: 'Assistant', sans-serif;
 $font-bt: gilroy, sans-serif;
 
 $font-base-lh: 1.3;
@@ -75,12 +75,14 @@ $h0-font-sizes: (
 );
 
 $h1-font-sizes: (
-	null : (40px)
+	null : (29px),
+	medium : (34px),
+	large : (40px)
 );
 
 $h2-font-sizes: (
-	null : (26px),
-	medium : (29px),
+	null : (24px),
+	medium : (28px),
 	large : (32px)
 );
 

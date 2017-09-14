@@ -19,6 +19,10 @@
 		background-color: transparent;
 		color: $c-main;
 		border: 3px solid $c-main;
+
+		&.c-white {
+			border-color: #fff;
+		}
 	}
 
 	&--2icon {

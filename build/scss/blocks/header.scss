@@ -11,6 +11,7 @@ $break2: 1250px;
 
 .header {
 	@extend .l-cell;
+	padding-bottom: 0;
 	@include flex(space-between center);
 }
 

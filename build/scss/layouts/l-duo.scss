@@ -30,6 +30,17 @@
 	transform: translate(-50%, -50%);
 }
 
+.l-duo__junction {
+	@include center(xy);
+	z-index: 5;
+
+	@media screen and (max-width: $break--m) {
+		.c-roundButton {
+			transform: rotate(90deg);
+		}
+	}
+}
+
 .l-duo__item {
 	display: flex;
 	flex: 1 0 0;
@@ -40,15 +51,13 @@
 }
 
 .l-duo__item__content {
-	max-width: $contentW/2;
+	max-width: $contentW/1.7;
+	width: 100%;
 	@extend .l-largeCell;
+	border-radius: 0 $radius $radius 0;
 
 	.l-duo__item--left & {
-		padding-left: 0;
-	}
-
-	.l-duo__item--right & {
-		padding-right: 0;
+		border-radius: $radius 0 0 $radius;
 	}
 }
 
