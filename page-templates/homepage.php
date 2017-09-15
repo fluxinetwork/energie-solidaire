@@ -8,7 +8,7 @@ Template Name: Homepage
 <section class="hp-intro">
 
 	<div class="hp-intro__content">
-		<h1 class="c-heroTxt">Nous soutenons des programmes de <sapn class="c-heroTxt--stabilo">lutte contre la précarité énergétique</sapn> au moyen de solutions de collecte <span class="c-heroTxt--underline">innovantes</span>.</h1>
+		<h1 class="c-heroTxt"><?php echo get_field('texte_intro'); ?></h1>
 	</div>
 
 	<div class="hp-decor hp-cloud hp-cloud-pos1 hp-cloud1"></div>
@@ -22,7 +22,7 @@ Template Name: Homepage
 </section>
 
 <section class="hp-video l-innerRythm">
-	<div class="hp-video__title">Comprendre notre projet<br><span>en 1 minute</span></div>
+	<div class="hp-video__title"><?php echo get_field('titre_video'); ?><br><span><?php echo get_field('sous-titre_video'); ?></span></div>
 	
 
 	<div class="hp-decor hp-cloud-pos3 hp-cloud-flip">
@@ -34,15 +34,15 @@ Template Name: Homepage
 	</div>
 
 	<div class="hp-video__player l-jump js-fitVids">
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/hsH7U9tk2R4?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+		<?php echo get_field('video'); ?>
 	</div>
 	
 	<div class="hp-video__txt l-jump l-col">
-		<p>La précarité énergétique est une urgence environnementale et sociale. </p>
+		<p><?php echo get_field('sous_texte_video'); ?></p>
 	</div>
 
 	<div class="hp-video__button l-jump">
-		<a href="#" class="c-button"><i class="c-button__icon fa fa-plus"></i>En savoir plus</a>
+		<a href="<?php echo get_field('lien_video'); ?>" class="c-button"><i class="c-button__icon fa fa-plus"></i>En savoir plus</a>
 	</div>
 
 	<div class="hp-video__decor">
@@ -57,18 +57,18 @@ Template Name: Homepage
 </section>
 
 <section class="l-vRythm content">
-	<h2 class="c-sectionTitle l-col l-col--content">Nous récoltons des <span class="underline">dons</span></h2>
+	<h2 class="c-sectionTitle l-col l-col--content"><?php echo get_field('titre_section_don'); ?></h2>
 
 	<div class="l-col l-col--content l-vRythm hp-glowing-shape hp-glowing-shape--rect">
-		<h3>Le micro don sur facture</h3>
-		<p>Le micro-don sur facture d'énergie permet aux consommateurs d'énergie de donner 1 centime par kWh consommé au profit de la lutte contre la précarité énergétique.</p>
-		<a href="#" class="c-link">En savoir plus</a>
+		<h3><?php echo get_field('titre_texte_don_1'); ?></h3>
+		<p><?php echo get_field('texte_don_1'); ?></p>
+		<a href="<?php echo get_field('lien_don_1'); ?>" class="c-link">En savoir plus</a>
 		<img src="<?php bloginfo('template_url'); ?>/app/img/micro-don.png" class="hp-micro-don">
 	</div>
 
 	<div class="l-col l-col--content l-vRythm hp-glowing-shape hp-glowing-shape--round">
-		<h3>Le don d'énergie</h3>
-		<p>Le don d'énergie permet à des producteurs professionnels et particuliers, de reverser une partie de l'énergie produite au profit de la lutte contre la précarité énergétique.</p>
+		<h3><?php echo get_field('titre_texte_don_2'); ?></h3>
+		<p><?php echo get_field('texte_don_2'); ?></p>
 	</div>
 
 	<div class="l-duo l-duo--respond mgnTop--m">
@@ -82,7 +82,7 @@ Template Name: Homepage
 				<div class="hp-forme-don__illustration">
 					<img src="<?php bloginfo('template_url'); ?>/app/img/don-energie-pro.png"></img>
 				</div>
-				<p class="hp-forme-don__txt">Versement d’un pourcentage du chiffres d’affaires au profit d’Energie Solidaire</p>
+				<p class="hp-forme-don__txt"><?php echo get_field('texte_professionels'); ?></p>
 			</div>
 		</div>
 
@@ -92,71 +92,57 @@ Template Name: Homepage
 				<div class="hp-forme-don__illustration">
 					<img src="<?php bloginfo('template_url'); ?>/app/img/don-energie-particulier.png"></img>
 				</div>
-				<p class="hp-forme-don__txt">Versement d’une partie de la revente des surplus d’énergie au profit d’Energie Solidaire</p>
+				<p class="hp-forme-don__txt"><?php echo get_field('texte_particuliers'); ?></p>
 			</div>
 		</div>
 	</div>
 
 	<div class="l-col l-col--content mgnTop--m">
-		<a href="#" class="c-link">En savoir plus</a>
+		<a href="<?php echo get_field('lien_don_energie'); ?>" class="c-link">En savoir plus</a>
 	</div>
 </section>
 
 <section class="l-innerRythm">
-	<h2 class="c-sectionTitle l-col l-col--content">Pour soutenir des <span class="underline">projets</span></h2>
+	<h2 class="c-sectionTitle l-col l-col--content"><?php echo get_field('titre_projets'); ?></h2>
 	
 	<div class="l-dotSlider l-vRythm js-dotSlider">
 		<div class="l-dotSlider__items js-dotSlider-items">
-			<div class="l-dotSlider__items__item js-dotSlider-item">
-				<a href="">
-					<article class="c-projectCard">
-						<div class="c-projectCard__city">
-							<span class="c-tiltedTitle">Grenoble</span>
-						</div>
-						<img src="<?php bloginfo('template_url'); ?>/app/img/tmp/img-projet.jpg" class="c-projectCard__img">
-						<h1 class="c-projectCard__title">Soleni</h1>
-						<h2 class="c-projectCard__excerpt">Dispositif innovant d'accompagnement des ménages</h2>
 
-						<div class="c-projectCard__more">
-							<span class="t-miniH t-miniH--glow">Découvrir<br>le projet</span>
-						</div>
-					</article>
-				</a>	
-			</div>
+			<?php
+				$args_projects = array(
+					'post_type' => 'projets',
+					'post_status' => 'publish'
+				);
+				$query_projects = new WP_Query( $args_projects );
+				if ( $query_projects->have_posts() ) :
+					while ( $query_projects->have_posts() ) :$query_projects->the_post();
 
-			<div class="l-dotSlider__items__item js-dotSlider-item">
-				<a href="">
-					<article class="c-projectCard">
-						<div class="c-projectCard__city">
-							<span class="c-tiltedTitle">Grenoble</span>
-						</div>
-						<img src="<?php bloginfo('template_url'); ?>/app/img/tmp/img-projet.jpg" class="c-projectCard__img">
-						<h1 class="c-projectCard__title">Soleni</h1>
-						<h2 class="c-projectCard__excerpt">Dispositif innovant d'accompagnement des ménages</h2>
+						$img_projet_arr = get_field('image_du_projet');
+						$img_projet_url = $img_projet_arr['sizes']['thumbnail'];
 
-						<div class="c-projectCard__more">
-							<span class="t-miniH t-miniH--glow">Découvrir<br>le projet</span>
-						</div>
-					</article>
-				</a>	
-			</div>
-
-			<div class="l-dotSlider__items__item js-dotSlider-item">
-				<a href="">
-					<article class="c-projectCard">
-						<div class="c-projectCard__city">
-							<span class="c-tiltedTitle">Grenoble</span>
-						</div>
-						<img src="<?php bloginfo('template_url'); ?>/app/img/tmp/img-projet.jpg" class="c-projectCard__img">
-						<h1 class="c-projectCard__title">Soleni</h1>
-						<h2 class="c-projectCard__excerpt">Dispositif innovant d'accompagnement des ménages</h2>
-
-						<div class="c-projectCard__more">
-							<span class="t-miniH t-miniH--glow">Découvrir<br>le projet</span>
-						</div>
-					</article>
-				</a>	
-			</div>
+						echo '<div class="l-dotSlider__items__item js-dotSlider-item">
+								<a href="'.get_permalink().'">
+									<article class="c-projectCard">
+						
+										<div class="c-projectCard__city">
+											<span class="c-tiltedTitle">'.get_field('lieu_projet').'</span>
+										</div>
+										<img src="'.$img_projet_url.'" class="c-projectCard__img">
+										<h1 class="c-projectCard__title">'.get_the_title().'</h1>
+										<h2 class="c-projectCard__excerpt">'.get_field('description_projet').'</h2>
+						
+										<div class="c-projectCard__more">
+											<span class="t-miniH t-miniH--glow">Découvrir<br>le projet</span>
+										</div>
+									</article>
+								</a>	
+							</div>';
+					
+					endwhile;
+				endif;
+				wp_reset_postdata();
+			?>
+			
 		</div>
 	</div>
 </section>
