@@ -163,12 +163,12 @@
 
 		?>
 
-		<button class="projet-shareBt bg-facebook js-share" data-url="<?php echo get_permalink(); ?>" data-network="facebook">Partager sur Facebook</button>
-		<button class="projet-shareBt bg-twitter js-share" data-url="<?php echo get_permalink(); ?>" data-network="twitter">Partager sur Twitter</button>	
+		<button class="projet-shareBt bg-facebook js-share" data-url="<?php echo get_permalink(); ?>" data-network="facebook"><i class="fa fa-share-square"></i>Partager sur Facebook</button>
+		<button class="projet-shareBt bg-twitter js-share" data-url="<?php echo get_permalink(); ?>" data-network="twitter"><i class="fa fa-share-square"></i>Partager sur Twitter</button>	
 	</aside>
 </div>
 
-<section class="l-innerRythm">
+<section class="projet-more l-innerRythm">
 	<h2 class="c-sectionTitle l-col l-col--content"><span class="underline">Découvrir</span> d'autres projets</h2>
 	
 	<?php require_once( get_template_directory() . '/page-templates-parts/slider-projets.php' );?>
