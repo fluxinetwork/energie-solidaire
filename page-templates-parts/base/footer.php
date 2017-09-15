@@ -4,14 +4,22 @@
 	</div>
 
 	<div class="footer__row l-col l-col--content">
-		<a href="#" class="c-navLink c-navLink">Contact</a>
-		<a href="#" class="c-navLink c-navLink">Mentions légales</a>
-		<a href="#" class="c-navLink c-navLink">Enercoop</a>
+		<?php
+			wp_nav_menu( array(
+				'theme_location' 	=> 'footer-menu',
+				'container'			=> '',
+				'menu_class' 		=> '',
+				'echo' 				=> true,
+				'items_wrap'		=> '%3$s',
+				'depth'         	=> 1,
+				'walker'        	=> new fluxi_walker_nav_menu
+			) );
+		?>
 	</div>
 
 	<div class="footer__row l-col l-col--content">
-		<a href="#" class="c-roundButton"><i class="fa fa-facebook"></i></a>
-		<a href="#" class="c-roundButton"><i class="fa fa-twitter"></i></a>
-		<a href="#" class="c-roundButton"><i class="fa fa-youtube-play"></i></a>
+		<a href="<?php echo FACEBOOK; ?>" class="c-roundButton"><i class="fa fa-facebook"></i></a>
+		<a href="<?php echo TWITTER; ?>" class="c-roundButton"><i class="fa fa-twitter"></i></a>
+		<a href="<?php echo YOUTUBE; ?>" class="c-roundButton"><i class="fa fa-youtube-play"></i></a>
 	</div>
 </footer>

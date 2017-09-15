@@ -7,16 +7,32 @@
 	
 	<div class="header__nav js-nav">
 		<nav class="header__nav__primary js-nav-primary" role="navigation">
-			<a href="#" class="c-navLink">Précarité énergétique</a>
-			<a href="#" class="c-navLink">Comment agir</a>
-			<a href="#" class="c-navLink">Projets soutenus</a>
+			<?php
+				wp_nav_menu( array(
+					'theme_location' 	=> 'main-menu',
+					'container'			=> '',
+					'menu_class' 		=> '',
+					'echo' 				=> true,
+					'items_wrap'		=> '%3$s',
+					'depth'         	=> 1,
+					'walker'        	=> new fluxi_walker_nav_menu
+				) );
+			?>
 		</nav>
 
 		<nav class="header__nav__secondary js-nav-secondary" role="navigation">
-			<a href="#" class="c-navLink c-navLink--light">À propos</a>
-			<a href="#" class="c-navLink c-navLink--light">Actualités</a>
-			<a href="#" class="c-navLink c-navLink--light">Presse</a>
-			<a href="#" class="c-button c-button--cta" id="nav-cta"><i class="c-button__icon fa fa-heart"></i>Donner</a>	
+			<?php
+				wp_nav_menu( array(
+					'theme_location' 	=> 'secondaire-menu',
+					'container'			=> '',
+					'menu_class' 		=> '',
+					'echo' 				=> true,
+					'items_wrap'		=> '%3$s',
+					'depth'         	=> 1,
+					'walker'        	=> new fluxi_walker_secondaire_menu
+				) );
+			?>
+			<a href="<?php echo get_permalink(PAGE_DON); ?>" class="c-button c-button--cta" id="nav-cta"><i class="c-button__icon fa fa-heart"></i><?php echo get_the_title(PAGE_DON); ?></a>	
 		</nav>
 	</div>
 
@@ -24,3 +40,4 @@
 		<button class="c-roundButton c-roundButton--ghost c-roundButton--2icon js-toggle-menu"><i class="fa fa-bars"></i><i class="fa fa-times"></i></button>	
 	</div>
 </header>
+

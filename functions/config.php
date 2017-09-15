@@ -31,7 +31,10 @@ add_action('acf/init', 'wpc_acf_init');
 
 define('FACEBOOK', 'https://www.facebook.com/');
 define('TWITTER', 'https://twitter.com/');
+define('YOUTUBE', 'https://youtube.com/');
 
+// PAGES
+define('PAGE_DON', 12);
 
 // MAILS
 
