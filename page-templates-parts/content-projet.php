@@ -16,7 +16,7 @@
 						<span class="t-miniH t-miniH--glow">Soutien apporté</span>
 					</div>
 					<div class="projet-detail__content">
-						<span class="projet-soutien"><?php echo get_field('soutien_apporte'); ?> €</span>
+						<span class="projet-soutien"><?php echo get_field('soutien_apporte'); ?>€</span>
 					</div>
 				</div>
 			</div>
