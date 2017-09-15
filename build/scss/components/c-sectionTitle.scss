@@ -1,10 +1,10 @@
 .c-sectionTitle {
 	@extend .h2;
 	font-family: $font-h;
-	text-transform: uppercase;
 	text-align: center;
 
-	.underline {
+	.underline,
+	i, em {
 		position: relative;
 
 		&::after {
@@ -13,5 +13,13 @@
 			height: 5px;
 			box-shadow: 0 0 50px rgba($c-accent, 0.5);
 		}
+	}
+
+	.home & {
+		//text-transform: uppercase;
+	}
+
+	.content & {
+		text-align: left;
 	}
 }

@@ -10,6 +10,7 @@ require_once locate_template('/functions/bodyclass.php');
 require_once locate_template('/functions/images.php');
 require_once locate_template('/functions/utils.php');
 require_once locate_template('/functions/rss.php');
+require_once locate_template('/functions/share.php');
 
 
 // OPTIONAL

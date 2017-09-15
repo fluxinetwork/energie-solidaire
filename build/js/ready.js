@@ -10,7 +10,9 @@ var FOO = {
     common: {
         init: function() {
             // Fitvids
-            jQuery(".fitvids").fitVids();
+            jQuery(".js-fitVids").fitVids({
+                customSelector: 'iframe[src*="dailymotion.com"]'
+            });
 
             // Warning flexbox
             if (jQuery('html').hasClass('detect_no-flexbox')) {
@@ -19,14 +21,16 @@ var FOO = {
 
             // Form contact
             initFormContact();
-
-            jQuery('.js-fitVids').fitVids();
         }
     },    
     home: {
         init: function() {
             isHome = true; 
-
+            dot_slider();
+        }
+    },
+    single_projets: {
+        init: function() {
             dot_slider();
         }
     }

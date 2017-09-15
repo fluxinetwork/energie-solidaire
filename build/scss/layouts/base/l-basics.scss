@@ -30,7 +30,6 @@
 	}
 }
 
-
 .l-largeCell {
 	@include largeCell();
 }
@@ -50,6 +49,8 @@
 
 //====================================================================  COL
 
+$break: $break--l;
+
 .l-col {
 	width: 100%;
 	max-width: $maxW;
@@ -62,15 +63,49 @@
 	&--content {
 		max-width: $contentW;
 
-		@media screen and (min-width: $break--m) {
+		@media screen and (min-width: $break--xl) {
 			padding-left: 0;
 			padding-right: 0;
 		}
+	}
+
+	&--aside {
+		@media screen and (min-width: $break) {
+			@include flex(center null);
+		}
+	}
+}
+
+.l-content__main {
+	@media screen and (min-width: $break) {
+		width: $contentW;
+		flex: none;
+		padding-right: $gutter;
+	}
+}
+
+.l-content__aside {
+	margin-top: $gutter*2;
+
+	@media screen and (min-width: $break) {
+		flex: 1 0 0;
+		padding-left: $gutter;
+		margin-top: 0;
+		max-width: $contentW/2;
 	}
 }
 
 
 //=========================================================  VERTICAL RYTHM
+
+
+.l-jump {
+	margin-top: $space--m;
+
+	@media screen and (min-width: $break--m) {
+		margin-top: $space--l;
+	}
+}
 
 .l-vRythm {
 	margin-top: $space--l*$bigger;
@@ -85,14 +120,6 @@
 
 	@media screen and (min-width: $break--xl) {
 		margin-top: $space--xxl*$bigger;
-	}
-}
-
-.l-jump {
-	margin-top: $space--m;
-
-	@media screen and (min-width: $break--m) {
-		margin-top: $space--l;
 	}
 }
 
@@ -121,8 +148,8 @@
 
 .l-center {
 	@include flex(center);
-}
 
-.l-centerCol {
-	@include flex(center, column);
+	&--col {
+		flex-direction: column;
+	}
 }

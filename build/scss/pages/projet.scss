@@ -1,3 +1,37 @@
+/*======================================================================*\
+==========================================================================
+
+							PROJET
+
+==========================================================================
+\*======================================================================*/
+
+
+//================================================================== INTRO
+
+.projet-header {
+	position: relative;
+	padding-bottom: 0;
+
+	&::before {
+		//content: '';
+		@include center(xy);
+		z-index: -1;
+		display: inline-block;
+		padding: 50px;
+		border: 5px solid $c-accent;
+		@extend .has-glow;
+		width: 700px;
+		height: 700px;
+		border-radius: 50%;
+	}
+}
+
+.projet-header__hgroup {
+	max-width: $contentW;
+	margin: 0 auto;
+}
+
 .projet-title {
 	font-family: $font-h;
 	text-align: center;
@@ -41,4 +75,115 @@
 
 .projet-porteur {
 	@extend .h3;
+}
+
+
+//================================================================= ASIDE
+
+.aside-cell {
+	position: relative;
+	@include flex(center, column);
+	padding: $space--l;
+	background-color: $c-light;
+	border-radius: $radius;
+
+	+ .aside-cell {
+		margin-top: $gutter;
+	}
+
+	&--trsp {
+		background-color: transparent;
+	}
+}
+
+.aside-cell__title {
+	@include center(xy);
+	top: 0;
+}
+
+.lien-txt {
+	@extend .h5;
+	color: $c-txt;
+
+	&:hover {
+		color: #000;
+	}
+}
+
+
+//================================================================ CONTACT
+
+
+.projet-contact__img {
+	border-radius: 50%;
+}
+
+.projet-contact__nom {
+	font-weight: 900;
+}
+
+.projet-contact__mail {
+	@extend .lien-txt;
+	width: 100%;
+	text-align: center;
+	word-break: break-all;
+
+	&:not(:first-child) {
+		margin-top: 1em;
+	}
+}
+
+.projet-contact__liens {
+	@include flex(center null);
+	width: 100%;
+	margin-top: $space--m;
+
+	.c-roundButton {
+		&:not(:first-child) {
+			margin-left: $space--s;
+		}
+	}
+}
+
+.projet-contact__site {
+	margin-top: $space--m;
+}
+
+
+//================================================================ LINKS
+
+.projet-links {
+	align-items: flex-start;
+}
+
+.projet-links__item {
+	@extend .lien-txt;
+	@include flex(null center);
+	color: $c-txt;
+	width: 100%;
+
+	&:not(:last-child) {
+		padding-bottom: $space--s;
+		border-bottom: 1px solid rgba($c-txt, 0.1);
+		margin-bottom: $space--s;
+	}
+
+	.c-roundButton {
+		flex: none;
+		margin-right: $space--s;
+	}
+}
+
+.projet-shareBt {
+	width: 100%;
+	margin-top: $gutter;
+	border-radius: 100px;
+	padding: 20px;
+	color: #fff;
+	font-weight: 900;
+	text-transform: uppercase;
+
+	+ .projet-shareBt {
+		margin-top: $gutter/2;
+	}
 }

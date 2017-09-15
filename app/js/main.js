@@ -55,7 +55,9 @@ var FOO = {
     common: {
         init: function() {
             // Fitvids
-            jQuery(".fitvids").fitVids();
+            jQuery(".js-fitVids").fitVids({
+                customSelector: 'iframe[src*="dailymotion.com"]'
+            });
 
             // Warning flexbox
             if (jQuery('html').hasClass('detect_no-flexbox')) {
@@ -64,14 +66,16 @@ var FOO = {
 
             // Form contact
             initFormContact();
-
-            jQuery('.js-fitVids').fitVids();
         }
     },    
     home: {
         init: function() {
             isHome = true; 
-
+            dot_slider();
+        }
+    },
+    single_projets: {
+        init: function() {
             dot_slider();
         }
     }
@@ -352,6 +356,57 @@ function scroll_to(position, duration, relative) {
 	$('html, body').animate({scrollTop: position}, duration);
 }
 
+/*======================================================================*\
+==========================================================================
+
+                             JS TOOL SHARE
+
+==========================================================================
+\*======================================================================*/
+
+/*
+SHARE BUTTONS 
+--
+Need data attributes on .js-share DOM element
+data-network = facebook || twitter
+data-url: url to sharer
+Set var origin if network == twitter
+*/
+
+$('.js-share').on('click', function(e){
+	e.preventDefault();
+
+	var network = $(this).attr('data-network');
+	var url = $(this).attr('data-url');
+	var shareUrl;
+
+	if (network == 'facebook') {
+		shareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
+		popupCenter(shareUrl, "Partager sur Facebook");
+	} if (network == 'twitter') {
+		var origin = "Energie_SolidR";
+		shareUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(document.title) +
+            "&via=" + origin + "" +
+            "&url=" + encodeURIComponent(url);
+		popupCenter(shareUrl, "Partager sur Twitter");
+	}
+});
+
+var popupCenter = function(url, title, width, height){
+	var popupWidth = width || 640;
+	var popupHeight = height || 320;
+	var windowLeft = window.screenLeft || window.screenX;
+	var windowTop = window.screenTop || window.screenY;
+	var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+	var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+	var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2 ;
+	var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
+	var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
+	popup.focus();
+	return true;
+};
+
+
 /*------------------------------*\
 
     #SUBSCRIBE
@@ -407,14 +462,14 @@ function dot_slider() {
 
 	// INIT
 
-	resize_slider();
-
 	var controls = '<div class="l-dotSlider__controls">';
 	for (var i = 0; i < nbItem; i++) {
 		controls += '<div class="l-dotSlider__controls__dot js-dotSlider-dot"></div>';
 	}
 	controls += '</div>';
 	slider.append(controls);
+
+	resize_slider();
 
 	jQuery('.js-dotSlider-item, .js-dotSlider-dot').on('click', function() {
 		jQuery('.js-dotSlider .is-active').removeClass('is-active');
@@ -430,7 +485,7 @@ function dot_slider() {
 	// TOOLS
 
 	function get_sizes() {
-		slidesH = slides.outerHeight(true);
+		slidesH = slides.outerHeight();
 		slideW = jQuery('.js-dotSlider-item').width();
 		slideOuterW = jQuery('.js-dotSlider-item').outerWidth(true);
 	}

@@ -11,14 +11,14 @@ function dot_slider() {
 
 	// INIT
 
-	resize_slider();
-
 	var controls = '<div class="l-dotSlider__controls">';
 	for (var i = 0; i < nbItem; i++) {
 		controls += '<div class="l-dotSlider__controls__dot js-dotSlider-dot"></div>';
 	}
 	controls += '</div>';
 	slider.append(controls);
+
+	resize_slider();
 
 	jQuery('.js-dotSlider-item, .js-dotSlider-dot').on('click', function() {
 		jQuery('.js-dotSlider .is-active').removeClass('is-active');
@@ -34,7 +34,7 @@ function dot_slider() {
 	// TOOLS
 
 	function get_sizes() {
-		slidesH = slides.outerHeight(true);
+		slidesH = slides.outerHeight();
 		slideW = jQuery('.js-dotSlider-item').width();
 		slideOuterW = jQuery('.js-dotSlider-item').outerWidth(true);
 	}

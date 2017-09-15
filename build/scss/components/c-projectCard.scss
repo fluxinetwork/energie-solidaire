@@ -21,7 +21,7 @@ $break: $break--m;
 
 .c-projectCard__title {
 	@extend .h2;
-	text-transform: uppercase;
+	font-family: $font-h;
 	color: $c-accent;
 	margin-top: 0;
 }
@@ -93,10 +93,16 @@ $break: $break--m;
 
 	.c-projectCard__title,
 	.c-projectCard__excerpt {
-		margin-left: $space--m;
+		margin-left: $space--l;
 	} 
 
 	.c-projectCard__more {
 		display: block;
+	}
+}
+
+@media screen and (min-width: $break--l) {
+	.c-projectCard {
+		max-width: $contentW;	
 	}
 }
