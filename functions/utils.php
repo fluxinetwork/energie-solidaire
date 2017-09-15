@@ -372,3 +372,11 @@ add_action('wp_ajax_fluxi_delete_post', 'fluxi_delete_post');
 function fluxi_post_exists( $id ) {
   return is_string( get_post_status( $id ) );
 }
+
+
+/**
+ * Quick var_dump() with <pre> tags
+ */
+function vardump( $array ) {
+  echo '<pre>'.var_dump($array).'</pre>';
+}

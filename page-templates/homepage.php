@@ -129,7 +129,7 @@ Template Name: Homepage
 										</div>
 										<img src="'.$img_projet_url.'" class="c-projectCard__img">
 										<h1 class="c-projectCard__title">'.get_the_title().'</h1>
-										<h2 class="c-projectCard__excerpt">'.get_field('description_projet').'</h2>
+										<h2 class="c-projectCard__excerpt">'.get_field('visee').'</h2>
 						
 										<div class="c-projectCard__more">
 											<span class="t-miniH t-miniH--glow">Découvrir<br>le projet</span>
