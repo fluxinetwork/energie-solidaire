@@ -8,7 +8,7 @@ Template Name: Homepage
 <section class="hp-intro">
 
 	<div class="hp-intro__content">
-		<h1 class="c-heroTxt"><?php echo get_field('texte_intro'); ?></h1>
+		<h1 class="c-heroTxt"><?php echo get_field('texte_intro', false, false); ?></h1>
 	</div>
 
 	<div class="hp-decor hp-cloud hp-cloud-pos1 hp-cloud1"></div>
