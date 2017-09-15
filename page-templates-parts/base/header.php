@@ -32,7 +32,7 @@
 					'walker'        	=> new fluxi_walker_secondaire_menu
 				) );
 			?>
-			<a href="<?php echo get_permalink(PAGE_DON); ?>" class="c-button c-button--cta" id="nav-cta"><i class="c-button__icon fa fa-heart"></i><?php echo get_the_title(PAGE_DON); ?></a>	
+			<a href="<?php echo get_permalink(PAGE_DON); ?>" class="c-button c-button--cta" id="nav-cta"><i class="c-button__icon fa fa-heart"></i>Donner</a>	
 		</nav>
 	</div>
 
