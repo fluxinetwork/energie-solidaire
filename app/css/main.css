@@ -1772,6 +1772,7 @@ p + .c-link {
   }
 }
 .c-accordeon__title {
+  padding-right: 0;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -1784,6 +1785,9 @@ p + .c-link {
 
 .c-accordeon__content {
   margin-top: 24px;
+  padding-left: 40px;
+  margin-left: 23px;
+  border-left: 5px solid #FCEE00;
 }
 
 .c-focus {
@@ -1970,6 +1974,7 @@ p + .c-link {
 }
 .content h2 {
   font-family: gilroy, sans-serif;
+  padding-right: 1em;
 }
 .content h3 {
   font-family: gilroy, sans-serif;
