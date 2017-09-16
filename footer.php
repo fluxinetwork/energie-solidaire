@@ -1,6 +1,7 @@
 		</div><!-- .main --> 
 
 		<?php get_template_part( 'page-templates-parts/base/footer'); ?>
+		<?php get_template_part( 'page-templates-parts/base/admin-tools'); ?>
 		    
     </div><!-- .global -->	
 

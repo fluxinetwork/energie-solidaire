@@ -373,6 +373,15 @@ function fluxi_post_exists( $id ) {
   return is_string( get_post_status( $id ) );
 }
 
+/**
+ * Cut string
+ */
+function cut_string( $string, $length, $endStr = '...' ) {    
+    if( strlen( $string ) <= $length ) return $string;  
+    $str = mb_substr( $string, 0, $length - strlen( $endStr ) + 1, 'UTF-8');  
+    return $str.$endStr;  
+} 
+
 
 /**
  * Quick var_dump() with <pre> tags

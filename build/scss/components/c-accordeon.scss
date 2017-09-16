@@ -1,0 +1,17 @@
+.c-accordeon {
+
+}
+
+.c-accordeon__title {
+	@include flex(null center);
+	cursor: pointer;
+	width: 100%;
+}
+
+.c-accordeon__title__icon {
+	margin-right: $space--s;
+}
+
+.c-accordeon__content {
+	margin-top: $space--m;
+}

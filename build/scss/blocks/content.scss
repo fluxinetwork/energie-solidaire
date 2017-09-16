@@ -1,6 +1,9 @@
+$jump: $space--xl 0;
+
 .content {
 	h2 {
 		font-family: $font-h;
+		//padding-right: 2em;
 	}
 
 	h3 {
@@ -8,37 +11,33 @@
 		font-weight: 400;
 	}
 
-	h4 {	
-
-	}
-
-	p {
-	}
-
-	ul {
-
-
-		li {
-
-		}
-	}
-
 	blockquote {
 
 	}
 
-	img {
-
-	}
-
 	figure {
+		margin: 0;
+
+		img {
+			border-radius: $radius;
+		}
 
 		figcaption {
-
+			text-align: center;
+			@extend .h5;
+			margin-top: 0.5em;
+			color: $c-txt;
+			padding: 0 5em;
 		}
 	}
+}
 
-	> a {
-		
+.content-jump {
+	display: block;
+	margin-top: $space--xl;
+	margin-bottom: $space--xl;
+
+	+ .content-jump {
+		margin-top: -$space--m; 	
 	}
 }

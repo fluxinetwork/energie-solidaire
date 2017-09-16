@@ -3,13 +3,14 @@
 	display: inline-block;
 	@extend .t-miniH;
 	color: $c-main;
+	text-decoration: none;
 	
 	&::before {
 		content: '';
 		position: absolute;
-		left: -55px;
-		top: 49%;
-		width: 50px;
+		left: -35px;
+		top: 48%;
+		width: 30px;
 		height: 2px;
 		background-color: $c-main;
 		@extend .transition;
@@ -17,10 +18,12 @@
 	}
 
 	p + & {
-		margin-top: $space--s;
+		margin-top: 1em;
 	}
 
 	&:hover {
+		color: $c-dark;
+		
 		&::before {
 			transform: scaleX(0.5);
 		}

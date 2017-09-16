@@ -1,0 +1,12 @@
+.c-focus {
+	@extend .l-largeCell;
+	background-color: $c-accent;
+	//border: 5px solid $c-accent;
+	border-radius: $radius;
+	@extend .has-glow;
+}
+
+.c-focus__title {
+	@extend .h3;
+	//font-weight: 400;
+}

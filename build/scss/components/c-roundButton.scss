@@ -6,6 +6,7 @@
 	border-radius: 50%;
 	background-color: $c-main;
 	color: #fff;
+	font-size: 16px;
 	@extend .transition;
 
 	&:hover,
@@ -33,7 +34,8 @@
 			display: none;
 		}
 
-		&.icon2 {
+		&.icon2,
+		.is-open & {
 			transform: rotate(180deg);
 
 			.fa:nth-child(1) {

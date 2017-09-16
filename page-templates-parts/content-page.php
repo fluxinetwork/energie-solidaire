@@ -4,13 +4,20 @@
  */
 ?>
 
-<article class="l-col l-col--content <? ( is_page() ) ? print('page') : print('article'); ?>">
+<article>
 
-	<header>
-		<?php the_title( '<h1>', '</h1>' ); ?>
+	<header class="projet-header l-largeCell">
+		<div class="hp-decor hp-cloud hp-cloud-pos1 hp-cloud1"></div>
+		<div class="hp-decor hp-cloud hp-cloud-pos2 hp-cloud2"></div>
+
+		<hgroup class="projet-header__hgroup">
+			<h1 class="projet-title"><?php echo get_the_title(); ?></h1>
+		</hgroup>
 	</header>
-
-	<?php the_content(); ?>	
+	
+	<div class="l-col l-col--content l-innerRythm content">
+		<?php the_content(); ?>			
+	</div>
 
 </article>
 

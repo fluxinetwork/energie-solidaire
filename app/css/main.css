@@ -50,7 +50,7 @@ Make background with :after and fancy shadow with :before
 
 ==========================================================================
 \*======================================================================*/
-.overlay, .c-button, .c-navLink,
+.overlay, .cb-adminTools, .c-button, .c-navLink,
 .transition,
 .l-dotSlider__items__item::after,
 .l-dotSlider__controls__dot,
@@ -832,39 +832,39 @@ h1 {
 }
 
 h2, .h2, .c-sectionTitle, .c-projectCard__title {
-  font-size: 24px;
+  font-size: 25px;
 }
 @media screen and (min-width: 768px) {
   h2, .h2, .c-sectionTitle, .c-projectCard__title {
-    font-size: 28px;
+    font-size: 29px;
   }
 }
 @media screen and (min-width: 960px) {
   h2, .h2, .c-sectionTitle, .c-projectCard__title {
-    font-size: 32px;
+    font-size: 34px;
   }
 }
 
 h2 {
-  margin-top: 1.5em;
+  margin-top: 2.2em;
 }
 
-h3, .h3, .cb-notify__message, .projet-subtitle, .projet-porteur {
+h3, .h3, .cb-notify__message, .c-focus__title, .projet-subtitle, .projet-porteur {
   font-size: 20px;
 }
 @media screen and (min-width: 768px) {
-  h3, .h3, .cb-notify__message, .projet-subtitle, .projet-porteur {
+  h3, .h3, .cb-notify__message, .c-focus__title, .projet-subtitle, .projet-porteur {
     font-size: 23px;
   }
 }
 @media screen and (min-width: 960px) {
-  h3, .h3, .cb-notify__message, .projet-subtitle, .projet-porteur {
+  h3, .h3, .cb-notify__message, .c-focus__title, .projet-subtitle, .projet-porteur {
     font-size: 25px;
   }
 }
 
 h3 {
-  margin-top: 1.2;
+  margin-top: 1.7em;
 }
 
 h4, .h4, .cb-notify__btn, .c-tiltedTitle, .hp-video__title {
@@ -886,16 +886,16 @@ h4 {
   margin-top: 1em;
 }
 
-h5, .h5, .t-miniH, .c-button, .c-link, .c-navLink, .cb-navAdmin__bt, .hp-forme-don__txt, .projet-public, .lien-txt, .projet-contact__mail, .projet-links__item {
+h5, .h5, .t-miniH, .cb-adminTools__bt, .c-button, .c-link, .c-navLink, .content figure figcaption, .hp-forme-don__txt, .projet-public, .lien-txt, .projet-contact__mail, .projet-links__item {
   font-size: 14px;
 }
 @media screen and (min-width: 768px) {
-  h5, .h5, .t-miniH, .c-button, .c-link, .c-navLink, .cb-navAdmin__bt, .hp-forme-don__txt, .projet-public, .lien-txt, .projet-contact__mail, .projet-links__item {
+  h5, .h5, .t-miniH, .cb-adminTools__bt, .c-button, .c-link, .c-navLink, .content figure figcaption, .hp-forme-don__txt, .projet-public, .lien-txt, .projet-contact__mail, .projet-links__item {
     font-size: 15px;
   }
 }
 @media screen and (min-width: 960px) {
-  h5, .h5, .t-miniH, .c-button, .c-link, .c-navLink, .cb-navAdmin__bt, .hp-forme-don__txt, .projet-public, .lien-txt, .projet-contact__mail, .projet-links__item {
+  h5, .h5, .t-miniH, .cb-adminTools__bt, .c-button, .c-link, .c-navLink, .content figure figcaption, .hp-forme-don__txt, .projet-public, .lien-txt, .projet-contact__mail, .projet-links__item {
     font-size: 16px;
   }
 }
@@ -922,17 +922,17 @@ h6 {
   margin-top: 0.7;
 }
 
-p, .p, .c-projectCard__excerpt {
+p, .p, ul li, .c-projectCard__excerpt {
   font-size: 16px;
   font-family: "Assistant", sans-serif;
 }
 @media screen and (min-width: 768px) {
-  p, .p, .c-projectCard__excerpt {
+  p, .p, ul li, .c-projectCard__excerpt {
     font-size: 18px;
   }
 }
 @media screen and (min-width: 960px) {
-  p, .p, .c-projectCard__excerpt {
+  p, .p, ul li, .c-projectCard__excerpt {
     font-size: 20px;
     line-height: 1.5;
   }
@@ -942,7 +942,26 @@ p {
   margin-top: 1em;
 }
 
-.t-miniH, .c-button, .c-link, .c-navLink {
+ul {
+  margin-top: 1em;
+}
+ul li {
+  margin-top: 0.4em;
+  line-height: 1.1;
+}
+
+p a,
+li a {
+  color: #026873;
+  font-weight: 900;
+  text-decoration: underline;
+}
+p a:hover,
+li a:hover {
+  color: #003035;
+}
+
+.t-miniH, .cb-adminTools__bt, .c-button, .c-link, .c-navLink {
   font-family: gilroy, sans-serif;
   font-weight: 900;
   letter-spacing: 0.7px;
@@ -955,7 +974,7 @@ p {
 
 .has-glow, .c-button, .c-heroTxt--underline::after,
 .c-heroTxt i::after,
-.c-heroTxt em::after, .hp-glowing-shape::before, .projet-header::before {
+.c-heroTxt em::after, .c-focus, .hp-glowing-shape::before, .projet-header::before {
   box-shadow: 0 0 50px rgba(252, 238, 0, 0.5);
 }
 
@@ -1009,16 +1028,16 @@ p {
   }
 }
 
-.l-largeCell, .l-duo__item__content, .c-heroTxt, .c-projectCard__more .t-miniH, .c-projectCard__more .c-button, .c-projectCard__more .c-link, .c-projectCard__more .c-navLink {
+.l-largeCell, .l-duo__item__content, .c-heroTxt, .c-projectCard__more .t-miniH, .c-projectCard__more .cb-adminTools__bt, .c-projectCard__more .c-button, .c-projectCard__more .c-link, .c-projectCard__more .c-navLink, .c-focus {
   padding: 40px;
 }
 @media screen and (min-width: 768px) {
-  .l-largeCell, .l-duo__item__content, .c-heroTxt, .c-projectCard__more .t-miniH, .c-projectCard__more .c-button, .c-projectCard__more .c-link, .c-projectCard__more .c-navLink {
+  .l-largeCell, .l-duo__item__content, .c-heroTxt, .c-projectCard__more .t-miniH, .c-projectCard__more .cb-adminTools__bt, .c-projectCard__more .c-button, .c-projectCard__more .c-link, .c-projectCard__more .c-navLink, .c-focus {
     padding: 52px;
   }
 }
 @media screen and (min-width: 960px) {
-  .l-largeCell, .l-duo__item__content, .c-heroTxt, .c-projectCard__more .t-miniH, .c-projectCard__more .c-button, .c-projectCard__more .c-link, .c-projectCard__more .c-navLink {
+  .l-largeCell, .l-duo__item__content, .c-heroTxt, .c-projectCard__more .t-miniH, .c-projectCard__more .cb-adminTools__bt, .c-projectCard__more .c-button, .c-projectCard__more .c-link, .c-projectCard__more .c-navLink, .c-focus {
     padding: 64px;
   }
 }
@@ -1047,7 +1066,7 @@ p {
   background-color: transparent;
 }
 .l-col--content {
-  max-width: 650px;
+  max-width: 700px;
 }
 @media screen and (min-width: 1200px) {
   .l-col--content {
@@ -1064,7 +1083,7 @@ p {
 
 @media screen and (min-width: 960px) {
   .l-content__main {
-    width: 650px;
+    width: 700px;
     flex: none;
     padding-right: 40px;
   }
@@ -1078,7 +1097,7 @@ p {
     flex: 1 0 0;
     padding-left: 40px;
     margin-top: 0;
-    max-width: 325px;
+    max-width: 350px;
   }
 }
 
@@ -1232,7 +1251,7 @@ p {
 }
 
 .l-duo__item__content {
-  max-width: 382.35294px;
+  max-width: 411.76471px;
   width: 100%;
   border-radius: 0 3px 3px 0;
 }
@@ -1428,26 +1447,31 @@ p {
 
 ==========================================================================
 \*======================================================================*/
-.cb-navAdmin {
+.cb-adminTools {
   position: fixed;
   z-index: 1000;
-  left: 8px;
+  right: 8px;
   bottom: 8px;
+  padding: 16px;
+  background-color: #000;
+  border-radius: 100px;
+  display: flex;
+  justify-content: space--between;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .cb-adminTools {
+    display: none;
+  }
 }
 
-.cb-navAdmin__bt {
-  display: inline-block;
-  font-family: gilroy, sans-serif;
+.cb-adminTools__bt {
+  position: relative;
   color: #fff;
-  padding: 8px 16px;
-  background-color: #026873;
-  border-radius: 3px;
+  padding: 0.1em  0.6em;
 }
-.cb-navAdmin__bt:hover {
-  background-color: #FCEE00;
-}
-.cb-navAdmin__bt:nth-child(2) {
-  margin-left: 4px;
+.cb-adminTools__bt:hover {
+  color: #FCEE00;
 }
 
 .c-roundButton {
@@ -1458,6 +1482,7 @@ p {
   border-radius: 50%;
   background-color: #026873;
   color: #fff;
+  font-size: 16px;
 }
 .c-roundButton:hover, a:hover .c-roundButton, button:hover .c-roundButton {
   transform: scale(1.1);
@@ -1479,13 +1504,13 @@ p {
 .c-roundButton--2icon .fa:nth-child(2) {
   display: none;
 }
-.c-roundButton--2icon.icon2 {
+.c-roundButton--2icon.icon2, .is-open .c-roundButton--2icon {
   transform: rotate(180deg);
 }
-.c-roundButton--2icon.icon2 .fa:nth-child(1) {
+.c-roundButton--2icon.icon2 .fa:nth-child(1), .is-open .c-roundButton--2icon .fa:nth-child(1) {
   display: none;
 }
-.c-roundButton--2icon.icon2 .fa:nth-child(2) {
+.c-roundButton--2icon.icon2 .fa:nth-child(2), .is-open .c-roundButton--2icon .fa:nth-child(2) {
   display: block;
 }
 
@@ -1522,19 +1547,23 @@ p {
   position: relative;
   display: inline-block;
   color: #026873;
+  text-decoration: none;
 }
 .c-link::before {
   content: '';
   position: absolute;
-  left: -55px;
-  top: 49%;
-  width: 50px;
+  left: -35px;
+  top: 48%;
+  width: 30px;
   height: 2px;
   background-color: #026873;
   transform-origin: right;
 }
 p + .c-link {
-  margin-top: 16px;
+  margin-top: 1em;
+}
+.c-link:hover {
+  color: #003035;
 }
 .c-link:hover::before {
   transform: scaleX(0.5);
@@ -1677,7 +1706,7 @@ p + .c-link {
   max-width: 0;
   width: 0;
 }
-.c-projectCard__more .t-miniH, .c-projectCard__more .c-button, .c-projectCard__more .c-link, .c-projectCard__more .c-navLink {
+.c-projectCard__more .t-miniH, .c-projectCard__more .cb-adminTools__bt, .c-projectCard__more .c-button, .c-projectCard__more .c-link, .c-projectCard__more .c-navLink {
   position: absolute;
   top: 5px;
   right: 0;
@@ -1739,9 +1768,29 @@ p + .c-link {
 }
 @media screen and (min-width: 960px) {
   .c-projectCard {
-    max-width: 650px;
+    max-width: 700px;
   }
 }
+.c-accordeon__title {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.c-accordeon__title__icon {
+  margin-right: 16px;
+}
+
+.c-accordeon__content {
+  margin-top: 24px;
+}
+
+.c-focus {
+  background-color: #FCEE00;
+  border-radius: 3px;
+}
+
 /*======================================================================*\
 ==========================================================================
 
@@ -1925,6 +1974,27 @@ p + .c-link {
 .content h3 {
   font-family: gilroy, sans-serif;
   font-weight: 400;
+}
+.content figure {
+  margin: 0;
+}
+.content figure img {
+  border-radius: 3px;
+}
+.content figure figcaption {
+  text-align: center;
+  margin-top: 0.5em;
+  color: #003035;
+  padding: 0 5em;
+}
+
+.content-jump {
+  display: block;
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+.content-jump + .content-jump {
+  margin-top: -24px;
 }
 
 /*======================================================================*\
@@ -2176,7 +2246,7 @@ p + .c-link {
   position: relative;
   z-index: 2;
   width: 80%;
-  max-width: 650px;
+  max-width: 700px;
 }
 .hp-video__player::before {
   content: '';
@@ -2345,7 +2415,7 @@ p + .c-link {
 }
 
 .projet-header__hgroup {
-  max-width: 650px;
+  max-width: 700px;
   margin: 0 auto;
 }
 

@@ -36,9 +36,9 @@ $h1-font-sizes: (
 );
 
 $h2-font-sizes: (
-	null : (24px),
-	medium : (28px),
-	large : (32px)
+	null : (25px),
+	medium : (29px),
+	large : (34px)
 );
 
 $h3-font-sizes: (
@@ -94,7 +94,7 @@ h2, .h2 {
 	@include font-size($h2-font-sizes);	
 }
 h2 {	
-	margin-top: 1.5em;
+	margin-top: 2.2em;
 }
 
 
@@ -102,7 +102,7 @@ h3, .h3 {
 	@include font-size($h3-font-sizes);	
 }
 h3 {	
-	margin-top: 1.2;
+	margin-top: 1.7em;
 }
 
 
@@ -138,9 +138,25 @@ p {
 }
 
 
-a,
-p a {
+ul {
+	margin-top: 1em;
 
+	li {
+		@extend .p;
+		margin-top: 0.4em;
+		line-height: 1.1;
+	}
+}
+
+p a,
+li a {
+	color: $c-main;
+	font-weight: 900;
+	text-decoration: underline;
+
+	&:hover {
+		color: $c-dark;
+	}
 }
 
 
