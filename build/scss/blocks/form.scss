@@ -1,0 +1,277 @@
+.form-row {
+	position: relative;
+	margin-top: $space--l;
+
+	+ .form-row {
+		
+	}
+
+	@media screen and (min-width: $break--m) {
+		&--flex {
+			display: flex;
+
+			.form-row {
+				flex: 1 0 0;
+				margin-top: 0;
+			}
+
+			.form-row:first-child {
+				margin-right: $gutter/2;
+			}
+
+			.form-row:last-child {
+				margin-left: $gutter/2;
+			}
+		}
+
+		&--asy {
+			flex: none !important;
+			width: 25%;
+		}
+	}
+}
+
+.form-sentence {
+	@include flex(center);
+	@extend .h1;
+}
+
+.form-sentence__txt {
+	flex: none;
+	color: $c-main;
+	font-family: $font-h;
+	font-weight: 900;
+}
+
+.form-sentence__input {
+	font-family: $font-h;
+	font-weight: 900;
+	max-width: 3em;
+	color: $c-dark;
+	margin: 0 $space--xs 0 $space--m;
+	text-align: center;
+	border-bottom: 2px solid rgba($c-dark, 0.3);
+	padding-bottom: 5px;
+}
+
+.form-row__label {
+	position: relative;
+	@extend .h6;
+	font-family: $font-h;
+
+	.i-required {
+		color: $c-error;
+		@extend .h2;
+		line-height: 0;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translate(200%, -50%);
+	}
+}
+
+.form-row__input {
+	cursor: pointer;
+	position: relative;
+	width: 100%;
+	@extend .h4;
+	font-weight: 900;
+	padding: 0.3em 0;
+
+	&:focus + .form-row__afterInput::after {
+		width: 100%;
+	}
+}
+
+.form-row__afterInput {
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 2px;
+		background-color: $c-dark;
+	}
+
+	&::before {
+		width: 100%;
+		opacity: 0.3;
+	}
+
+	&::after {
+		@extend .transition;
+		width: 0;
+	}
+}
+
+.form-infos {
+	@extend .h6;
+	margin-top: $space--s;
+	text-align: center;
+}
+
+.form-submit {
+	@extend .l-cell;
+	@include flex(center);
+}
+
+
+// CREDIT CARD
+
+.creditCard {
+	overflow: hidden;
+	position: relative;
+	border: 2px solid $c-main;
+	margin: 0 auto;
+	max-width: 400px;
+	padding: $space--m;
+	border-radius: 8px;
+	background: linear-grad($c-dark, $c-main);
+	box-shadow: 0 20px 40px rgba(#000, 0.2);
+
+	@media screen and (min-width: $break--m) {
+		padding: $space--l;
+	}
+}
+
+.creditCard-row {
+	+ .creditCard-row {
+		margin-top: $space--l;
+	}
+	
+	&--flex {
+		@include flex(space-between null);
+	}
+}
+
+.creditCard-label {
+	display: inline-block;
+	position: relative;
+	margin-bottom: $space--xs;
+	@extend .h6;
+	color: rgba(#fff, 0.6);
+
+	.i-required {
+		color: $c-error;
+		@extend .h2;
+		line-height: 0;
+		position: absolute;
+		top: 35%;
+		right: 0;
+		transform: translate(200%, -50%);
+	}
+}
+
+.creditCard-input {
+	cursor: pointer;
+	color: #fff;
+	width: 100%;
+	font-family: Courrier, monospace;
+	text-shadow: -1px -1px 1px rgba(#fff, 0.3), 1px 1px 1px #000;
+	border-bottom: 2px solid rgba(#fff, 0.2);
+	padding-bottom: 5px;
+
+	.creditCard-expiration &,
+	.creditCard-security & {
+		@extend .h5;
+		letter-spacing: 0.05em;
+	}
+}
+
+// LIGNE 1
+
+.creditCard-number {
+	@include flex(space-between);
+
+	.creditCard-input {
+		@extend .h3;
+		letter-spacing: 0.03em;
+		margin: 0 8px;
+		max-width: 21%;
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+// LIGNE 2
+
+
+.creditCard-expiration__select {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.creditCard-security {
+	max-width: 82px;
+
+	.creditCard-input {
+		position: relative;
+		top: -2px;
+	}
+
+	@media screen and (min-width: $break--m) {
+		max-width: 98px;
+	}
+}
+
+
+// SELECT
+
+.creditCard-select {
+	position: relative;
+	cursor: pointer;
+
+	&:last-child {
+		margin-left: $gutter/2;
+	}
+
+	.creditCard-input { 
+		display: inline;
+	}
+
+	.fa {
+		margin-left: 4px;
+		opacity: 0.5;
+		color: #fff;
+	}
+}
+
+.creditCard-list {
+	@include fill('parent', true);
+	z-index: 2;
+	display: flex;
+	flex-wrap: wrap;
+	@extend .l-cell;
+	background-color: $c-dark;
+	transform: translateY(100%);
+	@extend .transition;
+
+	&.is-open {
+		transform: translateY(0);
+	}
+}
+
+.creditCard-list__item {
+	@extend .creditCard-input;
+	border: 0;
+	@extend .h5;
+	@include flex(center);
+	flex: 1 0 50%;
+	cursor: pointer;
+
+	&:hover {
+		color: $c-accent;
+		text-shadow: 0 0 25px $c-accent;
+	}
+
+	@media screen and (min-width: $break--m) {
+		flex: 1 0 33%;
+	}
+}

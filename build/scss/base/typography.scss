@@ -9,7 +9,7 @@
 
 body {
 	font-family: $font-txt;
-	line-height: 1.25;
+	line-height: 1.2;
 	color: $c-txt;
 	@include font-smoothing();
 }

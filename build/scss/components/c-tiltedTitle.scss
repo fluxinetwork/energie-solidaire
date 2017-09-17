@@ -1,11 +1,14 @@
 .c-tiltedTitle {
 	position: relative;
-	display: inline-block;
+	@include flex(center);
 	transform: rotate(-2deg);
 	color: $c-dark;
 	@extend .h4;
 	font-weight: 900;
-	letter-spacing: 0.7px;
 	padding: 0.3em 0.7em;
 	background-color: $c-accent;
 }
+
+.c-tiltedTitle__icon {
+	margin-right: $space--xs;
+} 

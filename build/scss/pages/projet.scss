@@ -80,28 +80,7 @@
 
 //================================================================= ASIDE
 
-.aside-cell {
-	position: relative;
-	@include flex(center, column);
-	padding: $space--l;
-	background-color: $c-light;
-	border-radius: $radius;
-
-	+ .aside-cell {
-		margin-top: $gutter;
-	}
-
-	&--trsp {
-		background-color: transparent;
-	}
-}
-
-.aside-cell__title {
-	@include center(xy);
-	top: 0;
-}
-
-.lien-txt {
+.aside-textLink {
 	@extend .h5;
 	color: $c-txt;
 
@@ -123,7 +102,7 @@
 }
 
 .projet-contact__mail {
-	@extend .lien-txt;
+	@extend .aside-textLink;
 	width: 100%;
 	text-align: center;
 	word-break: break-all;
@@ -157,7 +136,7 @@
 }
 
 .projet-links__item {
-	@extend .lien-txt;
+	@extend .aside-textLink;
 	@include flex(null center);
 	color: $c-txt;
 	width: 100%;
@@ -199,6 +178,7 @@
 
 .projet-more {
 	position: relative;
+	//background: url('../img/wormz.png');
 
 	&::before {
 		content: '';

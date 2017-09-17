@@ -33,6 +33,12 @@ var FOO = {
         init: function() {
             dot_slider();
         }
+    },
+    page_template_don_ponctuel: {
+        init: function() {
+            jQuery('.js-montant').focus();
+            credit_card();
+        }
     }
     
 };

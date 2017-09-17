@@ -63,7 +63,7 @@
 	</div>
 
 	<aside class="l-content__aside">
-		<div class="projet-contact aside-cell ">
+		<div class="projet-contact c-lightCell">
 			<?php
 
 			if ( get_field('photo_contact') ||  get_field('logo_porteur') ) {
@@ -130,7 +130,7 @@
 
 			?>
 
-			<div class="aside-cell__title">
+			<div class="c-lightCell__title">
 				<span class="c-tiltedTitle">Contact</span>				
 			</div>
 		</div>
@@ -139,9 +139,9 @@
 
 		if ( get_field('lien_externe_du_projet') ) {
 
-			$output = '<div class=" aside-cell projet-links">';
+			$output = '<div class=" c-lightCell projet-links">';
 
-			$output .= '<div class="aside-cell__title"><span class="c-tiltedTitle">Liens</span></div>'; 
+			$output .= '<div class="c-lightCell__title"><span class="c-tiltedTitle">Liens</span></div>'; 
 
 			while ( have_rows('lien_externe_du_projet') ) : the_row();
 

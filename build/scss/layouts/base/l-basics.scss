@@ -69,6 +69,10 @@ $break: $break--l;
 		}
 	}
 
+	&--narrow {
+		max-width: $contentW*$smaller;
+	}
+
 	&--aside {
 		@media screen and (min-width: $break) {
 			@include flex(center null);
