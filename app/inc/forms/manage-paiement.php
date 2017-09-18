@@ -101,31 +101,32 @@ function fluxi_manage_paiement(){
 						add_post_meta($the_post_id, $key, $value, true);						
 					}
 
-
-					$datas_topdon = array();
-				    $datas_topdon['key'] = "e8Gpe5G!";
-				    $datas_topdon['civilite'] = 'M';
-				    $datas_topdon['nom'] = 'Rolland';
-				    $datas_topdon['prenom'] = 'Yann';
-				    $datas_topdon['email'] = 'rollandyann@gmail.com';
-				    $datas_topdon['adresse1'] = '166 rue Diderot';
-				    $datas_topdon['adresse2'] = '';
-				    $datas_topdon['codepostal'] = '94300';
-				    $datas_topdon['ville'] = 'Vincennes';
-				    $datas_topdon['pays'] = 'France';
-				    $datas_topdon['tel'] = '0682396513';
-				    $datas_topdon['code_aff'] = '????';
-				    $datas_topdon['numtransac'] = $charge->id;
-				    $datas_topdon['dt_paiement'] = date("Y-m-d H:i:s"); //prendre la date de la banque
-				    $datas_topdon['amount'] = $montant;
-				    $datas_topdon['authorisation_id'] = '77777';
-				    $datas_topdon['payment_certificate'] = '1235';
-				    $datas_topdon['payment_time'] = '1201';
-				    $datas_topdon['payment_date'] = '20170203';
-				    $datas_topdon['type_paiement'] = 'CBM';
-				    $datas_topdon['recurrence'] = 1;
-				    $datas_topdon['date_validite'] = 10;
-				    $datas_topdon['id_mem'] = '1234';
+					// Insert Topdon
+					$datas_topdon = array(
+					   'key' => "e8Gpe5G!",
+					   'civilite' => 'M',
+					   'nom' => 'Rolland',
+					   'prenom' => 'Yann',
+					   'email' => $mail_contact,
+					   'adresse1' => $adresse,
+					   'adresse2' => $complement_adresse,
+					   'codepostal' => $code_postal,
+					   'ville' => $ville,
+					   'pays' => 'France',
+					   'tel' => $telephone,
+					   //'code_aff' => '????',
+					   'numtransac' => $charge->id,
+					   'dt_paiement' => date("Y-m-d H:i:s"),
+					   'amount' => $montant,
+					   //'authorisation_id' => '77777',
+					   //'payment_certificate' => '1235',
+					   'payment_time' => date("Hi"),
+					   'payment_date' => $date_paiement,
+					   'type_paiement' => 'CBM',
+					   'recurrence' => 0,
+					   //'date_validite' => 10,
+					   'id_mem' => '1234',
+				    );
 
 				    $postdata_topdon = http_build_query($datas_topdon);
 			        $opts_topdon = array('http' =>

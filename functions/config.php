@@ -29,9 +29,9 @@ add_action('acf/init', 'wpc_acf_init');
 
 // LINKS
 
-define('FACEBOOK', 'https://www.facebook.com/');
-define('TWITTER', 'https://twitter.com/');
-define('YOUTUBE', 'https://youtube.com/');
+define('FACEBOOK', 'https://www.facebook.com/energiesolidaire');
+define('TWITTER', 'https://twitter.com/Energie_SolidR');
+define('YOUTUBE', 'https://www.youtube.com/channel/UCwuksGDFHnFkqvWk9pf-5sA');
 
 // PAGES
 define('PAGE_DON', 12);

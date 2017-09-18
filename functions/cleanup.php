@@ -15,7 +15,7 @@
    | remove_self_closing_tags()
    | remove_default_description()
    | search_request_filter()
-   |
+   | remove_empty_paragraphs()
 */
 
 /*
@@ -189,4 +189,15 @@ function search_request_filter($query_vars) {
   return $query_vars;
 }
 add_filter('request', 'search_request_filter');
+
+/*
+Remove unnecessary blank paragraphes
+*/
+
+function remove_empty_paragraphs($content) {
+    $content = str_replace("<p>&nbsp;</p>","",$content);
+    return $content;
+}
+
+add_filter('the_content', 'remove_empty_paragraphs', 99999);
 
