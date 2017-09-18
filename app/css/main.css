@@ -57,6 +57,7 @@ Make background with :after and fancy shadow with :before
 .c-roundButton,
 .c-link::before,
 .c-projectCard__more,
+.form-fieldset,
 .form-row__afterInput::after,
 .creditCard-sliding,
 .creditCard-list,
@@ -908,16 +909,16 @@ h5 {
   margin-top: 0.8em;
 }
 
-h6, .h6, .form-row__label, .form-infos, .creditCard-label {
+h6, .h6, .form-row__label, .creditCard-label, .stripe-link {
   font-size: 12px;
 }
 @media screen and (min-width: 768px) {
-  h6, .h6, .form-row__label, .form-infos, .creditCard-label {
+  h6, .h6, .form-row__label, .creditCard-label, .stripe-link {
     font-size: 13px;
   }
 }
 @media screen and (min-width: 960px) {
-  h6, .h6, .form-row__label, .form-infos, .creditCard-label {
+  h6, .h6, .form-row__label, .creditCard-label, .stripe-link {
     font-size: 14px;
   }
 }
@@ -2049,9 +2050,29 @@ p + .c-link {
   margin-top: -24px;
 }
 
-form input[type="number"]::-webkit-inner-spin-button, form input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+/*======================================================================*\
+==========================================================================
+
+							FORM
+
+==========================================================================
+\*======================================================================*/
+.form {
+  min-height: 50vh;
+  padding-top: 24px;
+}
+
+.form-fieldset {
+  border: 0;
+}
+.form-fieldset legend {
+  margin: 0 auto;
+}
+.form-fieldset + .form-fieldset {
+  margin-top: 40px;
+}
+.form-fieldset.is-first {
+  transform: translateY(8vh);
 }
 
 .form-row {
@@ -2076,6 +2097,28 @@ form input[type="number"]::-webkit-inner-spin-button, form input[type="number"]:
     flex: none !important;
     width: 25%;
   }
+}
+
+.input-validation:focus, .form-sentence__input:focus, .form-row__input:focus {
+  border-bottom-color: #003035;
+}
+.input-validation:focus + .form-row__afterInput::after, .form-sentence__input:focus + .form-row__afterInput::after, .form-row__input:focus + .form-row__afterInput::after {
+  width: 100%;
+}
+.input-validation.has-error, .has-error.form-sentence__input, .has-error.form-row__input {
+  border-bottom-color: #F13636;
+  color: #F13636;
+}
+.input-validation.has-error + .form-row__afterInput::before, .has-error.form-sentence__input + .form-row__afterInput::before, .has-error.form-row__input + .form-row__afterInput::before {
+  background-color: #F13636;
+  opacity: 1;
+}
+.input-validation.is-valid, .is-valid.form-sentence__input, .is-valid.form-row__input {
+  border-bottom-color: #00C15F;
+}
+.input-validation.is-valid + .form-row__afterInput::before, .is-valid.form-sentence__input + .form-row__afterInput::before, .is-valid.form-row__input + .form-row__afterInput::before {
+  background-color: #00C15F;
+  opacity: 1;
 }
 
 .form-sentence {
@@ -2122,20 +2165,6 @@ form input[type="number"]::-webkit-inner-spin-button, form input[type="number"]:
   font-weight: 900;
   padding: 0.3em 0;
 }
-.form-row__input:focus + .form-row__afterInput::after {
-  width: 100%;
-}
-.form-row__input.has-error {
-  color: #F13636;
-}
-.form-row__input.has-error + .form-row__afterInput::before {
-  background-color: #F13636;
-  opacity: 1;
-}
-.form-row__input.is-valid + .form-row__afterInput::before {
-  background-color: #00C15F;
-  opacity: 1;
-}
 
 .form-row__afterInput::before, .form-row__afterInput::after {
   content: '';
@@ -2153,17 +2182,24 @@ form input[type="number"]::-webkit-inner-spin-button, form input[type="number"]:
   width: 0;
 }
 
-.form-infos {
-  margin-top: 16px;
-  text-align: center;
-}
-
 .form-submit {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+form input[type="number"]::-webkit-inner-spin-button, form input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*======================================================================*\
+==========================================================================
+
+							CREDIT CARD
+
+==========================================================================
+\*======================================================================*/
 .creditCard {
   overflow: hidden;
   position: relative;
@@ -2258,6 +2294,19 @@ form input[type="number"]::-webkit-inner-spin-button, form input[type="number"]:
   }
 }
 
+.creditCard-sliding, .creditCard-list, .creditCard-ok {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transform: translateY(100%);
+}
+.creditCard-sliding.is-open, .is-open.creditCard-list, .is-open.creditCard-ok {
+  transform: translateY(0);
+}
+
 .creditCard-select {
   position: relative;
   cursor: pointer;
@@ -2272,19 +2321,6 @@ form input[type="number"]::-webkit-inner-spin-button, form input[type="number"]:
   margin-left: 4px;
   opacity: 0.5;
   color: #fff;
-}
-
-.creditCard-sliding, .creditCard-list, .creditCard-ok {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  transform: translateY(100%);
-}
-.creditCard-sliding.is-open, .is-open.creditCard-list, .is-open.creditCard-ok {
-  transform: translateY(0);
 }
 
 .creditCard-list {
@@ -2326,6 +2362,11 @@ form input[type="number"]::-webkit-inner-spin-button, form input[type="number"]:
 }
 .is-open .creditCard-ok__check {
   transform: scale(1);
+}
+
+.stripe-link {
+  margin-top: 16px;
+  text-align: center;
 }
 
 /*======================================================================*\

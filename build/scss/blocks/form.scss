@@ -1,18 +1,41 @@
-form input[type="number"] {
-	&::-webkit-inner-spin-button, 
-	&::-webkit-outer-spin-button { 
-		-webkit-appearance: none; 
-	  	margin: 0; 
+/*======================================================================*\
+==========================================================================
+
+							FORM
+
+==========================================================================
+\*======================================================================*/
+
+.form {
+	min-height: 50vh;
+	padding-top: $space--m;
+}
+
+//=============================================================== FIELDSET
+
+.form-fieldset {
+	border: 0;
+	@extend .transition;
+
+	legend {
+		margin: 0 auto;
+	}
+
+	+ .form-fieldset {
+		margin-top: $gutter;
+	}
+
+	&.is-first {
+		transform: translateY(8vh);
 	}
 }
+
+
+//=========================================================== FIELDSET ROW
 
 .form-row {
 	position: relative;
 	margin-top: $space--l;
-
-	+ .form-row {
-		
-	}
 
 	@media screen and (min-width: $break--m) {
 		&--flex {
@@ -39,6 +62,38 @@ form input[type="number"] {
 	}
 }
 
+
+//============================================================== SENTENCE
+
+.input-validation {
+	&:focus {
+		border-bottom-color: $c-dark;
+
+		& + .form-row__afterInput::after {
+			width: 100%;
+		}
+	}
+
+	&.has-error {
+		border-bottom-color: $c-error;
+		color: $c-error;
+
+		& + .form-row__afterInput::before {
+			background-color: $c-error;
+			opacity: 1;
+		}
+	}
+
+	&.is-valid {
+		border-bottom-color: $c-valid;
+
+		& + .form-row__afterInput::before {
+			background-color: $c-valid;
+			opacity: 1;
+		}
+	}
+}
+
 .form-sentence {
 	@include flex(center);
 	@extend .h1;
@@ -52,6 +107,7 @@ form input[type="number"] {
 }
 
 .form-sentence__input {
+	@extend .input-validation;
 	font-family: $font-h;
 	font-weight: 900;
 	max-width: 3em;
@@ -61,6 +117,9 @@ form input[type="number"] {
 	border-bottom: 2px solid rgba($c-dark, 0.3);
 	padding-bottom: 5px;
 }
+
+
+//================================================================== LABEL
 
 .form-row__label {
 	position: relative;
@@ -78,31 +137,17 @@ form input[type="number"] {
 	}
 }
 
+
+//================================================================== INPUT
+
 .form-row__input {
+	@extend .input-validation;
 	cursor: pointer;
 	position: relative;
 	width: 100%;
 	@extend .h4;
 	font-weight: 900;
 	padding: 0.3em 0;
-
-	&:focus + .form-row__afterInput::after {
-		width: 100%;
-	}
-
-	&.has-error {
-		color: $c-error;
-
-		& + .form-row__afterInput::before {
-			background-color: $c-error;
-			opacity: 1;
-		}
-	}
-
-	&.is-valid + .form-row__afterInput::before {
-		background-color: $c-valid;
-		opacity: 1;
-	}
 }
 
 .form-row__afterInput {
@@ -127,13 +172,21 @@ form input[type="number"] {
 	}
 }
 
-.form-infos {
-	@extend .h6;
-	margin-top: $space--s;
-	text-align: center;
-}
+
+//================================================================== SUBMIT
 
 .form-submit {
 	@extend .l-cell;
 	@include flex(center);
+}
+
+
+//================================================================== MISC
+
+form input[type="number"] {
+	&::-webkit-inner-spin-button, 
+	&::-webkit-outer-spin-button { 
+		-webkit-appearance: none; 
+	  	margin: 0; 
+	}
 }

@@ -1,3 +1,14 @@
+/*======================================================================*\
+==========================================================================
+
+							CREDIT CARD
+
+==========================================================================
+\*======================================================================*/
+
+
+//=================================================================== WRAP
+
 .creditCard {
 	overflow: hidden;
 	position: relative;
@@ -14,6 +25,9 @@
 	}
 }
 
+
+//=================================================================== ROW
+
 .creditCard-row {
 	+ .creditCard-row {
 		margin-top: $space--l;
@@ -23,6 +37,9 @@
 		@include flex(space-between null);
 	}
 }
+
+
+//=================================================================== LABEL
 
 .creditCard-label {
 	display: inline-block;
@@ -41,6 +58,9 @@
 		transform: translate(200%, -50%);
 	}
 }
+
+
+//=================================================================== INPUT
 
 .creditCard-input {
 	cursor: pointer;
@@ -87,13 +107,18 @@
 	}
 }
 
-// LIGNE 2
+
+//================================================================== EXPIRATION
 
 
 .creditCard-expiration__select {
 	display: flex;
 	flex-wrap: wrap;
 }
+
+
+
+//================================================================== CVV
 
 .creditCard-security {
 	max-width: 82px;
@@ -109,7 +134,18 @@
 }
 
 
-// SELECT
+//================================================================== SELECT
+
+.creditCard-sliding {
+	@include fill('parent', true);
+	z-index: 2;
+	transform: translateY(100%);
+	@extend .transition;
+
+	&.is-open {
+		transform: translateY(0);
+	}
+}
 
 .creditCard-select {
 	position: relative;
@@ -127,17 +163,6 @@
 		margin-left: 4px;
 		opacity: 0.5;
 		color: #fff;
-	}
-}
-
-.creditCard-sliding {
-	@include fill('parent', true);
-	z-index: 2;
-	transform: translateY(100%);
-	@extend .transition;
-
-	&.is-open {
-		transform: translateY(0);
 	}
 }
 
@@ -168,7 +193,7 @@
 }
 
 
-// OK {
+//================================================================== CHECK 
 
 .creditCard-ok {
 	@extend .creditCard-sliding;
@@ -185,4 +210,13 @@
 	.is-open & {
 		transform: scale(1);			
 	}
+}
+
+
+//================================================================== MISC
+
+.stripe-link {
+	@extend .h6;
+	margin-top: $space--s;
+	text-align: center;
 }
