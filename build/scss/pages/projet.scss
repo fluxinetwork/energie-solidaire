@@ -178,10 +178,10 @@
 
 .projet-more {
 	position: relative;
-	//background: url('../img/wormz.png');
+	background: url('../img/patterns/light-wormz.jpg');
 
 	&::before {
-		content: '';
+		//content: '';
 		position: absolute;
 		top: 0;
 		width: 100%;

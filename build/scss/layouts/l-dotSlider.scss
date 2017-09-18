@@ -15,11 +15,12 @@
 	flex: none;
 	transition: 0.4s $easeInOutCubic;
 	transform: scale(0.8);
+	opacity: 0.5;
 
 	&::after {
 		content: '';
 		display: inline-block;
-		background-color: rgba(#fff, 0.75);
+		background-color: transparent;
 		position: absolute;
 		width: 120%;
 		height: 120%;

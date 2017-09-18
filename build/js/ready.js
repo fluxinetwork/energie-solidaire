@@ -34,9 +34,11 @@ var FOO = {
             dot_slider();
         }
     },
-    page_template_don_ponctuel: {
+    don: {
         init: function() {
             jQuery('.js-montant').focus();
+            input_auto_validate();
+            input_number_auto_blur();
             credit_card();
         }
     }

@@ -56,14 +56,14 @@ Template Name: Homepage
 	</div>
 </section>
 
-<section class="l-vRythm">
+<section class="l-vRythm mgnBottom--l">
 	<h2 class="c-sectionTitle l-col l-col--content"><?php echo get_field('titre_section_don'); ?></h2>
 
 	<div class="l-col l-col--content content l-vRythm hp-glowing-shape hp-glowing-shape--rect">
 		<h3><?php echo get_field('titre_texte_don_1'); ?></h3>
 		<p><?php echo get_field('texte_don_1'); ?></p>
 		<a href="<?php echo get_field('lien_don_1'); ?>" class="c-link">En savoir plus</a>
-		<img src="<?php bloginfo('template_url'); ?>/app/img/micro-don.png" class="hp-micro-don">
+		<img src="<?php bloginfo('template_url'); ?>/app/img/homepage/micro-don.png" class="hp-micro-don">
 	</div>
 
 	<div class="l-col l-col--content content l-vRythm hp-glowing-shape hp-glowing-shape--round">
@@ -80,7 +80,7 @@ Template Name: Homepage
 			<div class="l-duo__item__content hp-forme-don">
 				<span class="t-miniH t-miniH--glow">Professionnels</span>
 				<div class="hp-forme-don__illustration">
-					<img src="<?php bloginfo('template_url'); ?>/app/img/don-energie-pro.png"></img>
+					<img src="<?php bloginfo('template_url'); ?>/app/img/homepage/don-energie-pro.png"></img>
 				</div>
 				<p class="hp-forme-don__txt"><?php echo get_field('texte_professionels'); ?></p>
 			</div>
@@ -90,19 +90,19 @@ Template Name: Homepage
 			<div class="l-duo__item__content hp-forme-don">
 				<span class="t-miniH t-miniH--glow">Particuliers</span>
 				<div class="hp-forme-don__illustration">
-					<img src="<?php bloginfo('template_url'); ?>/app/img/don-energie-particulier.png"></img>
+					<img src="<?php bloginfo('template_url'); ?>/app/img/homepage/don-energie-particulier.png"></img>
 				</div>
 				<p class="hp-forme-don__txt"><?php echo get_field('texte_particuliers'); ?></p>
 			</div>
 		</div>
 	</div>
 
-	<div class="l-col l-col--content mgnTop--m">
+	<div class="l-col l-col--content l-jump">
 		<a href="<?php echo get_field('lien_don_energie'); ?>" class="c-link">En savoir plus</a>
 	</div>
 </section>
 
-<section class="l-innerRythm">
+<section class="l-innerRythm bg-wormz">
 	<h2 class="c-sectionTitle l-col l-col--content"><?php echo get_field('titre_projets'); ?></h2>
 	
 	<?php require_once( get_template_directory() . '/page-templates-parts/slider-projets.php' );?>

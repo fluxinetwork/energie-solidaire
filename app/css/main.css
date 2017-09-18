@@ -58,7 +58,9 @@ Make background with :after and fancy shadow with :before
 .c-link::before,
 .c-projectCard__more,
 .form-row__afterInput::after,
-.creditCard-list {
+.creditCard-sliding,
+.creditCard-list,
+.creditCard-ok {
   transition-property: all;
   transition-duration: 0.2s;
   transition-delay: 0s;
@@ -974,12 +976,6 @@ li a:hover {
   text-shadow: 0 0 25px #FCEE00;
 }
 
-.has-glow, .c-button, .c-heroTxt--underline::after,
-.c-heroTxt i::after,
-.c-heroTxt em::after, .c-focus, .hp-glowing-shape::before, .projet-header::before {
-  box-shadow: 0 0 50px rgba(252, 238, 0, 0.5);
-}
-
 /*======================================================================*\
 ==========================================================================
 
@@ -1012,6 +1008,16 @@ li a:hover {
 }
 .anim-floating {
   animation: 3s floating infinite linear;
+}
+
+.has-glow, .c-button, .c-heroTxt--underline::after,
+.c-heroTxt i::after,
+.c-heroTxt em::after, .c-focus, .hp-glowing-shape::before, .projet-header::before {
+  box-shadow: 0 0 50px rgba(252, 238, 0, 0.5);
+}
+
+.bg-wormz {
+  background: url("../img/patterns/light-wormz.jpg");
 }
 
 /*======================================================================*\
@@ -1281,11 +1287,12 @@ li a:hover {
   flex: none;
   transition: 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transform: scale(0.8);
+  opacity: 0.5;
 }
 .l-dotSlider__items__item::after {
   content: '';
   display: inline-block;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: transparent;
   position: absolute;
   width: 120%;
   height: 120%;
@@ -2042,6 +2049,11 @@ p + .c-link {
   margin-top: -24px;
 }
 
+form input[type="number"]::-webkit-inner-spin-button, form input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .form-row {
   position: relative;
   margin-top: 40px;
@@ -2112,6 +2124,17 @@ p + .c-link {
 }
 .form-row__input:focus + .form-row__afterInput::after {
   width: 100%;
+}
+.form-row__input.has-error {
+  color: #F13636;
+}
+.form-row__input.has-error + .form-row__afterInput::before {
+  background-color: #F13636;
+  opacity: 1;
+}
+.form-row__input.is-valid + .form-row__afterInput::before {
+  background-color: #00C15F;
+  opacity: 1;
 }
 
 .form-row__afterInput::before, .form-row__afterInput::after {
@@ -2193,6 +2216,12 @@ p + .c-link {
 .creditCard-expiration .creditCard-input, .creditCard-expiration .creditCard-list__item, .creditCard-security .creditCard-input, .creditCard-security .creditCard-list__item {
   letter-spacing: 0.05em;
 }
+.creditCard-input.has-error, .has-error.creditCard-list__item {
+  border-color: #F13636;
+}
+.creditCard-input.is-valid, .is-valid.creditCard-list__item {
+  border-color: #00C15F;
+}
 
 .creditCard-number {
   display: flex;
@@ -2245,20 +2274,23 @@ p + .c-link {
   color: #fff;
 }
 
-.creditCard-list {
+.creditCard-sliding, .creditCard-list, .creditCard-ok {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 2;
+  transform: translateY(100%);
+}
+.creditCard-sliding.is-open, .is-open.creditCard-list, .is-open.creditCard-ok {
+  transform: translateY(0);
+}
+
+.creditCard-list {
   display: flex;
   flex-wrap: wrap;
   background-color: #003035;
-  transform: translateY(100%);
-}
-.creditCard-list.is-open {
-  transform: translateY(0);
 }
 
 .creditCard-list__item {
@@ -2277,6 +2309,23 @@ p + .c-link {
   .creditCard-list__item {
     flex: 1 0 33%;
   }
+}
+
+.creditCard-ok {
+  background-color: #00C15F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 80px;
+}
+
+.creditCard-ok__check {
+  transform: scale(0);
+  transition: 0.4s 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.is-open .creditCard-ok__check {
+  transform: scale(1);
 }
 
 /*======================================================================*\
@@ -2819,9 +2868,9 @@ p + .c-link {
 
 .projet-more {
   position: relative;
+  background: url("../img/patterns/light-wormz.jpg");
 }
 .projet-more::before {
-  content: '';
   position: absolute;
   top: 0;
   width: 100%;
