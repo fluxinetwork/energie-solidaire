@@ -23,7 +23,7 @@ function initDisplayAmount(){
 
 	$('input[name="amount"]').on( 'focus', function(){
 		var current_amount = $('input[name="amount"]').val();
-		displayAmount(current_amount);		
+		displayAmount(current_amount);
 	});
 }
 
@@ -38,19 +38,19 @@ function displayAmount(amount){
 // Paiement don ponctuel
 function initaddPay(){	
 
-	Stripe.setPublishableKey('pk_test_vVfhSNv1SsueVCKsQZ0NchPM');
+	Stripe.setPublishableKey('pk_test_7Gbk6BpNbWWmQ8bHUKovDyrw');
 
     var formID = '#don-ponctuel';
 
     $(formID+' button[type=submit]').prop('disabled', false);
     $formObj = $('#don-ponctuel');
 
-	$formObj.submit(function (e) {
+	$('#don-ponctuel').submit(function (e) {
 
 		e.preventDefault();
-		$formObj.find('button[type=submit]').prop('disabled', true).html('<i class="spinner"></i> En cours ...'); // On désactive le bouton submit
+		$('#don-ponctuel').find('button[type=submit]').prop('disabled', true).html('<i class="spinner"></i> En cours ...'); // On désactive le bouton submit
 
-		Stripe.card.createToken($formObj, function (status, response) {
+		Stripe.card.createToken($(this), function (status, response) {
 
 		    if (response.error) { 
 
@@ -127,14 +127,14 @@ function initaddPay(){
 				}
 
 				// On affiche les erreurs
-			    $formObj.find('.js-notify').html('<span class="error">' + error_mess + '</span>');
+			    $('#don-ponctuel').find('.js-notify').html('<span class="error">' + error_mess + '</span>');
 				// On réactive le bouton
-				$formObj.find('button[type=submit]').prop('disabled', false).html('Faire un don');
+				$('#don-ponctuel').find('button[type=submit]').prop('disabled', false).html('Faire un don');
 
 		    } else { // Le token a bien été créé
 
 			    var token = response.id; // On récupère le token
-			    var params = $formObj.serialize();
+			    var params = $('#don-ponctuel').serialize();			    
 
 			    $.ajax({
 	                type: 'POST',
@@ -144,17 +144,17 @@ function initaddPay(){
 	                success: function(data){
 
 	                    if(data[0].validation == 'error'){
-	                        $formObj.find('button[type=submit]').prop('disabled', false).html('Faire un don');
+	                        $('#don-ponctuel').find('button[type=submit]').prop('disabled', false).html('Faire un don');
 	                    }else{
-	                        $formObj.find('button[type=submit]').remove();
-	                        $formObj.find('.form__buttons').html('<a href="'+data[0].redirect+'" class="button">Retour</a>');
+	                        $('#don-ponctuel').find('button[type=submit]').remove();
+	                        $('#don-ponctuel').find('.form__buttons').html('<a href="'+data[0].redirect+'" class="button">Retour</a>');
 	                    }
-	                    $formObj.find('.js-notify').html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
+	                    $('#don-ponctuel').find('.js-notify').html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
 
 	                },
 	                error : function(jqXHR, textStatus, errorThrown) {
 	                    //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
-	                    $formObj.find('button[type=submit]').prop('disabled', false).html('Faire un don');
+	                    $('#don-ponctuel').find('button[type=submit]').prop('disabled', false).html('Faire un don');
 	                }
 
 	            });

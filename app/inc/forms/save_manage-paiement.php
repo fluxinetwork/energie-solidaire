@@ -47,7 +47,7 @@ function fluxi_manage_paiement(){
 			]);
 
 			if( property_exists($customer, 'error') ):
-				//var_dump($customer->error);
+				var_dump($customer->error);
 				$reg_errors->add( 'stripefail', $customer->error );
 			else:
 
@@ -59,7 +59,7 @@ function fluxi_manage_paiement(){
 				]);
 
 				if( property_exists($charge,'error') || $charge->status == 'failed'):
-					//var_dump($charge->error);
+					var_dump($charge->error);
 					$reg_errors->add( 'stripefail', $message_response );
 				else:
 
@@ -102,7 +102,7 @@ function fluxi_manage_paiement(){
 					}
 
 					// Insert Topdon
-					$datas_topdon = array(
+					/*$datas_topdon = array(
 					   'key' => "e8Gpe5G!",
 					   'civilite' => 'M',
 					   'nom' => 'Rolland',
@@ -139,7 +139,7 @@ function fluxi_manage_paiement(){
 
 			        $context_topdon = stream_context_create($opts_topdon);
 
-			        $result_topdon = file_get_contents('https://ws.topdon.fr/importDonsTopweb.php', false, $context_topdon);
+			        $result_topdon = file_get_contents('https://ws.topdon.fr/importDonsTopweb.php', false, $context_topdon);*/
 			        
 
 					// Notification mail admin

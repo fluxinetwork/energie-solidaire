@@ -16,8 +16,10 @@ define('EDITOR_STYLE', false);
 // VALUES
 
 define('POST_EXCERPT_LENGTH', 40);
-define('GOOGLE_ANALYTICS_ID', get_field('google_api_id', 'option'));
-define('STRIPE_KEY', get_field('stripe_sk', 'option'));
+//define('GOOGLE_ANALYTICS_ID', get_field('google_api_id', 'option'));
+//define('STRIPE_KEY', get_field('stripe_sk', 'option'));
+define('GOOGLE_ANALYTICS_ID', 'UA-56826617-2');
+define('STRIPE_KEY', 'sk_test_LKiegAycnrookkhPpKHxQxSK');
 
 define('GOOGLE_MAP_API_KEY', '');
 /* ACF Google Maps */
