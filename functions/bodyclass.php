@@ -43,7 +43,13 @@ function custom_bodyclass( $classes ) {
 
 	if ( is_page_template( 'page-templates/don-ponctuel.php' ) ) {
 
-		$classes[] = 'don bg-wormz';
+		$classes[] = 'form-don bg-wormz';
+
+	}
+
+	if ( is_page_template( 'page-templates/page-contact.php' ) ) {
+
+		$classes[] = 'form-contact';
 
 	}
 

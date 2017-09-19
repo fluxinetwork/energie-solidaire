@@ -20,9 +20,13 @@ var FOO = {
             }
 
             // Form contact
-            initFormContact();
+            
 
-            dot_slider();
+            // Init form
+            if (  jQuery('.js-dotSlider').length  ) {  //#temp
+                dot_slider();
+            }
+            
         }
     },    
     home: {
@@ -36,13 +40,19 @@ var FOO = {
             //dot_slider();
         }
     },
-    don: {
+    form_don: {
         init: function() {
             jQuery('.js-montant').focus();
             form_first_step();
             input_auto_validate();
             input_number_auto_blur();
             credit_card();
+        }
+    },
+    form_contact: {
+        init: function() {
+            init_form_contact();
+            input_auto_validate();
         }
     }
     

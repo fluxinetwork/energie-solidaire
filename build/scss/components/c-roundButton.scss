@@ -36,7 +36,7 @@
 
 		&.icon2,
 		.is-open & {
-			transform: rotate(180deg);
+			transform: rotate(360deg);
 
 			.fa:nth-child(1) {
 				display: none;

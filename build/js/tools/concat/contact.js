@@ -6,7 +6,7 @@
 ==========================================================================
 \*======================================================================*/
 
-function initFormContact() {
+function init_form_contact() {
 
     var formID = '#form-contact';
     jQuery(formID+' button[type=submit]').prop('disabled', false);
@@ -18,7 +18,7 @@ function initFormContact() {
         e.preventDefault();
         var params = $formObj.serialize(); 
 
-         $formObj.find('button[type=submit]').html('Chargement...').prop('disabled', true);
+        $formObj.find('button[type=submit]').toggleClass('icon2').prop('disabled', true);
 
         jQuery.ajax({
             type: 'POST',
@@ -26,7 +26,7 @@ function initFormContact() {
             url: ajax_object.ajax_url,
             data: 'action=fluxi_contact_form&'+params,
             success: function(data){
-                $formObj.find('button[type=submit]').html(labelBtn);
+                $formObj.find('button[type=submit]').removeClass('icon2');
 
                 if(data[0].validation == 'error'){
                     $formObj.find('button[type=submit]').prop('disabled', false);
@@ -37,7 +37,7 @@ function initFormContact() {
             },
             error : function(jqXHR, textStatus, errorThrown) {
                 //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
-                $formObj.find('button[type=submit]').prop('disabled', false).html(labelBtn);
+                $formObj.find('button[type=submit]').prop('disabled', false).removeClass('icon2');
             }
 
         });

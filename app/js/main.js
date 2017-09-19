@@ -65,9 +65,13 @@ var FOO = {
             }
 
             // Form contact
-            initFormContact();
+            
 
-            dot_slider();
+            // Init form
+            if (  jQuery('.js-dotSlider').length  ) {  //#temp
+                dot_slider();
+            }
+            
         }
     },    
     home: {
@@ -81,13 +85,19 @@ var FOO = {
             //dot_slider();
         }
     },
-    don: {
+    form_don: {
         init: function() {
             jQuery('.js-montant').focus();
             form_first_step();
             input_auto_validate();
             input_number_auto_blur();
             credit_card();
+        }
+    },
+    form_contact: {
+        init: function() {
+            init_form_contact();
+            input_auto_validate();
         }
     }
     
@@ -199,7 +209,7 @@ if ( resizeDebouncer ) { jQuery( window ).on( "resize", debouncer(debouncer_hand
 ==========================================================================
 \*======================================================================*/
 
-function initFormContact() {
+function init_form_contact() {
 
     var formID = '#form-contact';
     jQuery(formID+' button[type=submit]').prop('disabled', false);
@@ -211,7 +221,7 @@ function initFormContact() {
         e.preventDefault();
         var params = $formObj.serialize(); 
 
-         $formObj.find('button[type=submit]').html('Chargement...').prop('disabled', true);
+        $formObj.find('button[type=submit]').toggleClass('icon2').prop('disabled', true);
 
         jQuery.ajax({
             type: 'POST',
@@ -219,7 +229,7 @@ function initFormContact() {
             url: ajax_object.ajax_url,
             data: 'action=fluxi_contact_form&'+params,
             success: function(data){
-                $formObj.find('button[type=submit]').html(labelBtn);
+                $formObj.find('button[type=submit]').removeClass('icon2');
 
                 if(data[0].validation == 'error'){
                     $formObj.find('button[type=submit]').prop('disabled', false);
@@ -230,7 +240,7 @@ function initFormContact() {
             },
             error : function(jqXHR, textStatus, errorThrown) {
                 //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
-                $formObj.find('button[type=submit]').prop('disabled', false).html(labelBtn);
+                $formObj.find('button[type=submit]').prop('disabled', false).removeClass('icon2');
             }
 
         });
@@ -671,7 +681,7 @@ function input_number_auto_blur() {
 
 function input_auto_validate() {
 
-	jQuery('input[data-validation]').on('blur', function() {
+	jQuery('[data-validation]').on('blur', function() {
 
 		inputField = jQuery(this);
 		var value = inputField.val();
@@ -691,17 +701,40 @@ function input_auto_validate() {
 
 					if ( value.indexOf('@') !== -1 )  { // has @
 
-						var emailArray = value.split('@')
+						var forbiddenCharArray = '#&/\\<>!?"\',;:%€()[]'.split('');
 
-						if ( emailArray.length == 2 && emailArray[1].indexOf('.') !== -1 )  { // has . somewhere after @
+						for ( var i = 0; i < forbiddenCharArray.length; i++ ) {
 
-							if ( emailArray[1].slice(-1) != '.' ) { // last character is not .
+							if ( value.indexOf( forbiddenCharArray[i] ) != -1 ) { 
 
-								var lastPiece = ( emailArray[1].split('.') ).pop();
+								input_class('error');
+								break;
+								
+							} else if ( i == forbiddenCharArray.length-1 ) { // pas de caracteres speciaux
 
-								if ( lastPiece.length > 1 ) { // domain extension has more than 1 character
+								var emailArray = value.split('@')
 
-									( lastPiece.indexOf('xn--') == -1 ) ? input_class('valid') : input_class('error'); // has unicode encoded character
+								if ( emailArray.length == 2 && emailArray[1].indexOf('.') !== -1 )  { // has . somewhere after @
+
+									if ( emailArray[1].slice(-1) != '.' ) { // last character is not .
+
+										var lastPiece = ( emailArray[1].split('.') ).pop();
+
+										if ( lastPiece.length > 1 ) { // domain extension has more than 1 character
+
+											( lastPiece.indexOf('xn--') == -1 ) ? input_class('valid') : input_class('error'); // has unicode encoded character
+
+										} else {
+
+											input_class('error');
+
+										}
+
+									} else {
+
+										input_class('error');
+
+									}
 
 								} else {
 
@@ -709,15 +742,7 @@ function input_auto_validate() {
 
 								}
 
-							} else {
-
-								input_class('error');
-
 							}
-
-						} else {
-
-							input_class('error');
 
 						}
 
@@ -725,13 +750,11 @@ function input_auto_validate() {
 
 						input_class('error');
 
-						console.log('no @');
-
 					}
 
 				} else {
 
-					( inputField.val().length > 5 ) ? input_class('valid') : input_class('error');
+					input_class('valid');
 
 				}
 

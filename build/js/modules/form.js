@@ -18,7 +18,7 @@ function input_number_auto_blur() {
 
 function input_auto_validate() {
 
-	jQuery('input[data-validation]').on('blur', function() {
+	jQuery('[data-validation]').on('blur', function() {
 
 		inputField = jQuery(this);
 		var value = inputField.val();
@@ -38,17 +38,40 @@ function input_auto_validate() {
 
 					if ( value.indexOf('@') !== -1 )  { // has @
 
-						var emailArray = value.split('@')
+						var forbiddenCharArray = '#&/\\<>!?"\',;:%€()[]'.split('');
 
-						if ( emailArray.length == 2 && emailArray[1].indexOf('.') !== -1 )  { // has . somewhere after @
+						for ( var i = 0; i < forbiddenCharArray.length; i++ ) {
 
-							if ( emailArray[1].slice(-1) != '.' ) { // last character is not .
+							if ( value.indexOf( forbiddenCharArray[i] ) != -1 ) { 
 
-								var lastPiece = ( emailArray[1].split('.') ).pop();
+								input_class('error');
+								break;
+								
+							} else if ( i == forbiddenCharArray.length-1 ) { // pas de caracteres speciaux
 
-								if ( lastPiece.length > 1 ) { // domain extension has more than 1 character
+								var emailArray = value.split('@')
 
-									( lastPiece.indexOf('xn--') == -1 ) ? input_class('valid') : input_class('error'); // has unicode encoded character
+								if ( emailArray.length == 2 && emailArray[1].indexOf('.') !== -1 )  { // has . somewhere after @
+
+									if ( emailArray[1].slice(-1) != '.' ) { // last character is not .
+
+										var lastPiece = ( emailArray[1].split('.') ).pop();
+
+										if ( lastPiece.length > 1 ) { // domain extension has more than 1 character
+
+											( lastPiece.indexOf('xn--') == -1 ) ? input_class('valid') : input_class('error'); // has unicode encoded character
+
+										} else {
+
+											input_class('error');
+
+										}
+
+									} else {
+
+										input_class('error');
+
+									}
 
 								} else {
 
@@ -56,15 +79,7 @@ function input_auto_validate() {
 
 								}
 
-							} else {
-
-								input_class('error');
-
 							}
-
-						} else {
-
-							input_class('error');
 
 						}
 
@@ -72,13 +87,11 @@ function input_auto_validate() {
 
 						input_class('error');
 
-						console.log('no @');
-
 					}
 
 				} else {
 
-					( inputField.val().length > 5 ) ? input_class('valid') : input_class('error');
+					input_class('valid');
 
 				}
 

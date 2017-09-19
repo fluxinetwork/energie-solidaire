@@ -27,6 +27,23 @@
 		box-shadow: 0 0 80px rgba($c-accent, 0.8);
 		transform: scale(1.1);
 	}
+
+	&--2icon {
+		.fa:nth-child(2) {
+			display: none;
+		}
+
+		&.icon2,
+		.is-open & {
+			.fa:nth-child(1) {
+				display: none;
+			}
+
+			.fa:nth-child(2) {
+				display: inline-block;
+			}
+		}
+	}
 }
 
 .c-button__icon {

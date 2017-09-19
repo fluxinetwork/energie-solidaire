@@ -7,8 +7,10 @@
 \*======================================================================*/
 
 .form {
-	min-height: 50vh;
-	padding-top: $space--m;
+	&.is-folded {
+		min-height: 30vh;
+		padding-top: $space--m;
+	}
 }
 
 //=============================================================== FIELDSET
@@ -22,10 +24,6 @@
 
 	+ .form-fieldset {
 		margin-top: $gutter;
-	}
-
-	&.is-first {
-		transform: translateY(8vh);
 	}
 }
 
@@ -124,6 +122,7 @@
 	position: relative;
 	@extend .h6;
 	font-family: $font-h;
+	text-transform: uppercase;
 
 	.i-required {
 		color: $c-error;
@@ -149,6 +148,21 @@
 	padding: 0.3em 0;
 }
 
+// textarea.form-row__input {
+// 	background-color: rgba($c-light, 0.2);
+// 	@extend .transition;
+// 	margin-top: $space--s;
+
+// 	&:focus {
+// 		background-color: transparent;
+// 	}
+
+// 	+ .form-row__afterInput {
+// 		position: relative;
+// 		top: -3px;
+// 	}
+// }
+
 .form-row__afterInput {
 	&::before,
 	&::after {
@@ -168,6 +182,30 @@
 	&::after {
 		@extend .transition;
 		width: 0;
+	}
+}
+
+//================================================================== NOTIFY
+
+.form-notify {
+	margin-top: $space--l;
+	
+	span {
+		display: block;
+		@extend .l-cell;
+		@extend .h4;
+		font-weight: 900;
+		color: #fff;
+		text-align: center;
+		border-radius: $radius;
+		
+		&.error {
+			background-color: $c-error;
+		}
+
+		&.success {
+			background-color: $c-valid;
+		}
 	}
 }
 

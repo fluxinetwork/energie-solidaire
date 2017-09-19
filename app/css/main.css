@@ -871,16 +871,16 @@ h3 {
   margin-top: 1.7em;
 }
 
-h4, .h4, .cb-notify__btn, .c-tiltedTitle, .form-row__input, .hp-video__title {
+h4, .h4, .cb-notify__btn, .c-tiltedTitle, .form-row__input, .form-notify span, .hp-video__title {
   font-size: 16px;
 }
 @media screen and (min-width: 768px) {
-  h4, .h4, .cb-notify__btn, .c-tiltedTitle, .form-row__input, .hp-video__title {
+  h4, .h4, .cb-notify__btn, .c-tiltedTitle, .form-row__input, .form-notify span, .hp-video__title {
     font-size: 18px;
   }
 }
 @media screen and (min-width: 960px) {
-  h4, .h4, .cb-notify__btn, .c-tiltedTitle, .form-row__input, .hp-video__title {
+  h4, .h4, .cb-notify__btn, .c-tiltedTitle, .form-row__input, .form-notify span, .hp-video__title {
     font-size: 20px;
     line-height: 1.5;
   }
@@ -1027,11 +1027,11 @@ li a:hover {
 
 ==========================================================================
 \*======================================================================*/
-.l-cell, .overlay__bt, .cb-notify__content, .c-projectCard, .header, .form-submit, .creditCard-list {
+.l-cell, .overlay__bt, .cb-notify__content, .c-projectCard, .header, .form-notify span, .form-submit, .creditCard-list {
   padding: 16px;
 }
 @media screen and (min-width: 960px) {
-  .l-cell, .overlay__bt, .cb-notify__content, .c-projectCard, .header, .form-submit, .creditCard-list {
+  .l-cell, .overlay__bt, .cb-notify__content, .c-projectCard, .header, .form-notify span, .form-submit, .creditCard-list {
     padding: 24px;
   }
 }
@@ -1517,7 +1517,7 @@ li a:hover {
   display: none;
 }
 .c-roundButton--2icon.icon2, .is-open .c-roundButton--2icon {
-  transform: rotate(180deg);
+  transform: rotate(360deg);
 }
 .c-roundButton--2icon.icon2 .fa:nth-child(1), .is-open .c-roundButton--2icon .fa:nth-child(1) {
   display: none;
@@ -1549,6 +1549,15 @@ li a:hover {
 .c-button:hover {
   box-shadow: 0 0 80px rgba(252, 238, 0, 0.8);
   transform: scale(1.1);
+}
+.c-button--2icon .fa:nth-child(2) {
+  display: none;
+}
+.c-button--2icon.icon2 .fa:nth-child(1), .is-open .c-button--2icon .fa:nth-child(1) {
+  display: none;
+}
+.c-button--2icon.icon2 .fa:nth-child(2), .is-open .c-button--2icon .fa:nth-child(2) {
+  display: inline-block;
 }
 
 .c-button__icon {
@@ -2056,8 +2065,8 @@ p + .c-link {
 
 ==========================================================================
 \*======================================================================*/
-.form {
-  min-height: 50vh;
+.form.is-folded {
+  min-height: 30vh;
   padding-top: 24px;
 }
 
@@ -2069,9 +2078,6 @@ p + .c-link {
 }
 .form-fieldset + .form-fieldset {
   margin-top: 40px;
-}
-.form-fieldset.is-first {
-  transform: translateY(8vh);
 }
 
 .form-row {
@@ -2147,6 +2153,7 @@ p + .c-link {
 .form-row__label {
   position: relative;
   font-family: gilroy, sans-serif;
+  text-transform: uppercase;
 }
 .form-row__label .i-required {
   color: #F13636;
@@ -2179,6 +2186,23 @@ p + .c-link {
 }
 .form-row__afterInput::after {
   width: 0;
+}
+
+.form-notify {
+  margin-top: 40px;
+}
+.form-notify span {
+  display: block;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+}
+.form-notify span.error {
+  background-color: #F13636;
+}
+.form-notify span.success {
+  background-color: #00C15F;
 }
 
 .form-submit {
