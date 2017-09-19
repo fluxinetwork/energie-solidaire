@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Don ponctuel
+Template Name: Don ponctuel thibaut
 */
 ?>
 <?php get_header(); ?>
@@ -23,11 +23,11 @@ Template Name: Don ponctuel
 		<fieldset class="form-fieldset is-first js-first-fieldset transition">
 			<div class="form-sentence form-row">
 				<h1 class="form-sentence__txt">Je souhaite donner</h1>
-				<input class="form-sentence__input js-montant js-firstInput" type="number" name="amount" id="amount" min="1" max="99999" maxlength="5">
+				<input class="form-sentence__input js-montant js-firstInput" type="number" name="amount" id="amount" min= "1" max="99999" maxlength="5" data-validation="required">
 				<span class="form-sentence__txt">€</span>
 			</div>
 		</fieldset>
-		
+
 		<div class="form-fieldset js-form-hide">
 
 			<fieldset class="form-fieldset">
@@ -35,13 +35,13 @@ Template Name: Don ponctuel
 
 				<div class="form-row">
 					<label for="name" class="form-row__label">Nom / Raison social<span class="i-required">•</span></label>
-			    	<input class="form-row__input" type="text" name="name" id="name">
+			    	<input class="form-row__input" type="text" name="name" id="name" data-validation="required">
 			    	<div class="form-row__afterInput"></div>
 			    </div>
 
 				<div class="form-row">
 					<label for="adresse" class="form-row__label">Adresse<span class="i-required">•</span></label>
-			  		<input class="form-row__input" type="text" name="adresse" id="adresse">
+			  		<input class="form-row__input" type="text" name="adresse" id="adresse" data-validation="required">
 			  		<div class="form-row__afterInput"></div>
 			  	</div>
 
@@ -60,7 +60,7 @@ Template Name: Don ponctuel
 			
 					<div class="form-row">
 						<label for="ville" class="form-row__label">Ville<span class="i-required">•</span></label>
-				  		<input class="form-row__input" type="text" name="ville" id="ville">
+				  		<input class="form-row__input" type="text" name="ville" id="ville" data-validation="required">
 				  		<div class="form-row__afterInput"></div>
 				  	</div>
 			  	</div>
@@ -74,7 +74,7 @@ Template Name: Don ponctuel
 
 					<div class="form-row">
 						<label for="email" class="form-row__label">Email<span class="i-required">•</span></label>
-						<input class="form-row__input js-auto-validate" type="email" name="email">
+						<input class="form-row__input js-auto-validate" type="email" name="email" data-validation="required">
 						<div class="form-row__afterInput"></div>
 					</div>
 				</div>
@@ -84,17 +84,17 @@ Template Name: Don ponctuel
 				<legend class="c-tiltedTitle"><i class="fa fa-lock c-tiltedTitle__icon"></i>Vos informations de paiement</legend>
 				
 				<?php
-				
+
 				if ( $isMobile ) {
 
-					require_once( get_template_directory() . '/page-templates-parts/form/basic-stripe-form.php' );
+					require_once( get_template_directory() . '/page-templates-parts/form/stripe-basic-form.php' );
 
 				} else {
 
 					require_once( get_template_directory() . '/page-templates-parts/form/stripe-credit-card-form.php' );
 
 				}
-				
+
 				?>
 		  	</fieldset>
 

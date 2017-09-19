@@ -21,4 +21,5 @@ require_once locate_template('/functions/menus.php');
 
 // FORMS
 
+require_once locate_template('/app/inc/forms/manage-paiement.php');
 require_once locate_template('/app/inc/forms/manage-contact.php');

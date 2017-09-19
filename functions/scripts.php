@@ -85,7 +85,7 @@ function enqueue_scripts() {
     
 
     // Paiement
-    wp_register_script( 'don-ponctuel', THEME_DIR_PATH . '/app/js/modules/don-ponctuel.js', array('jQuery', 'form-validator', 'stripeApi'), null, true );
+    wp_register_script( 'don-ponctuel', THEME_DIR_PATH . '/app/js/modules/don-ponctuel.js', array('jQuery','stripeApi'), null, true );
     if( is_page_template( 'page-templates/don-ponctuel.php' ) ){
         wp_localize_script( 'don-ponctuel', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
         wp_enqueue_script( 'don-ponctuel' );
