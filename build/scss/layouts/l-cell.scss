@@ -1,0 +1,30 @@
+.l-cell {
+	@include flex(center, column);
+	position: relative;
+	padding: $space--m;
+	border-radius: $radius;
+	border: 0;
+
+	+ .l-cell {
+		margin-top: $gutter;
+	}
+
+	&--bg {
+		background-color: $c-light;
+
+		.l-cell__title {
+			@include center(xy);
+			top: 0;
+			width: 100%;
+		}
+
+	}
+
+	@media screen and (min-width: $break--l) {
+		padding: $space--l;
+	}
+}
+
+.l-cell__title {
+	@include flex(center null);
+}

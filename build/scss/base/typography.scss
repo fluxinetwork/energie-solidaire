@@ -162,6 +162,16 @@ li a {
 
 //============================================================ COMPOSANTS
 
+.t-title {
+	font-family: $font-h;
+	color: $c-main;
+}
+
+.t-subtitle {
+	@extend .h3;
+	font-weight: 400;
+}
+
 .t-miniH {
 	font-family: $font-h;
 	@extend .h5;

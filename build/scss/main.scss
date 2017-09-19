@@ -20,8 +20,10 @@
 
 @import "layouts/base/l-basics";
 @import "layouts/base/l-flexGrid";
+@import "layouts/l-cell";
 @import "layouts/l-duo";
 @import "layouts/l-dotSlider";
+@import "layouts/l-page";
 
 
 // COMPONENTS
@@ -40,7 +42,6 @@
 @import "components/c-projectCard";
 @import "components/c-accordeon";
 @import "components/c-focus";
-@import "components/c-lightCell";
 
 
 // BLOCKS

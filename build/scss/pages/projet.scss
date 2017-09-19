@@ -9,41 +9,6 @@
 
 //================================================================== INTRO
 
-.projet-header {
-	position: relative;
-	padding-bottom: 0;
-
-	&::before {
-		//content: '';
-		@include center(xy);
-		z-index: -1;
-		display: inline-block;
-		padding: 50px;
-		border: 5px solid $c-accent;
-		@extend .has-glow;
-		width: 700px;
-		height: 700px;
-		border-radius: 50%;
-	}
-}
-
-.projet-header__hgroup {
-	max-width: $contentW;
-	margin: 0 auto;
-}
-
-.projet-title {
-	font-family: $font-h;
-	text-align: center;
-	color: $c-main;
-}
-
-.projet-subtitle {
-	@extend .h3;
-	font-weight: 400;
-	text-align: center;
-}
-
 .projet-public {
 	text-align: center;
 	@extend .h5;
@@ -68,7 +33,7 @@
 	@include flex(center null, column);
 }
 
-.projet-soutien{
+.projet-soutien {
 	@extend .h0;
 	font-weight: 900;
 }
@@ -78,7 +43,7 @@
 }
 
 
-//================================================================= ASIDE
+//================================================================== ASIDE
 
 .aside-textLink {
 	@extend .h5;
@@ -90,7 +55,7 @@
 }
 
 
-//================================================================ CONTACT
+//============================== CONTACT
 
 
 .projet-contact__img {
@@ -129,7 +94,7 @@
 }
 
 
-//================================================================ LINKS
+//=============================== LINKS
 
 .projet-links {
 	align-items: flex-start;
@@ -153,7 +118,7 @@
 	}
 }
 
-//================================================================ SHARE
+//============================== SHARE
 
 .projet-shareBt {
 	width: 100%;
@@ -170,23 +135,5 @@
 
 	+ .projet-shareBt {
 		margin-top: $gutter/2;
-	}
-}
-
-
-//================================================================ MORE
-
-.projet-more {
-	position: relative;
-	background: url('../img/patterns/light-wormz.jpg');
-
-	&::before {
-		//content: '';
-		position: absolute;
-		top: 0;
-		width: 100%;
-		height: 30px;
-		background: linear-gradient(#fff, $c-light);
-		transform: translateY(-100%);
 	}
 }

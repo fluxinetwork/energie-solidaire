@@ -7,18 +7,18 @@ Template Name: Don ponctuel
 
 <?php $amount = 0; ?>
 	
-<header class="projet-header l-largeCell is-none">
+<header class="l-page__header is-none">
 	<div class="hp-decor hp-cloud hp-cloud-pos1 hp-cloud1"></div>
 	<div class="hp-decor hp-cloud hp-cloud-pos2 hp-cloud2"></div>
 
-	<hgroup class="projet-header__hgroup">
-		<h1 class="projet-title"><?php echo get_the_title(); ?></h1>
+	<hgroup class="l-page__header__hgroup">
+		<h1 class="t-title"><?php echo get_the_title(); ?></h1>
 	</hgroup>
 </header>
 
-<section class="l-col l-col--content l-innerRythm form">
+<section class="l-page__content">
 
-	<form action="" method="POST" id="don-ponctuel" role="form">
+	<form action="" method="POST" id="don-ponctuel" role="form" class="form">
 
 		<fieldset class="form-fieldset is-first js-first-fieldset transition">
 			<div class="form-sentence form-row">

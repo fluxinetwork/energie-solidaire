@@ -5,7 +5,7 @@ Template Name: Style Guide
 ?>
 <?php get_header(); ?>
 
-<section class="style-guide__section l-row l-vRythm">
+<section class="style-guide__section l-row l-topMargin">
 	<div class="l-col ">
 		<p class="style-guide__section-title">Headings</p>
 		<h1>Titre de niveau 1</h1>
@@ -16,7 +16,7 @@ Template Name: Style Guide
 		<p>Paragraphe : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra elementum pharetra. Nullam auctor maximus posuere. Duis viverra tellus id ipsum auctor varius. Sed leo sem, varius in aliquam quis, ornare et ante. In eget nulla aliquet metus aliquet pharetra non quis libero. Vivamus a justo est. Nam commodo ultricies neque, eget egestas nunc. Suspendisse potenti. Suspendisse congue nisi a augue iaculis hendrerit. Pellentesque volutpat non mauris quis suscipit.</p>
 	</div>
 </section>
-<section class="style-guide__section l-row l-vRythm">
+<section class="style-guide__section l-row l-topMargin">
 	<div class="l-col ">
 		<p class="style-guide__section-title">Colors</p>
 		<div class="style-guide__colors">
@@ -30,7 +30,7 @@ Template Name: Style Guide
 		</div>
 	</div>
 </section>
-<section class="style-guide__section l-row l-vRythm">
+<section class="style-guide__section l-row l-topMargin">
 	<div class="l-col ">
 		<p class="style-guide__section-title">Spaces</p>
 		<div class="style-guide__spaces">

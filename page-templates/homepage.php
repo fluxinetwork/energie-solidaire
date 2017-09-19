@@ -21,7 +21,7 @@ Template Name: Homepage
 	</div>
 </section>
 
-<section class="hp-video l-innerRythm">
+<section class="hp-video l-padding">
 	<div class="hp-video__title"><?php echo get_field('titre_video'); ?><br><span><?php echo get_field('sous-titre_video'); ?></span></div>
 	
 
@@ -56,22 +56,25 @@ Template Name: Homepage
 	</div>
 </section>
 
-<section class="l-vRythm mgnBottom--l">
-	<h2 class="c-sectionTitle l-col l-col--content"><?php echo get_field('titre_section_don'); ?></h2>
-
-	<div class="l-col l-col--content content l-vRythm hp-glowing-shape hp-glowing-shape--rect">
+<section class="l-page__section">
+	<div class="l-page__section__title">
+		<h2 class="c-sectionTitle"><?php echo get_field('titre_section_don'); ?></h2>
+	</div>
+	
+	<div class="l-page__section__content content hp-glowing-shape hp-glowing-shape--rect">
 		<h3><?php echo get_field('titre_texte_don_1'); ?></h3>
 		<p><?php echo get_field('texte_don_1'); ?></p>
 		<a href="<?php echo get_field('lien_don_1'); ?>" class="c-link">En savoir plus</a>
 		<img src="<?php bloginfo('template_url'); ?>/app/img/homepage/micro-don.png" class="hp-micro-don">
 	</div>
 
-	<div class="l-col l-col--content content l-vRythm hp-glowing-shape hp-glowing-shape--round">
+	<div class="l-page__section__content content hp-glowing-shape hp-glowing-shape--round">
 		<h3><?php echo get_field('titre_texte_don_2'); ?></h3>
 		<p><?php echo get_field('texte_don_2'); ?></p>
+		<a href="<?php echo get_field('lien_don_energie'); ?>" class="c-link">En savoir plus</a>
 	</div>
 
-	<div class="l-duo l-duo--respond mgnTop--m">
+	<div class="l-duo l-duo--respond l-jump">
 		<div class="l-duo__title is-none">
 			<span class="c-tiltedTitle">2 formes de don d'énergie</span>
 		</div>
@@ -96,16 +99,16 @@ Template Name: Homepage
 			</div>
 		</div>
 	</div>
-
-	<div class="l-col l-col--content l-jump">
-		<a href="<?php echo get_field('lien_don_energie'); ?>" class="c-link">En savoir plus</a>
-	</div>
 </section>
 
-<section class="l-innerRythm bg-wormz">
-	<h2 class="c-sectionTitle l-col l-col--content"><?php echo get_field('titre_projets'); ?></h2>
+<section class="l-page__more">
+	<div class="l-page__more__title">
+		<h2 class="c-sectionTitle"><?php echo get_field('titre_projets'); ?></h2>		
+	</div>
 	
-	<?php require_once( get_template_directory() . '/page-templates-parts/slider-projets.php' );?>
+	<div class="l-page__more__content">
+		<?php require_once( get_template_directory() . '/page-templates-parts/slider-projets.php' );?>		
+	</div>
 </section>
 
 <?php get_footer(); ?>

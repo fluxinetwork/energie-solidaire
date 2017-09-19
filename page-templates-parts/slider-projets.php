@@ -1,4 +1,4 @@
-<div class="l-dotSlider l-vRythm js-dotSlider">
+<div class="l-dotSlider js-dotSlider">
 	<div class="l-dotSlider__items js-dotSlider-items">
 
 		<?php

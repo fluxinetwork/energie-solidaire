@@ -10,7 +10,7 @@
 //==================================================================  CELL
 
 
-.l-cell {
+.l-basicCell {
 	padding: $space--s;
 	
 	@media screen and (min-width: $break--l) {
@@ -72,31 +72,6 @@ $break: $break--l;
 	&--narrow {
 		max-width: $contentW*$smaller;
 	}
-
-	&--aside {
-		@media screen and (min-width: $break) {
-			@include flex(center null);
-		}
-	}
-}
-
-.l-content__main {
-	@media screen and (min-width: $break) {
-		width: $contentW;
-		flex: none;
-		padding-right: $gutter;
-	}
-}
-
-.l-content__aside {
-	margin-top: $gutter*2;
-
-	@media screen and (min-width: $break) {
-		flex: 1 0 0;
-		padding-left: $gutter;
-		margin-top: 0;
-		max-width: $contentW/2;
-	}
 }
 
 
@@ -109,42 +84,84 @@ $break: $break--l;
 	@media screen and (min-width: $break--m) {
 		margin-top: $space--l;
 	}
-}
-
-.l-vRythm {
-	margin-top: $space--l*$bigger;
-
-	@media screen and (min-width: $break--m) {
-		margin-top: $space--xl*$bigger;
-	}
 
 	@media screen and (min-width: $break--l) {
-		margin-top: $space--xxl;
-	}
-
-	@media screen and (min-width: $break--xl) {
-		margin-top: $space--xxl*$bigger;
+		margin-top: $space--l*$bigger;
 	}
 }
 
-.l-innerRythm {
-	padding-top: $space--l*$bigger;
-	padding-bottom: $space--l*$bigger;
+$rythm-s: $space--l;
+$rythm-m: $space--xl;
+$rythm-l: $space--xxl;
+$rythm-xl: $space--xxl*$bigger;
+
+.l-topMargin {
+	margin-top: $rythm-s;
 
 	@media screen and (min-width: $break--m) {
-		padding-top: $space--xl*$bigger;
-		padding-bottom: $space--xl*$bigger;
+		margin-top: $rythm-m;
 	}
 
 	@media screen and (min-width: $break--l) {
-		padding-top: $space--xxl;
-		padding-bottom: $space--xxl;
+		margin-top: $rythm-l;
 	}
 
 	@media screen and (min-width: $break--xl) {
-		padding-top: $space--xxl*$bigger;
-		padding-bottom: $space--xxl*$bigger;
+		margin-top: $rythm-xl;
 	}
+}
+
+.l-bottomMargin {
+	margin-bottom: $rythm-s;
+
+	@media screen and (min-width: $break--m) {
+		margin-bottom: $rythm-m;
+	}
+
+	@media screen and (min-width: $break--l) {
+		margin-bottom: $rythm-l;
+	}
+
+	@media screen and (min-width: $break--xl) {
+		margin-bottom: $rythm-xl;
+	}
+}
+
+.l-topPadding {
+	padding-top: $rythm-s;
+
+	@media screen and (min-width: $break--m) {
+		padding-top: $rythm-m;
+	}
+
+	@media screen and (min-width: $break--l) {
+		padding-top: $rythm-l;
+	}
+
+	@media screen and (min-width: $break--xl) {
+		padding-top: $rythm-xl;
+	}
+}
+
+.l-bottomPadding {
+	padding-bottom: $rythm-s;
+
+	@media screen and (min-width: $break--m) {
+		padding-bottom: $rythm-m;
+	}
+
+	@media screen and (min-width: $break--l) {
+		padding-bottom: $rythm-l;
+	}
+
+	@media screen and (min-width: $break--xl) {
+		padding-bottom: $rythm-xl;
+	}
+}
+
+.l-padding {
+	@extend .l-topPadding;
+	@extend .l-bottomPadding;
 }
 
 

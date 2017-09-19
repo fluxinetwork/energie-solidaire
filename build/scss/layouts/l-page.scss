@@ -1,0 +1,126 @@
+/*======================================================================*\
+==========================================================================
+
+							LAYOUT PAGE
+
+==========================================================================
+\*======================================================================*/
+
+
+//================================================================  HEADER
+
+.l-page__header {
+	position: relative;
+	@extend .l-padding;
+	
+	&--wormz {
+		@extend .bg-wormz;
+	}
+
+	&--glowingShape {
+		// &::before {
+		// 	content: '';
+		// 	position: absolute;
+		// 	z-index: -1;
+		// 	display: inline-block;
+		// 	width: 275px;
+		// 	height: 275px;
+		// 	padding: 50px;
+		// 	top: 50%;
+		// 	left: 50%;
+		// 	border-radius: 50%;
+		// 	transform: translate(-50%, -50%);
+		// 	border: 5px solid $c-accent;
+		// 	@extend .has-glow;
+
+		// 	@media screen and (max-width: $break--m) {
+		// 		display: none
+		// 	}
+		// }
+
+		background: url('../img/patterns/rounds.jpg') bottom center repeat-x;
+	}
+}
+
+.l-page__header__hgroup {
+	text-align: center;
+	max-width: $contentW;
+	margin: 0 auto;
+
+	h2 {
+		margin-top: $space--m;
+	}
+}
+
+
+//================================================================  CONTENT
+
+$break: $break--l;
+
+.l-page__content {
+	@extend .l-col;
+	max-width: $contentW;
+	@extend .l-padding;
+
+	&--aside  {
+		@media screen and (min-width: $break) {
+			@include flex(center null);
+		}
+	}
+}
+
+.l-page__content__main {
+	@media screen and (min-width: $break) {
+		width: $contentW;
+		flex: none;
+		padding-right: $gutter;
+	}
+}
+
+.l-page__content__aside {
+	margin-top: $gutter*2;
+
+	@media screen and (min-width: $break) {
+		flex: 1 0 0;
+		padding-left: $gutter;
+		margin-top: 0;
+		max-width: $contentW/2;
+	}
+}
+
+
+//================================================================  SECTION
+
+.l-page__section {
+	@extend .l-topPadding;
+}
+
+.l-page__section__content {
+	@extend .l-col;
+	max-width: $contentW;
+	@extend .l-topMargin;
+}
+
+.l-page__section__jump {
+	@extend .l-col;
+	max-width: $contentW;
+	@extend .l-jump;
+}
+
+
+//===================================================================  MORE
+
+.l-page__more {
+	@extend .l-padding;
+	position: relative;
+	background: url('../img/patterns/light-wormz.jpg');
+}
+
+.l-page__more__title {
+	@extend .l-col;
+	max-width: $contentW;
+}
+
+.l-page__more__content {
+	@extend .l-jump;
+}

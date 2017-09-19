@@ -10,7 +10,7 @@ $break1: 760px; // report this breakpoint in nav.js
 $break2: 1250px;
 
 .header {
-	@extend .l-cell;
+	@extend .l-basicCell;
 	padding-bottom: 0;
 	@include flex(space-between center);
 }
