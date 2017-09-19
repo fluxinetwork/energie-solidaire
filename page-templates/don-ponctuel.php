@@ -20,7 +20,7 @@ Template Name: Don ponctuel
 
 	<form action="" method="POST" id="don-ponctuel" role="form">
 
-		<fieldset class="form-fieldset is-first js-first-fieldset">
+		<fieldset class="form-fieldset is-first js-first-fieldset transition">
 			<div class="form-sentence form-row">
 				<h1 class="form-sentence__txt">Je souhaite donner</h1>
 				<input class="form-sentence__input js-montant js-firstInput" type="number" name="amount" id="amount" min= "1" max="99999" maxlength="5" data-validation="required">
@@ -28,7 +28,7 @@ Template Name: Don ponctuel
 			</div>
 		</fieldset>
 
-		<span class="form-fieldset js-form-hide">
+		<div class="form-fieldset js-form-hide">
 
 			<fieldset class="form-fieldset">
 				<legend class="c-tiltedTitle">Contact et facturation</legend>
@@ -107,7 +107,7 @@ Template Name: Don ponctuel
 		  		<button type="submit" class="c-button c-button--cta js-amount">Faire un don</button>
 		  	</div>
 
-	  	</span>
+	  	</div>
 	</form>
 
 </section>

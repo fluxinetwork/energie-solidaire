@@ -748,9 +748,7 @@ function input_auto_validate() {
 
 function form_first_step() {
 
-	jQuery('.js-form-hide').slideToggle(0);
-
-	var isOpen = false;
+	jQuery('.js-form-hide').hide();
 
 	jQuery('.js-firstInput').on('keyup', function(e) {
 
@@ -762,37 +760,46 @@ function form_first_step() {
 
 	});
 
+	var isOpen = false;
 	var timer;
 
 	jQuery('.js-firstInput').on('change', function() {
 
 		inputField = jQuery(this);
-
 		clearTimeout(timer);
 
 		if ( inputField.val() < 1 ||  inputField.val() == '' ) {
 
-			( isOpen ) ? jQuery('.js-form-hide').slideToggle() : '';
-			isOpen = false;
-			input_class('error');
-			
-			timer = setTimeout(function() {
+			if ( isOpen ) {
+				
+				jQuery('.js-form-hide').slideUp('fast');
+				isOpen = false;
+				input_class('error');
+				//jQuery('.js-montant').focus();
 
-				jQuery('.js-first-fieldset').addClass('is-first');
+				timer = setTimeout(function() {
 
-			}, 250);
+					jQuery('.js-first-fieldset').addClass('is-first');
+
+				}, 250);
+
+			}
 
 		} else {
 
-			jQuery('.js-first-fieldset').removeClass('is-first');
+			if ( !isOpen ) {
 
-			timer = setTimeout(function() {
+				jQuery('.js-first-fieldset').removeClass('is-first');
 
-				( !isOpen ) ? jQuery('.js-form-hide').slideToggle() : '';
-				isOpen = true;
-				input_class('valid');
-	
-			}, 250);
+				timer = setTimeout(function() {
+
+					jQuery('.js-form-hide').slideDown('fast');
+					isOpen = true;
+					input_class('valid');
+
+				}, 200);
+
+			}
 			
 		}
 

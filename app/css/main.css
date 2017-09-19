@@ -57,7 +57,6 @@ Make background with :after and fancy shadow with :before
 .c-roundButton,
 .c-link::before,
 .c-projectCard__more,
-.form-fieldset,
 .form-row__afterInput::after,
 .creditCard-sliding,
 .creditCard-list,
@@ -2426,7 +2425,7 @@ form input[type="number"]::-webkit-inner-spin-button, form input[type="number"]:
 
 .hp-decor {
   position: absolute;
-  background-image: url("../img/hp-decor.png");
+  background-image: url("../img/homepage/hp-decor.png");
 }
 
 .hp-cloud {
