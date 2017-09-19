@@ -9,7 +9,7 @@
 
 			$args_projects = array(
 				'post_type' 	=> 'projets',
-				'post_status' 	=> 'publish',
+				'post_status' 	=> 'any', #temp
 				'post__not_in' 	=> array($exclude)
 			);
 			$query_projects = new WP_Query( $args_projects );

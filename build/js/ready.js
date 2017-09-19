@@ -21,17 +21,19 @@ var FOO = {
 
             // Form contact
             initFormContact();
+
+            dot_slider();
         }
     },    
     home: {
         init: function() {
             isHome = true; 
-            dot_slider();
+            //dot_slider();
         }
     },
     single_projets: {
         init: function() {
-            dot_slider();
+            //dot_slider();
         }
     },
     don: {

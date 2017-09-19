@@ -84,7 +84,6 @@ function input_auto_validate() {
 
 			} else {
 
-				console.log('putain');
 				input_class('error');
 
 			}
