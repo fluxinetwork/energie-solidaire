@@ -86,7 +86,7 @@ function credit_card() {
 
 			fullNumber += jQuery(this).val();
 
-		})
+		});
 
 		jQuery('.js-number-stripe').val(fullNumber);
 

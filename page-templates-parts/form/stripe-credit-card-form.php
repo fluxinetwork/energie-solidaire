@@ -2,7 +2,7 @@
 	<div class="creditCard">
 		<div class="creditCard-row">
 			<label class="creditCard-label">Numéro de carte<span class="i-required">•</span></label>
-			<input class="js-number-stripe js-check" type="hidden" data-stripe="number" min="1" max="9999999999999999" maxlength="16">
+			<input class="js-number-stripe js-check" type="number" data-stripe="number" min="1" max="9999999999999999" maxlength="16">
 			<div class="creditCard-number">
 				<input class="creditCard-input js-input js-card-number" type="number" max="9999" maxlength="4">
 				<input class="creditCard-input js-input js-card-number" type="number" max="9999" maxlength="4">

@@ -1083,7 +1083,7 @@ li a:hover {
   }
 }
 .l-col--narrow {
-  max-width: 490.0px;
+  max-width: 490px;
 }
 @media screen and (min-width: 960px) {
   .l-col--aside {

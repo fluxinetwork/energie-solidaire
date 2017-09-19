@@ -46,7 +46,7 @@ var FOO = {
             form_first_step();
             //input_auto_validate();
             //input_number_auto_blur();
-            //credit_card();
+            credit_card();
         }
     },
     form_contact: {

@@ -85,16 +85,16 @@ Template Name: Don ponctuel
 				
 				<?php
 				
-				//if ( $isMobile ) {
+				if ( $isMobile ) {
 
 					require_once( get_template_directory() . '/page-templates-parts/form/basic-stripe-form.php' );
 
-				/*} else {
+				} else {
 
 					require_once( get_template_directory() . '/page-templates-parts/form/stripe-credit-card-form.php' );
 
 				}
-				*/
+				
 				?>
 		  	</fieldset>
 
