@@ -21,6 +21,8 @@ if ( $vars ) :
     $date_paiement = $vars[7];
     $num_mode_paiement = $vars[8];
     $mode_paiement = $vars[9];
+    $nom_contact = $vars[10];
+    $prenom_contact = $vars[11];
 endif;
 
 if($mode_paiement=='cb'):
@@ -45,6 +47,7 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
               Paris, le '.$date_paiement.'<br><br>
 
               Destinataire :<br>
+              '.$prenom_contact.' '.$nom_contact.'<br>
               '.$nom_structure_contact.'<br>
               '.$adresse.' '.$complement_adresse.'<br>
               '.$code_postal.', '.$ville.'

@@ -19,12 +19,15 @@ function fluxi_manage_paiement(){
 	// Verify nonce & toky_toky
 	if ( isset( $_POST['fluxi_manage_paiement_nonce_field'] ) && wp_verify_nonce( $_POST['fluxi_manage_paiement_nonce_field'], 'fluxi_manage_paiement' ) && is_numeric($toky_toky) && $toky_toky == 698413581217 ) :
 		
-		if ( !empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['token_s']) && !empty($_POST['amount']) ):
+		if ( !empty($_POST['name']) && !empty($_POST['prenom']) && !empty($_POST['civilite']) && !empty($_POST['email']) && !empty($_POST['token_s']) && !empty($_POST['amount']) ):
 
 			require (get_template_directory() . '/app/inc/forms/Stripe.php');
 			
 			$mail_contact = filter_var( $_POST['email'], FILTER_SANITIZE_EMAIL);			
-			$nom_structure_contact = filter_var( $_POST['name'], FILTER_SANITIZE_STRING);
+			$nom_contact = filter_var( $_POST['name'], FILTER_SANITIZE_STRING);
+			$prenom_contact = filter_var( $_POST['prenom'], FILTER_SANITIZE_STRING);
+			$civilite_contact = filter_var( $_POST['civilite'], FILTER_SANITIZE_STRING);
+			$nom_structure_contact = filter_var( $_POST['name_structure'], FILTER_SANITIZE_STRING);
 			$adresse = filter_var( $_POST['adresse'], FILTER_SANITIZE_STRING);
 			$complement_adresse = filter_var( $_POST['complement_adresse'], FILTER_SANITIZE_STRING);
 			$ville = filter_var( $_POST['ville'], FILTER_SANITIZE_STRING);
@@ -67,13 +70,16 @@ function fluxi_manage_paiement(){
 						'montant' => $montant,
 						'mode_paiement'	=> 'cb',
 						'date_paiement'	=> $date_paiement,
-						'mail_contact' => $mail_contact,
+						'mail_contact' 	=> $mail_contact,
+						'nom'			=> $nom_contact,
+						'prenom'		=> $prenom_contact,
+						'civilite'		=> $civilite_contact,
 						'nom_structure_contact' => $nom_structure_contact,
-						'adresse' 	=> $adresse,
+						'adresse' 				=> $adresse,
 						'complement_adresse' 	=> $complement_adresse,
-						'ville' 	=> $ville,
-						'code_postal' 	=> $code_postal,
-						'telephone' => $telephone						
+						'ville' 				=> $ville,
+						'code_postal' 			=> $code_postal,
+						'telephone' 			=> $telephone						
 					);
 
 					$last4 = 'XXXX XXXX XXXX ' . $charge->source->last4;
@@ -105,8 +111,8 @@ function fluxi_manage_paiement(){
 					$datas_topdon = array(
 					   'key' => "e8Gpe5G!",
 					   'civilite' => 'M',
-					   'nom' => 'Rolland',
-					   'prenom' => 'Yann',
+					   'nom' => $nom_contact,
+					   'prenom' => $prenom_contact,
 					   'email' => $mail_contact,
 					   'adresse1' => $adresse,
 					   'adresse2' => $complement_adresse,
@@ -125,7 +131,7 @@ function fluxi_manage_paiement(){
 					   'type_paiement' => 'CBM',
 					   'recurrence' => 0,
 					   //'date_validite' => 10,
-					   'id_mem' => '1234',
+					   //'id_mem' => '1234',
 				    );
 
 				    $postdata_topdon = http_build_query($datas_topdon);
@@ -143,10 +149,10 @@ function fluxi_manage_paiement(){
 			        
 
 					// Notification mail admin
-					/*notify_by_mail ( array(CONTACT_ENERCOOP), 'Les Amis d\'Enercoop <' . CONTACT_ENERCOOP . '>','Nouveau don',false,'<h2>Nouveau don de '.$montant.'€</h2><p>' . $nom_structure_contact . ' a donné '.$montant.'€ le '.$today.'.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder au reçu</a></p>');
+					/*notify_by_mail ( array(CONTACT_ENERCOOP), 'Les Amis d\'Enercoop <' . CONTACT_ENERCOOP . '>','Nouveau don',false,'<h2>Nouveau don de '.$montant.'€</h2><p>' . $prenom_contact . ' ' . $nom_contact . ' a donné '.$montant.'€ le '.$today.'.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder au reçu</a></p>');
 
 					// Notification mail user
-					$mail_paiement = array(get_footer_mail(), $montant, $nom_structure_contact, $adresse, $complement_adresse, $code_postal, $ville, $today, $last4, 'cb' );
+					$mail_paiement = array(get_footer_mail(), $montant, $nom_structure_contact, $adresse, $complement_adresse, $code_postal, $ville, $today, $last4, 'cb', $nom_contact, $prenom_contact );
 					notify_by_mail (array($mail_contact),'Les Amis d\'Enercoop <' . CONTACT_ENERCOOP . '>', 'Confirmation de don', true, get_template_directory() . '/app/inc/mails/confirmation-paiement.php', $mail_paiement);	*/			
 
 					$message_response = 'Votre don a été pris en compte. Vous allez recevoir une confirmation par email.';
