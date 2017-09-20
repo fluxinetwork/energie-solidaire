@@ -79,6 +79,7 @@
 		& + .form-row__afterInput::before {
 			background-color: $c-error;
 			opacity: 1;
+			@extend .anim-flash;
 		}
 	}
 

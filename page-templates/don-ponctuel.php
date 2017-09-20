@@ -68,7 +68,7 @@ Template Name: Don ponctuel
 
 				<div class="form-row">
 					<label for="complement_adresse" class="form-row__label">Complément d'adresse</label>
-			  		<input class="form-row__input" type="text" name="complement_adresse" id="complement_adresse" required>
+			  		<input class="form-row__input" type="text" name="complement_adresse" id="complement_adresse">
 			  		<div class="form-row__afterInput"></div>
 			  	</div>
 				

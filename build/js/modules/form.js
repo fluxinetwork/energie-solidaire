@@ -145,12 +145,18 @@ function input_auto_validate() {
 
 					}
 
+				} else {
+
+					input_class('valid');
+
 				}
 
 
 			} else { // Champ vide
 
 				input_class('error');
+				var label = $.parseHTML( inputField.prev('label').html() )[0].data;
+				notify('Le champ "'+label+'" est obligatoire', 'error');
 
 			}
 
