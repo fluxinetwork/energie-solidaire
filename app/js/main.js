@@ -548,10 +548,9 @@ function credit_card() {
 			jQuery(this).addClass('has-error').removeClass('is-valid');
 
 		}
-	})
+	});
 
 	jQuery('.js-card-number').on('blur', function() {
-
 		var fullNumber = '';
 
 		jQuery('.js-card-number').each(function() {
@@ -561,8 +560,7 @@ function credit_card() {
 		});
 
 		jQuery('.js-number-stripe').val(fullNumber);
-
-	})
+	});
 
 }
 
@@ -578,7 +576,7 @@ function check_card() {
 
 		}
 
-	})
+	});
 
 	if ( nbValid == jQuery('.js-check').length ) {
 
