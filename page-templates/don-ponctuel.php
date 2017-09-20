@@ -33,6 +33,14 @@ Template Name: Don ponctuel
 			<fieldset class="form-fieldset">
 				<legend class="c-tiltedTitle">Contact et facturation</legend>
 
+ 				<div class="form-row">					
+			    	<input type="radio" name="civilite" id="civilite_1" value="Monsieur" required>
+			    	<label for="Monsieur" class="form-row__label">Monsieur</label>
+			    	<input type="radio" name="civilite" id="civilite_2" value="Madame">
+			    	<label for="Madame" class="form-row__label">Madame</label>
+			    	<div class="form-row__afterInput"></div>
+			    </div>
+
 				<div class="form-row">
 					<label for="name" class="form-row__label">Nom<span class="i-required">•</span></label>
 			    	<input class="form-row__input" type="text" name="name" id="name" required>
@@ -43,16 +51,7 @@ Template Name: Don ponctuel
 					<label for="prenom" class="form-row__label">Prénom<span class="i-required">•</span></label>
 			    	<input class="form-row__input" type="text" name="prenom" id="prenom" required>
 			    	<div class="form-row__afterInput"></div>
-			    </div>
-
-			    <div class="form-row">
-					<p class="form-row__label">Civilité<span class="i-required">•</span></p>
-			    	<input type="radio" name="civilite" id="civilite_1" value="Monsieur" required>
-			    	<label for="Monsieur" class="form-row__label">Monsieur</label>
-			    	<input type="radio" name="civilite" id="civilite_2" value="Madame">
-			    	<label for="Madame" class="form-row__label">Madame</label>
-			    	<div class="form-row__afterInput"></div>
-			    </div>
+			    </div>			   
 
 				<div class="form-row">
 					<label for="name_structure" class="form-row__label">Raison social</label>
