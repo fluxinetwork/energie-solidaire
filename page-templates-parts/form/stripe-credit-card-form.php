@@ -5,10 +5,10 @@
 			<label class="creditCard-label">Numéro de carte<span class="i-required">•</span></label>
 			<input class="js-number-stripe js-check" type="hidden" data-stripe="number" min="1" max="9999999999999999" maxlength="16">
 			<div class="creditCard-number">
-				<input class="creditCard-input js-input js-card-number" type="text" maxlength="4" max="9999">
-				<input class="creditCard-input js-input js-card-number" type="text" maxlength="4" max="9999">
-				<input class="creditCard-input js-input js-card-number" type="text" maxlength="4" max="9999">
-				<input class="creditCard-input js-input js-card-number" type="text" maxlength="4" max="9999">
+				<input class="creditCard-input js-input js-card-number" type="number" maxlength="4" max="9999" required>
+				<input class="creditCard-input js-input js-card-number" type="number" maxlength="4" max="9999" required>
+				<input class="creditCard-input js-input js-card-number" type="number" maxlength="4" max="9999" required>
+				<input class="creditCard-input js-input js-card-number" type="number" maxlength="4" max="9999" required>
 			</div>
 		</div>
 
@@ -34,7 +34,7 @@
 
 			<div class="creditCard-security">
 				<label class="creditCard-label">Code sécurité<span class="i-required">•</span></label>
-				<input class="creditCard-input js-cvv js-input js-check" type="text" maxlength="3" max="999" data-stripe="cvc">
+				<input class="creditCard-input js-cvv js-input js-check" type="number" maxlength="3" max="999" data-stripe="cvc" required>
 			</div>
 		</div>
 		
