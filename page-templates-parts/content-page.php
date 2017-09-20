@@ -6,7 +6,7 @@
 
 <article class="l-page">
 
-	<header class="l-page__header">
+	<header class="l-page__header l-page__header--glowingShape">
 		<hgroup class="l-page__header__hgroup">
 			<h1 class="t-title"><?php echo get_the_title(); ?></h1>
 		</hgroup>

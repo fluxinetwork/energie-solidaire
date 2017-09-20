@@ -45,7 +45,7 @@
 	if ( is_page_template( 'page-templates/actions-soutenues.php' ) ) {
 
 		$output = '<div class="l-jump l-center">';
-		$output .= '<a href='. get_permalink() .'" class="c-button c-button--ghost"><i class="fa fa-plus c-button__icon"></i>En savoir plus</a>'; 
+		$output .= '<a href="'. get_permalink() .'" class="c-button c-button--ghost"><i class="fa fa-plus c-button__icon"></i>En savoir plus</a>'; 
 		$output .= '</div>';
 
 		echo $output;

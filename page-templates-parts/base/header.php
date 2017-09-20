@@ -1,5 +1,5 @@
 <header id="header" class="header" role="header">
-	<a  href="<?php bloginfo('url'); ?>" class="header__logo">
+	<a  href="<?php bloginfo('url'); ?>//accueil" class="header__logo">
 		<div class="header__logo__content">
 			<img src="<?php bloginfo('template_url'); ?>/app/img/logo.svg">
 		</div>

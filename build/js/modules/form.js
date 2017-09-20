@@ -28,7 +28,7 @@ function input_auto_validate() {
 
 			if ( /\S/.test(value) ) { // not empty and not just whitespace
 
-				var typeValidation = inputField.attr('type');
+				var typeValidation = inputField.data('validation');
 
 				if ( typeValidation == 'number' ) {
 
@@ -73,7 +73,7 @@ function input_auto_validate() {
 
 									}
 
-								} else {
+								} else { 
 
 									input_class('error');
 
@@ -83,19 +83,16 @@ function input_auto_validate() {
 
 						}
 
-					} else {
+					} else { // Pas d'@
 
 						input_class('error');
 
 					}
 
-				} else {
-
-					input_class('valid');
-
 				}
 
-			} else {
+
+			} else { // Champ vide
 
 				input_class('error');
 
@@ -136,7 +133,6 @@ function form_first_step() {
 				jQuery('.js-form-hide').slideUp('fast');
 				isOpen = false;
 				input_class('error');
-				//jQuery('.js-montant').focus();
 
 				timer = setTimeout(function() {
 
