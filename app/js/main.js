@@ -89,8 +89,9 @@ var FOO = {
         init: function() {
             jQuery('.js-montant').focus();
             form_first_step();
-            //input_auto_validate();
-            //input_number_auto_blur();
+            input_auto_validate();
+            input_number_auto_blur();
+            input_number_limit();
             credit_card();
         }
     },
@@ -320,6 +321,66 @@ if (!Modernizr.flexbox) {
 /*======================================================================*\
 ==========================================================================
 
+                              JS NOTIFY
+
+==========================================================================
+\*======================================================================*/
+
+var timer;
+
+function notify(message, color) {
+
+	if ( color == 'error' ) {
+
+		jQuery('.js-baseNotify').addClass('error');
+
+	} else if ( color == 'valid' ) {
+
+		jQuery('.js-baseNotify').addClass('valid');
+
+	} else {
+
+		jQuery('.js-baseNotify').removeClass('error valid');
+
+	}
+
+	jQuery('.js-baseNotify').addClass('is-open').find('.js-baseNotify-message').html(message);
+
+	clearTimeout(timer);
+	var delay = Math.round(message.length*0.15)*1000;
+
+	timer = setTimeout(function() {
+
+	    jQuery('.js-baseNotify').removeClass('is-open');
+
+	    timer = setTimeout(function() {
+
+	        jQuery('.js-baseNotify').removeClass('error valid');
+
+	    }, 400);
+
+	}, delay);
+
+}
+
+jQuery('.js-baseNotify-close').on('click', function(){
+
+	jQuery('.js-baseNotify').removeClass('is-open');
+
+	clearTimeout(timer);
+
+	timer = setTimeout(function() {
+
+	    jQuery('.js-baseNotify').removeClass('error valid');
+
+	}, 400);
+
+})
+
+
+/*======================================================================*\
+==========================================================================
+
                               JS TOOL SCROLL TO
 
 ==========================================================================
@@ -524,32 +585,6 @@ function credit_card() {
 
 	});
 
-	jQuery('.js-input').on('keyup', function() {
-		var input = jQuery(this);
-
-		if ( input.val().length == input.attr('maxlength') ) {
-
-			if ( input.hasClass('js-card-number') ) {
-
-				input.next().focus();
-
-			} else {
-
-				input.blur();
-
-			}
-
-			jQuery(this).removeClass('has-error').addClass('is-valid');
-
-			check_card();
-
-		} else {
-
-			jQuery(this).addClass('has-error').removeClass('is-valid');
-
-		}
-	});
-
 	jQuery('.js-card-number').on('blur', function() {
 		var fullNumber = '';
 
@@ -661,15 +696,18 @@ function dot_slider() {
 
 var inputField;
 
-function input_number_auto_blur() {
+function input_number_limit() {
 
 	jQuery('input[type="number').on('keyup', function() {
 
 		inputField = jQuery(this);
+		var value = inputField.val();
+		var max = inputField.data('length');
 
-		if ( inputField.val().length == inputField.attr('maxlength') ) {
+		if (  value.length > max ) {
 
-			inputField.blur().parent().next().find('input').focus();
+			inputField.val( value.substring(0, max) );
+			notify('Ce champ ne doit pas contenir plus de '+max+' caractères ', 'error');
 
 		}
 
@@ -677,9 +715,39 @@ function input_number_auto_blur() {
 
 }
 
+function input_number_auto_blur() {
+
+	jQuery('input[type="number').on('keyup', function(e) {
+
+		var authorisedKeyArray = [37, 38, 39, 40];
+
+		if ( authorisedKeyArray.indexOf( e.keyCode ) == -1 ) {
+
+			inputField = jQuery(this);
+
+			if ( inputField.val().length == inputField.data('length') ) {
+
+				if ( inputField.next().is('input') ) {
+
+					inputField.blur().next().focus();
+
+				} else {
+
+					inputField.blur().parent().next('.form-row').find('input').focus();
+
+				}
+
+			}
+
+		} 
+
+	});
+
+}
+
 function input_auto_validate() {
 
-	jQuery('[data-validation]').on('blur', function() {
+	jQuery('[required]').on('blur', function() {
 
 		inputField = jQuery(this);
 		var value = inputField.val();
@@ -689,12 +757,22 @@ function input_auto_validate() {
 
 			if ( /\S/.test(value) ) { // not empty and not just whitespace
 
-				var typeValidation = inputField.data('validation');
+				var typeValidation = inputField.attr('type');
 
 				if ( typeValidation == 'number' ) {
 
-					( inputField.val().length == inputField.attr('maxlength') )  ? input_class('valid') : input_class('error');
+					var max = inputField.data('length')
 
+					if ( value.length ==  max )  {
+
+						input_class('valid');
+
+					} else {
+
+						input_class('error');
+						notify('Ce champ doit contenir '+max+' caractères ', 'error');
+
+					}
 				} else if ( typeValidation == 'email' ) {
 
 					if ( value.indexOf('@') !== -1 )  { // has @
@@ -706,6 +784,7 @@ function input_auto_validate() {
 							if ( value.indexOf( forbiddenCharArray[i] ) != -1 ) { 
 
 								input_class('error');
+								notify('Votre email ne doit pas contenir de caractères spéciaux', 'error');
 								break;
 								
 							} else if ( i == forbiddenCharArray.length-1 ) { // pas de caracteres speciaux
@@ -720,23 +799,34 @@ function input_auto_validate() {
 
 										if ( lastPiece.length > 1 ) { // domain extension has more than 1 character
 
-											( lastPiece.indexOf('xn--') == -1 ) ? input_class('valid') : input_class('error'); // has unicode encoded character
+											if ( lastPiece.indexOf('xn--') == -1 ) { // has no unicode encoded character
+
+												input_class('valid');
+
+											} else {
+
+												input_class('error');
+												notify('Votre email ne doit pas contenir de caractères accentués', 'error');
+											}
 
 										} else {
 
 											input_class('error');
+											notify('Un email valide doit contenir le symbole <i class="fa fa-at"></i>', 'error');
 
 										}
 
 									} else {
 
 										input_class('error');
+										notify('Votre email ne doit pas finir par un point', 'error');
 
 									}
 
 								} else { 
 
 									input_class('error');
+									notify('La fin de votre email ne semble pas valide', 'error');
 
 								}
 
@@ -747,6 +837,7 @@ function input_auto_validate() {
 					} else { // Pas d'@
 
 						input_class('error');
+						notify('Votre email doit contenir le symbole <i class="fa fa-at"></i>', 'error');
 
 					}
 

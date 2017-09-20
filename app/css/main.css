@@ -853,16 +853,16 @@ h2 {
   margin-top: 2.2em;
 }
 
-h3, .h3, .t-subtitle, .cb-notify__message, .c-focus__title, .creditCard-number .creditCard-input, .creditCard-number .creditCard-list__item, .projet-porteur {
+h3, .h3, .t-subtitle, .c-focus__title, .creditCard-number .creditCard-input, .creditCard-number .creditCard-list__item, .projet-porteur {
   font-size: 20px;
 }
 @media screen and (min-width: 768px) {
-  h3, .h3, .t-subtitle, .cb-notify__message, .c-focus__title, .creditCard-number .creditCard-input, .creditCard-number .creditCard-list__item, .projet-porteur {
+  h3, .h3, .t-subtitle, .c-focus__title, .creditCard-number .creditCard-input, .creditCard-number .creditCard-list__item, .projet-porteur {
     font-size: 23px;
   }
 }
 @media screen and (min-width: 960px) {
-  h3, .h3, .t-subtitle, .cb-notify__message, .c-focus__title, .creditCard-number .creditCard-input, .creditCard-number .creditCard-list__item, .projet-porteur {
+  h3, .h3, .t-subtitle, .c-focus__title, .creditCard-number .creditCard-input, .creditCard-number .creditCard-list__item, .projet-porteur {
     font-size: 25px;
   }
 }
@@ -871,16 +871,16 @@ h3 {
   margin-top: 1.7em;
 }
 
-h4, .h4, .cb-notify__btn, .c-tiltedTitle, .form-row__input, .form-notify span, .hp-video__title {
+h4, .h4, .cb-notify__message, .c-tiltedTitle, .form-row__input, .form-notify span, .hp-video__title {
   font-size: 16px;
 }
 @media screen and (min-width: 768px) {
-  h4, .h4, .cb-notify__btn, .c-tiltedTitle, .form-row__input, .form-notify span, .hp-video__title {
+  h4, .h4, .cb-notify__message, .c-tiltedTitle, .form-row__input, .form-notify span, .hp-video__title {
     font-size: 18px;
   }
 }
 @media screen and (min-width: 960px) {
-  h4, .h4, .cb-notify__btn, .c-tiltedTitle, .form-row__input, .form-notify span, .hp-video__title {
+  h4, .h4, .cb-notify__message, .c-tiltedTitle, .form-row__input, .form-notify span, .hp-video__title {
     font-size: 20px;
     line-height: 1.5;
   }
@@ -1234,7 +1234,7 @@ li a:hover {
   }
 }
 
-.l-cell, .overlay__bt, .cb-notify__content, .c-projectCard, .form-notify span, .form-submit, .creditCard-list {
+.l-cell, .overlay__bt, .c-projectCard, .form-notify span, .form-submit, .creditCard-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1244,7 +1244,7 @@ li a:hover {
   border-radius: 3px;
   border: 0;
 }
-.l-cell + .l-cell, .overlay__bt + .l-cell, .cb-notify__content + .l-cell, .c-projectCard + .l-cell, .form-notify span + .l-cell, .form-submit + .l-cell, .creditCard-list + .l-cell, .l-cell + .overlay__bt, .overlay__bt + .overlay__bt, .cb-notify__content + .overlay__bt, .c-projectCard + .overlay__bt, .form-notify span + .overlay__bt, .form-submit + .overlay__bt, .creditCard-list + .overlay__bt, .l-cell + .cb-notify__content, .overlay__bt + .cb-notify__content, .cb-notify__content + .cb-notify__content, .c-projectCard + .cb-notify__content, .form-notify span + .cb-notify__content, .form-submit + .cb-notify__content, .creditCard-list + .cb-notify__content, .l-cell + .c-projectCard, .overlay__bt + .c-projectCard, .cb-notify__content + .c-projectCard, .c-projectCard + .c-projectCard, .form-notify span + .c-projectCard, .form-submit + .c-projectCard, .creditCard-list + .c-projectCard, .form-notify .l-cell + span, .form-notify .overlay__bt + span, .form-notify .cb-notify__content + span, .form-notify .c-projectCard + span, .form-notify span + span, .form-notify .form-submit + span, .form-notify .creditCard-list + span, .l-cell + .form-submit, .overlay__bt + .form-submit, .cb-notify__content + .form-submit, .c-projectCard + .form-submit, .form-notify span + .form-submit, .form-submit + .form-submit, .creditCard-list + .form-submit, .l-cell + .creditCard-list, .overlay__bt + .creditCard-list, .cb-notify__content + .creditCard-list, .c-projectCard + .creditCard-list, .form-notify span + .creditCard-list, .form-submit + .creditCard-list, .creditCard-list + .creditCard-list {
+.l-cell + .l-cell, .overlay__bt + .l-cell, .c-projectCard + .l-cell, .form-notify span + .l-cell, .form-submit + .l-cell, .creditCard-list + .l-cell, .l-cell + .overlay__bt, .overlay__bt + .overlay__bt, .c-projectCard + .overlay__bt, .form-notify span + .overlay__bt, .form-submit + .overlay__bt, .creditCard-list + .overlay__bt, .l-cell + .c-projectCard, .overlay__bt + .c-projectCard, .c-projectCard + .c-projectCard, .form-notify span + .c-projectCard, .form-submit + .c-projectCard, .creditCard-list + .c-projectCard, .form-notify .l-cell + span, .form-notify .overlay__bt + span, .form-notify .c-projectCard + span, .form-notify span + span, .form-notify .form-submit + span, .form-notify .creditCard-list + span, .l-cell + .form-submit, .overlay__bt + .form-submit, .c-projectCard + .form-submit, .form-notify span + .form-submit, .form-submit + .form-submit, .creditCard-list + .form-submit, .l-cell + .creditCard-list, .overlay__bt + .creditCard-list, .c-projectCard + .creditCard-list, .form-notify span + .creditCard-list, .form-submit + .creditCard-list, .creditCard-list + .creditCard-list {
   margin-top: 40px;
 }
 .l-cell--bg {
@@ -1259,7 +1259,7 @@ li a:hover {
   width: 100%;
 }
 @media screen and (min-width: 960px) {
-  .l-cell, .overlay__bt, .cb-notify__content, .c-projectCard, .form-notify span, .form-submit, .creditCard-list {
+  .l-cell, .overlay__bt, .c-projectCard, .form-notify span, .form-submit, .creditCard-list {
     padding: 40px;
   }
 }
@@ -1547,6 +1547,7 @@ li a:hover {
 \*======================================================================*/
 .cb-notify {
   position: fixed;
+  width: 100%;
   z-index: 1000;
   left: 0;
   bottom: 0;
@@ -1560,8 +1561,15 @@ li a:hover {
 .cb-notify.is-open {
   transform: translateY(0%);
 }
+.cb-notify.error {
+  background-color: #F13636;
+}
+.cb-notify.valid {
+  background-color: #00C15F;
+}
 
 .cb-notify__content {
+  padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1570,9 +1578,11 @@ li a:hover {
 .cb-notify__message {
   font-family: gilroy, sans-serif;
   color: #fff;
+  margin-right: 24px;
 }
 
 .cb-notify__btn {
+  flex: none;
   cursor: pointer;
   flex: none;
   color: #fff;

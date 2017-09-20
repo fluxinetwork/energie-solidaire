@@ -23,7 +23,7 @@ Template Name: Don ponctuel
 		<fieldset class="form-fieldset is-first js-first-fieldset transition">
 			<div class="form-sentence form-row">
 				<h1 class="form-sentence__txt">Je souhaite donner</h1>
-				<input class="form-sentence__input js-montant js-firstInput" type="number" name="amount" id="amount" min="1" max="99999" maxlength="5" required>
+				<input class="form-sentence__input js-montant js-firstInput" type="number" name="amount" id="amount" min="1" max="99999" data-length="5" required>
 				<span class="form-sentence__txt">€</span>
 			</div>
 		</fieldset>
@@ -33,25 +33,26 @@ Template Name: Don ponctuel
 			<fieldset class="form-fieldset">
 				<legend class="c-tiltedTitle">Contact et facturation</legend>
 
- 				<div class="form-row">					
+ 				<div class="form-row t-align--c mgnBottom--s">		
 			    	<input type="radio" name="civilite" id="civilite_1" value="Monsieur" required>
-			    	<label for="Monsieur" class="form-row__label">Monsieur</label>
+			    	<label for="Monsieur" class="form-row__label mgnRight--m">Monsieur</label>		
 			    	<input type="radio" name="civilite" id="civilite_2" value="Madame">
-			    	<label for="Madame" class="form-row__label">Madame</label>
-			    	<div class="form-row__afterInput"></div>
+			    	<label for="Madame" class="form-row__label">Madame</label>			
 			    </div>
+				
+				<div class="form-row form-row--flex">
+					<div class="form-row">
+						<label for="name" class="form-row__label">Nom<span class="i-required">•</span></label>
+				    	<input class="form-row__input" type="text" name="name" id="name" required>
+				    	<div class="form-row__afterInput"></div>
+				    </div>
 
-				<div class="form-row">
-					<label for="name" class="form-row__label">Nom<span class="i-required">•</span></label>
-			    	<input class="form-row__input" type="text" name="name" id="name" required>
-			    	<div class="form-row__afterInput"></div>
-			    </div>
-
-			    <div class="form-row">
-					<label for="prenom" class="form-row__label">Prénom<span class="i-required">•</span></label>
-			    	<input class="form-row__input" type="text" name="prenom" id="prenom" required>
-			    	<div class="form-row__afterInput"></div>
-			    </div>			   
+				    <div class="form-row">
+						<label for="prenom" class="form-row__label">Prénom<span class="i-required">•</span></label>
+				    	<input class="form-row__input" type="text" name="prenom" id="prenom" required>
+				    	<div class="form-row__afterInput"></div>
+				    </div>		
+			    </div>	   
 
 				<div class="form-row">
 					<label for="name_structure" class="form-row__label">Raison social</label>
@@ -74,7 +75,7 @@ Template Name: Don ponctuel
 				<div class="form-row form-row--flex">
 					<div class="form-row form-row--asy">
 						<label for="code_postal" class="form-row__label">Code postal<span class="i-required">•</span></label>
-				  		<input class="form-row__input" type="number" name="code_postal" id="code_postal" maxlength="5" data-validation="number" required>
+				  		<input class="form-row__input" type="number" name="code_postal" id="code_postal" data-length="5" required>
 				  		<div class="form-row__afterInput"></div>
 				  	</div>
 			
@@ -88,7 +89,7 @@ Template Name: Don ponctuel
 				<div class="form-row form-row--flex">
 					<div class="form-row form-row--asy">
 						<label for="telephone" class="form-row__label">Téléphone<span class="i-required">•</span></label>
-						<input class="form-row__input" type="number" maxlength="10" name="telephone" id="telephone" data-validation="number" required>
+						<input class="form-row__input" type="number" data-length="10" name="telephone" id="telephone" required>
 						<div class="form-row__afterInput"></div>
 					</div>
 

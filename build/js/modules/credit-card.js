@@ -52,32 +52,6 @@ function credit_card() {
 
 	});
 
-	jQuery('.js-input').on('keyup', function() {
-		var input = jQuery(this);
-
-		if ( input.val().length == input.attr('maxlength') ) {
-
-			if ( input.hasClass('js-card-number') ) {
-
-				input.next().focus();
-
-			} else {
-
-				input.blur();
-
-			}
-
-			jQuery(this).removeClass('has-error').addClass('is-valid');
-
-			check_card();
-
-		} else {
-
-			jQuery(this).addClass('has-error').removeClass('is-valid');
-
-		}
-	});
-
 	jQuery('.js-card-number').on('blur', function() {
 		var fullNumber = '';
 
