@@ -32,7 +32,7 @@ function fluxi_contact_form(){
 					);
 					
 					// Notification admin					
-					notify_by_mail (array(CONTACT_GENERAL),'Énergie Solidaire <' . CONTACT_GENERAL . '>', 'Nouveau message de contact', false, '<h2>Demande d\'informations via formulaire</h2>'.	
+					notify_by_mail (array(CONTACT_ENERCOOP),'Énergie Solidaire <' . CONTACT_ENERCOOP . '>', 'Nouveau message de contact', false, '<h2>Demande d\'informations via formulaire</h2>'.	
 						'<p><strong>Nom et prénom :</strong><br> ' . $metas_tab['nom_prenom_contact'] . '</p>'.
 						'<p><strong>Email :</strong><br> ' . $metas_tab['mail_contact'] . '</p>'.					
 						'<p><strong>Texte :</strong><br> ' . nl2br($metas_tab['texte_contact']) . '</p>');
