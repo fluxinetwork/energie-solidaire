@@ -89,7 +89,7 @@ Template Name: Don ponctuel
 				<div class="form-row form-row--flex">
 					<div class="form-row form-row--asy">
 						<label for="telephone" class="form-row__label">Téléphone<span class="i-required">•</span></label>
-						<input class="form-row__input" type="number" data-length="10" name="telephone" id="telephone" required>
+						<input class="form-row__input" type="tel" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" data-length="10" name="telephone" id="telephone" required>
 						<div class="form-row__afterInput"></div>
 					</div>
 
