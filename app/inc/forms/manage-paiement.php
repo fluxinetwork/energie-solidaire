@@ -89,7 +89,7 @@ function fluxi_manage_paiement(){
 					$metas_tab['derniers_chiffres'] = $last4;
 					$metas_tab['statut_paiement'] = $charge->status;
 					
-					$title = $nom_structure_contact.' : '.$mail_contact;
+					$title = $nom_contact.' '.$prenom_contact.' : '.$mail_contact;
 					$content = '';
 					
 					// Insert post
